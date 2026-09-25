@@ -285,9 +285,9 @@ const EXTRAS = {
   groundF: (c, t) => groundDraw(c, t, -160, 2290),
   padsS: (c, t) => { padDraw(c, t, [0, 50, -38, 0]); padDraw(c, t, [900, 950, -38, 0]); },
   blockS: (c, t) => blockDraw(c, t, [420, 530, -65, 75]),
-  padsF: (c, t) => { padDraw(c, t, [0, 75, -38, 0]); padDraw(c, t, [2055, 2130, -38, 0]); },
+  padsF: (c, t) => { padDraw(c, t, [0, 50, -38, 0]); padDraw(c, t, [2030, 2080, -38, 0]); },
   blockF: (c, t) => blockDraw(c, t, [940, 1190, -65, 75]),
-  padsR: (c, t) => { padDraw(c, t, [0, 75, -38, 0]); padDraw(c, t, [2055, 2130, -38, 0]); },
+  padsR: (c, t) => { padDraw(c, t, [0, 50, -38, 0]); padDraw(c, t, [2030, 2080, -38, 0]); },
   padsPlan: (c, t) => {
     padDraw(c, t, [-20, 95, -20, 70]); padDraw(c, t, [2035, 2150, -20, 70]);
     padDraw(c, t, [-20, 95, 880, 970]); padDraw(c, t, [2035, 2150, 880, 970]);
@@ -322,7 +322,7 @@ const EXTRAS = {
   lapsD: (c, t) => courseLines(c, t, 8, 952, CO.door.lines),
   wraps: (c, t) => {
     c.save(); c.setLineDash([6, 4]); c.strokeStyle = PAL.dim; c.lineWidth = 1.2;
-    [0, 2130].forEach(x => { c.beginPath(); c.moveTo(t.X(x), t.Y(-20)); c.lineTo(t.X(x), t.Y(1580)); c.stroke(); });
+    [0, 2080].forEach(x => { c.beginPath(); c.moveTo(t.X(x), t.Y(-20)); c.lineTo(t.X(x), t.Y(1580)); c.stroke(); });
     c.restore();
   },
   arcUp: (c, t) => {

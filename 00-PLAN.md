@@ -1,5 +1,7 @@
 # 00 — PLAN · v2 Guide (IKEA-style, mobile-first, accurate)
 
+
+> **v2.4 AS-BUILT (25 Sep evening):** frame flipped — walls 75 thick, rails 50 tall, posts 50 across; side rails = inside overlaps (SRb 200–275, SRt 1265–1340); SLs centred on the post lines (inner faces x=50/2030); overall 2080, envelope 2124, eaves ~78; RS trims to ~1140; rear tails 2×54. Bands below updated where load-bearing. Full record: `../v2-2026-09-17/18-v2.4-as-built-orientation-flip.md`.
 **Date:** 2026-09-25 · **Status:** approved plan, build not yet started
 **Folder:** `2026-09-25-v2-guide/` (this folder — plan + the new guide, self-contained)
 **Replaces:** `guide/` (v1 web guide, left untouched as reference)
@@ -25,7 +27,7 @@ Fix all three by rebuilding the presentation layer around a **single verified ge
 | # | Question | Decision |
 |---|---|---|
 | D1 | Geometry truth | **The v1 guide engine is the design truth** (rise 190, FH between posts, top side rails at 1390, SL/RC all flat, rear clad 14 courses) — with the corrections in §4. The v2.2 markdown docs describe a *different, superseded* frame (see §3.5). |
-| D2 | Rear wall top rail | **RR2 top edge sits ON the box line at 1390, perfectly level with FH (front header) and SR3/SR4 (side top rails).** "We want a box." RR2 is on edge, band 1315–1390, between the posts, 190 below the rear post tops. |
+| D2 | Rear wall top rail | **RR2 top edge sits ON the box line at 1390, perfectly level with FH (front header).** "We want a box." v2.4: RR2 is flat (band 1340–1390); SR3/SR4 tuck UNDER the box line at 1340 (their tops = FH/RR2 undersides) because the front/rear rails fill the 75-thick walls at 1340–1390. |
 | D3 | Rear offcut | A short offcut (~190) **fills the vertical space between RR2's top (1390) and the roof cross member plane (post tops, 1580)** at mid-wall, aligned above RS. Installed while the wall is still flat. |
 | D4 | Roof frame orientation | **All flat** (50 tall): SL1/SL2 flat on the slope over the post lines; RC1/RC2/RC3 flat between them. |
 | D5 | Cross-member naming | Front → rear = **RC1, RC2, RC3** (RC3 is the one on the rear post tops). |
@@ -35,7 +37,7 @@ Fix all three by rebuilding the presentation layer around a **single verified ge
 | D9 | Build status | Nothing is built yet — the guide teaches the *intended* build; the geometry must be internally consistent (it now is, §3.3). |
 | D10 | Rendering mode | **2D orthographic CAD only.** No 3D, no axonometric, no exploded 3D stacks, no perspective — anywhere, including phase dividers. Every canvas is a true flat projection on a visible **CAD grid with correct aspect ratios** (uniform mm scale on both axes, never stretched). |
 | D11 | Views per step | **Every step shows multiple 2D views — always front, side AND top** (triptych, §6.3), with the step's piece highlighted in all of them. No step ever ships a single view. |
-| D12 | Corner detail (2026-09-25, later session) | **NO folding.** Timber splits across a 90° bend — never wrap or kerf a board around a corner. Rear boards keep their 2188 cut read as **2130 wall + 2×29 square-cut tails** oversailing each side wall; tails sealed same-day, no nails in them. Side boards, doors and battens unchanged — battens stay reserved (front drip edge / door catches). |
+| D12 | Corner detail (2026-09-25, later session) | **NO folding.** Timber splits across a 90° bend — never wrap or kerf a board around a corner. Rear boards keep their 2188 cut read as **2080 wall (v2.4) + 2×54 square-cut tails** oversailing each side wall; tails sealed same-day, no nails in them. Side boards, doors and battens unchanged — battens stay reserved (front drip edge / door catches). |
 
 ---
 
@@ -46,7 +48,7 @@ All dimensions mm. Nominal sections: frame 75×50, batten 50×22, boards 22×125
 ### 3.1 Coordinate system & constants
 
 ```
-x : width     0 = outer face LEFT posts  → 2130
+x : width     0 = outer face LEFT posts  → 2080 (v2.4)
 y : height    0 = post bottoms (pad bearing plane) → up
 z : depth     0 = outer face FRONT posts → 950 (rear)     [ONE z everywhere — v1 engine
                                                             had plan/side flipped vs each other]
@@ -54,7 +56,7 @@ z : depth     0 = outer face FRONT posts → 950 (rear)     [ONE z everywhere �
 
 | Constant | Value | Meaning |
 |---|---|---|
-| W_MEM / POST / W_ALL | 1980 / 75 / 2130 | members between posts / post face across / overall width |
+| W_MEM / POST / W_ALL | 1980 / 50 / **2080** | members between posts / post face across (v2.4) / overall width |
 | D_RAIL / D_ALL | 850 / 950 | side rails between posts / overall depth |
 | H_FP / H_RP | 1390 / 1580 | front / rear post lengths (already cut) |
 | **BOX** | **1390** | the level plane of ALL wall-top rails: FH top, SR3/SR4 top, RR2 top |
@@ -63,7 +65,7 @@ z : depth     0 = outer face FRONT posts → 950 (rear)     [ONE z everywhere �
 | Roof bearings | (z 0–50, y 1390) → (z 900–950, y 1580) | FH top face → rear post tops |
 | Roof frame tops | 1440 → 1630 | flat members +50 above each bearing; sheets bear on these tops |
 | Sheets | 760×1000, 8 corr @ 95 | side lap 1 corr = 95; boundaries −75…685 / 590…1350 / 1255…2015 / strip 1920…2205 |
-| Roof envelope | 2174 wall faces; sheets cover 2280 | eaves ≈ 53/side; down-slope overhang ≈ 16/end (recompute exactly at build) |
+| Roof envelope | **2124** wall faces (v2.4); sheets cover 2280 | eaves ≈ **78**/side; down-slope overhang ≈ 16/end (recompute exactly at build) |
 | Cladding | 25 lap / 100 exposure | sides: 14 courses from 150 + raked course · rear: 14 courses from 145, laps eased to land on 1580 · doors: 12 courses = 1200 exactly |
 | Doors | 960 × 1200, overlay | stiles 1200; rails 700 centred 250/950 from bottom; diagonal ~990 scribed |
 
@@ -73,13 +75,13 @@ z : depth     0 = outer face FRONT posts → 950 (rear)     [ONE z everywhere �
 
 | Piece | x | y | Notes |
 |---|---|---|---|
-| RP1 / RP2 | 0–75 / 2055–2130 | 0–1580 | rear corner posts |
-| RR1 | 75–2055 | 150–225 | on edge, bottom ON the 150 line |
-| **RR2** | 75–2055 | **1315–1390** | on edge, **TOP on the box line** (190 below post tops) — CORRECTED (was 1505–1580) |
-| **RS** | 1027.5–1102.5 | **225–1315** | cut 1150 → **scribe/trim to ~1090** in place so top beds under RR2 — CORRECTED (was 225–1375) |
+| RP1 / RP2 | 0–50 / 2030–2080 (v2.4) | 0–1580 | rear corner posts |
+| RR1 | 50–2030 | 150–200 (v2.4: flat) | bottom ON the 150 line |
+| **RR2** | 50–2030 | **1340–1390** (v2.4: flat, 50 tall) | **TOP on the box line** (190 below post tops) — CORRECTED (was 1505–1580) |
+| **RS** | 1027.5–1102.5 | **200–1340** (v2.4) | cut 1150 → **trim ~10 to ~1140** in place so top beds under RR2 — CORRECTED (was 225–1375) |
 | **FILL** | 1027.5–1102.5 | **1390–1580** | ~190 offcut above RR2 up to post-top plane, aligned above RS; fixed while wall is flat — CORRECTED (was 1375–1505 under old RR2) |
 | RC3r | 75–2055 | 1580–1630 | flat, ends over the post tops' inner halves, between the SLs — **NOT resting on RR2** |
-| SLr1 / SLr2 | 0–75 / 2055–2130 | ≈1580–1634 | rear ends of the sloped side pieces |
+| SLr1 / SLr2 | −25–50 / 2030–2105 (v2.4) | ≈1580–1634 | rear ends of the sloped side pieces |
 | Rear cladding | −29–2159 | 145 → 1580 | 14 courses, first at 145, laps eased (~102.5 avg cover); boards 2188 = 2130 + 2×29 square-cut tails (D12 — no folding) |
 
 **Front elevation (x, y):**
@@ -98,8 +100,8 @@ z : depth     0 = outer face FRONT posts → 950 (rear)     [ONE z everywhere �
 |---|---|---|
 | FP / RP | 0–50 / 900–950 | 0–1390 / 0–1580 |
 | FT / FH | 0–50 | 75–150 / 1340–1390 |
-| SRb (SR1/SR2) | 50–900 | 150–225 |
-| SRt (SR3/SR4) | 50–900 | 1315–1390 (top on box line) |
+| SRb (SR1/SR2) | 50–900 | 200–275 (v2.4: INSIDE overlap, 25 per post; bottom = RR1 top) |
+| SRt (SR3/SR4) | 50–900 | 1265–1340 (v2.4: top = FH/RR2 underside, tucked under the box line) |
 | RR1 / RR2 | 900–950 | 150–225 / 1315–1390 |
 | RS / FILL | 900–950 | 225–1315 / 1390–1580 |
 | SLp | polygon on slope | deck(s), s −49.5…920.5, flat (50 slope-normal) |

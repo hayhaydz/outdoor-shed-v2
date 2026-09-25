@@ -4,15 +4,15 @@
 
 const PHASES = {
   phase00: { num: '00', title: 'The base', steps: ['step01'], lead: 'Five pads and one bedded block. Nothing else ever touches the ground.', handle: '4 corner pads \u00D74 \u00B7 threshold block \u00D71 \u00B7 slate/packing', meta: [['level', 'Level \u00B15 mm'], ['helper', 'Solo OK']],
-    views: [{ kind: 'plan', label: 'TOP', sub: 'the 5-pad layout', extras: ['padsPlan'], ghost: ['PF1', 'PF2', 'PR1', 'PR2', 'FTp'], dims: [{ k: 'h', a: 0, b: 2130, y: -80, t: '2130' }, { k: 'v', a: 0, b: 950, x: 2320, t: '950', s: 'r' }] }] },
-  phase01: { num: '01', title: 'Rear wall, built flat', steps: ['step02', 'step03', 'step04', 'step05', 'step06', 'step07'], lead: 'The tall wall, assembled face-up on the ground. RR2 sits on the box line \u2014 the FILL offcut completes the wall while it is still flat.', handle: 'RP1 \u00B7 RP2 \u00B7 RR1 \u00B7 RR2 \u00B7 RS (1150 \u2192 ~1090) \u00B7 FILL ~190', meta: [['drill', '~30 min'], ['helper', 'Solo OK']],
+    views: [{ kind: 'plan', label: 'TOP', sub: 'the 5-pad layout', extras: ['padsPlan'], ghost: ['PF1', 'PF2', 'PR1', 'PR2', 'FTp'], dims: [{ k: 'h', a: 0, b: 2080, y: -80, t: '2080 (v2.4)' }, { k: 'v', a: 0, b: 950, x: 2320, t: '950', s: 'r' }] }] },
+  phase01: { num: '01', title: 'Rear wall, built flat', steps: ['step02', 'step03', 'step04', 'step05', 'step06', 'step07'], lead: 'The tall wall, assembled face-up on the ground. RR2 sits on the box line \u2014 the FILL offcut completes the wall while it is still flat.', handle: 'RP1 \u00B7 RP2 \u00B7 RR1 \u00B7 RR2 \u00B7 RS (1150 \u2192 ~1140, v2.4) \u00B7 FILL ~190', meta: [['drill', '~30 min'], ['helper', 'Solo OK']],
     views: [{ kind: 'rear', label: 'FACE', sub: 'the wall lying face up', built: ['RP1', 'RP2'], new: ['RR1', 'RR2', 'RS', 'FILL'], extras: ['datum150r', 'datumBOX'], labels: { RS: 'RS ~1090', FILL: 'FILL 190' }, dims: [{ k: 'v', a: 0, b: 1580, x: 2260, t: '1580', s: 'r' }] }] },
   phase02: { num: '02', title: 'Front wall, built flat', steps: ['step08', 'step09', 'step10', 'step11'], lead: 'Same recipe, shorter posts. The middle stays empty \u2014 that is the door opening.', handle: 'FP1 \u00B7 FP2 \u00B7 FT \u00B7 FH', meta: [['drill', '~30 min'], ['helper', 'Solo OK']],
     views: [{ kind: 'front', label: 'FACE', sub: 'the wall lying face up', built: ['FP1', 'FP2'], new: ['FT', 'FH'], extras: ['datum150r', 'datumBOX'], dims: [{ k: 'v', a: 0, b: 1390, x: 2260, t: '1390', s: 'r' }] }] },
-  phase03: { num: '03', title: 'Stand the box', steps: ['step12', 'step13'], lead: 'Two walls upright, 850 apart, braced before anyone lets go.', handle: 'Both walls \u00B7 4+ temporary braces \u00B7 pegs', meta: [['helper', 'Helper needed'], ['wind', 'Calm-ish day']],
+  phase03: { num: '03', title: 'Stand the box', steps: ['step12', 'step13'], lead: 'Two walls upright, 800 apart (v2.4), braced before anyone lets go.', handle: 'Both walls \u00B7 4+ temporary braces \u00B7 pegs', meta: [['helper', 'Helper needed'], ['wind', 'Calm-ish day']],
     views: [{ kind: 'side', label: 'SIDE', sub: 'both walls standing', built: ['FP', 'RP', 'FT', 'FH', 'RR1', 'RR2', 'RS', 'FILL'], extras: ['groundS', 'padsS', 'blockS', 'bracesR', 'bracesF', 'datum150'], dims: [{ k: 'v', a: 0, b: 1580, x: 1120, t: '1580', s: 'r' }] }] },
-  phase04: { num: '04', title: 'Side rails', steps: ['step14', 'step15', 'step16', 'step17'], lead: 'Four rails lock the box: two bottoms on the 150 line, two tops on the box line 1390.', handle: 'SR1 \u00B7 SR2 \u00B7 SR3 \u00B7 SR4 (850 each)', meta: [['drill', '~45 min'], ['square2', 'Diagonals \u00B15']],
-    views: [{ kind: 'side', label: 'SIDE', sub: 'bottom rails 150 \u00B7 top rails on the box line', built: ['FP', 'RP', 'FT', 'FH', 'RR1', 'RR2', 'RS', 'FILL'], new: ['SRb', 'SRt'], extras: ['groundS', 'padsS', 'blockS', 'datum150', 'datumBOXs'], dims: [{ k: 'v', a: 0, b: 1390, x: 1120, t: '1390', s: 'r' }] }] },
+  phase04: { num: '04', title: 'Side rails', steps: ['step14', 'step15', 'step16', 'step17'], lead: 'v2.4: four rails lock the box as INSIDE overlaps \u2014 bottoms at 200, tops at 1340.', handle: 'SR1 \u00B7 SR2 \u00B7 SR3 \u00B7 SR4 (850 each)', meta: [['drill', '~45 min'], ['square2', 'Diagonals \u00B15']],
+    views: [{ kind: 'side', label: 'SIDE', sub: 'v2.4: bottom rails 200 \u00B7 top rails 1340, inside the posts', built: ['FP', 'RP', 'FT', 'FH', 'RR1', 'RR2', 'RS', 'FILL'], new: ['SRb', 'SRt'], extras: ['groundS', 'padsS', 'blockS', 'datum150', 'datumBOXs'], dims: [{ k: 'v', a: 0, b: 1340, x: 1120, t: '1340', s: 'r' }] }] },
   phase05: { num: '05', title: 'Roof frame', steps: ['step18', 'step19', 'step20', 'step21', 'step22'], lead: 'Two sloped pieces flat over the post lines, three rails flat between them. All five rows, tops flush, on the slope.', handle: 'SL1 \u00B7 SL2 (970) \u00B7 RC1 \u00B7 RC2 \u00B7 RC3 (1980)', meta: [['ladder', 'Ladder care'], ['helper', 'Helper useful']],
     views: [{ kind: 'plan', label: 'TOP', sub: 'the 5 nailing rows', built: ['PF1', 'PF2', 'PR1', 'PR2', 'FTp', 'RR2p'], new: ['SL1', 'SL2', 'RC1', 'RC2', 'RC3'], extras: ['envp'] }] },
   phase06: { num: '06', title: 'Door linings', steps: ['step23', 'step24'], lead: 'Two battens become the door stops \u2014 then photograph the frame: it is your nailing map.', handle: 'DL1 \u00B7 DL2 (1200 batten)', meta: [['drill', '~20 min'], ['photo', 'Photo checkpoint']],
@@ -41,9 +41,9 @@ step01: { phase: 'phase00', title: '5 pads + the threshold block',
     { kind: 'side', label: 'SIDE', sub: 'at ground', extras: ['groundS', 'padsS', 'blockS'], ghost: ['FP', 'RP', 'FT'], extras2: null,
       dims: [{ k: 'v', a: 0, b: 75, x: 620, t: '75', s: 'r' }, { k: 'v', a: 0, b: 150, x: -120, t: '150', s: 'l' }], callouts: [[25, -60], [475, -110]] },
     { kind: 'front', label: 'FRONT', sub: 'at ground', extras: ['groundF', 'padsF', 'blockF'], ghost: ['FP1', 'FP2', 'FT'],
-      dims: [{ k: 'h', a: 0, b: 2130, y: -120, t: '2130' }] },
+      dims: [{ k: 'h', a: 0, b: 2080, y: -120, t: '2080 (v2.4)' }] },
     { kind: 'plan', label: 'TOP', sub: 'the 5-pad layout', extras: ['padsPlan'], ghost: ['PF1', 'PF2', 'PR1', 'PR2', 'FTp'],
-      dims: [{ k: 'h', a: 0, b: 2130, y: -80, t: '2130' }, { k: 'v', a: 50, b: 900, x: 2320, t: '850', s: 'r' }] }
+      dims: [{ k: 'h', a: 0, b: 2080, y: -80, t: '2080 (v2.4)' }, { k: 'v', a: 75, b: 875, x: 2320, t: '800', s: 'r' }] }
   ],
   actions: [
     'Set <b>4 corner pads</b> where the post bottoms land \u2014 level within <b>\u00B15 mm</b> of each other (level + tape).',
@@ -59,7 +59,7 @@ step01: { phase: 'phase00', title: '5 pads + the threshold block',
 step02: { phase: 'phase01', title: 'RP1 \u2014 first rear post',
   panels: [
     { kind: 'rear', label: 'FACE', sub: 'wall lying face up', new: ['RP1'],
-      dims: [{ k: 'h', a: 0, b: 2130, y: 1700, t: '2130' }, { k: 'v', a: 0, b: 1580, x: 2260, t: '1580', s: 'r' }] },
+      dims: [{ k: 'h', a: 0, b: 2080, y: 1700, t: '2080 (v2.4)' }, { k: 'v', a: 0, b: 1580, x: 2260, t: '1580', s: 'r' }] },
     { kind: 'rearSec', label: 'SECTION', sub: 'looking along the wall', new: ['RPs'] },
     { kind: 'plan', label: 'TOP', sub: 'this wall\u2019s place (drawn standing)', new: ['PR1'], ghost: ['PF1', 'PF2'] }
   ],
@@ -68,14 +68,14 @@ step02: { phase: 'phase01', title: 'RP1 \u2014 first rear post',
     'Write <b>RP1</b> on the face you can see: that is the wall\u2019s outside face.',
     'Measure <b>150 up</b> from the bottom end, square a pencil line across \u2014 RR1 lands on it.'
   ],
-  pieces: [['RP1', '1580 \u00D7 75\u00D750', '75 across \u00B7 50 deep (vertical)', 0, [75, 50]]],
+  pieces: [['RP1', '1580 \u00D7 75\u00D750', '50 across \u00B7 75 deep (vertical) \u2014 v2.4', 0, [50, 75]]],
   tools: ['tape', 'pencil', 'marker'],
   checks: ['Bottom end flush with the straight edge.'] },
 
 step03: { phase: 'phase01', title: 'RP2 \u2014 second rear post',
   panels: [
     { kind: 'rear', label: 'FACE', sub: 'wall lying face up', built: ['RP1'], new: ['RP2'],
-      dims: [{ k: 'h', a: 0, b: 2130, y: 1700, t: '2130' }] },
+      dims: [{ k: 'h', a: 0, b: 2080, y: 1700, t: '2080 (v2.4)' }] },
     { kind: 'rearSec', label: 'SECTION', sub: 'looking along the wall', new: ['RPs'] },
     { kind: 'plan', label: 'TOP', sub: 'this wall\u2019s place', built: ['PR1'], new: ['PR2'], ghost: ['PF1', 'PF2'] }
   ],
@@ -84,25 +84,25 @@ step03: { phase: 'phase01', title: 'RP2 \u2014 second rear post',
     'Both bottom ends hard against the <b>same</b> straight edge.',
     'Square the <b>150 line</b> across RP2 as well \u2014 two posts, two lines, one level.'
   ],
-  pieces: [['RP2', '1580 \u00D7 75\u00D750', '75 across \u00B7 50 deep (vertical)', 0, [75, 50]]],
+  pieces: [['RP2', '1580 \u00D7 75\u00D750', '50 across \u00B7 75 deep (vertical) \u2014 v2.4', 0, [50, 75]]],
   tools: ['tape', 'pencil', 'square'],
   checks: ['150 lines level across both posts.'] },
 
 step04: { phase: 'phase01', title: 'RR1 \u2014 bottom rail, on the 150 line',
   panels: [
     { kind: 'rear', label: 'FACE', sub: 'wall lying face up', built: ['RP1', 'RP2'], new: ['RR1'], extras: ['datum150r'],
-      screws: [[107, 187], [137, 187], [1993, 187], [2023, 187]], screwChip: '\u00D72',
+      screws: [[107, 175], [137, 175], [1993, 175], [2023, 175]], screwChip: '\u00D72',
       dims: [{ k: 'v', a: 0, b: 150, x: -140, t: '150', s: 'l' }] },
-    { kind: 'rearSec', label: 'SECTION', sub: 'on edge \u2014 75 tall', built: [], new: ['RPs', 'RR1s'] },
+    { kind: 'rearSec', label: 'SECTION', sub: 'FLAT \u2014 50 tall (v2.4)', built: [], new: ['RPs', 'RR1s'] },
     { kind: 'plan', label: 'TOP', sub: 'between the posts', built: ['PR1', 'PR2'], new: ['RR1p'] }
   ],
   actions: [
     'RR1 slides <b>between</b> the posts \u2014 ends meet the posts\u2019 inner faces.',
-    'Bottom edge <b>ON the two 150 lines</b>. On edge: 50 up, 75 tall.',
+    'Bottom edge <b>ON the two 150 lines</b>. v2.4 as built: FLAT \u2014 75 up, 50 tall (band 150\u2013200) \u2014 so the screws cross the posts\u2019 50 and bite 30 mm, not 5.',
     'Clamp, then check <b>diagonals corner-to-corner equal within 3 mm</b> BEFORE screwing.',
     '2 \u00D7 5.0\u00D780 per joint, 3 mm pilots, ~25 in from edges, staggered.'
   ],
-  pieces: [['RR1', '1980 \u00D7 75\u00D750', '50 up (on edge, 75 tall)', 0, [50, 75]]],
+  pieces: [['RR1', '1980 \u00D7 75\u00D750', '75 up (flat, 50 tall \u2014 v2.4)', 0, [75, 50]]],
   tools: ['drill', 'pilot', 'clamp', 'tape'],
   warnings: [['split', 'Pilot 3 mm first \u2014 every screw within 100 mm of an end splits untreated timber without one.']],
   checks: ['Diagonals equal within 3 mm.', 'Bottoms still flush with the straight edge.'] },
@@ -110,10 +110,10 @@ step04: { phase: 'phase01', title: 'RR1 \u2014 bottom rail, on the 150 line',
 step05: { phase: 'phase01', title: 'RR2 \u2014 top rail, on the BOX LINE',
   panels: [
     { kind: 'rear', label: 'FACE', sub: 'wall lying face up', built: ['RP1', 'RP2', 'RR1'], new: ['RR2'], extras: ['datumBOX'],
-      screws: [[107, 1352], [137, 1352], [1993, 1352], [2023, 1352]], screwChip: '\u00D72',
+      screws: [[107, 1365], [137, 1365], [1993, 1365], [2023, 1365]], screwChip: '\u00D72',
       dims: [{ k: 'v', a: 1390, b: 1580, x: 2260, t: '190 down', s: 'r' }, { k: 'v', a: 0, b: 1390, x: -140, t: '1390', s: 'l' }],
       callouts: [[1065, 1440]] },
-    { kind: 'rearSec', label: 'SECTION', sub: 'on edge \u2014 75 tall', new: ['RPs', 'RR1s', 'RR2s'] },
+    { kind: 'rearSec', label: 'SECTION', sub: 'FLAT \u2014 50 tall (v2.4)', new: ['RPs', 'RR1s', 'RR2s'] },
     { kind: 'plan', label: 'TOP', sub: 'same slot as RR1', built: ['PR1', 'PR2'], new: ['RR2p'] }
   ],
   insets: [
@@ -122,32 +122,32 @@ step05: { phase: 'phase01', title: 'RR2 \u2014 top rail, on the BOX LINE',
   ],
   actions: [
     'Measure <b>DOWN 190</b> from each post top, square lines across both posts.',
-    'Clamp RR2\u2019s <b>top edge on the lines</b> \u2192 top = the <b>box line 1390</b>, level with FH and the side top rails later.',
-    'On edge, like RR1. 2 \u00D7 5.0\u00D780 per joint, pilots first.'
+    'Clamp RR2\u2019s <b>top edge on the lines</b> \u2192 top = the <b>box line 1390</b>, level with FH later (band 1340\u20131390, v2.4).',
+    'Flat like RR1. 2 \u00D7 5.0\u00D780 per joint, pilots first.'
   ],
-  pieces: [['RR2', '1980 \u00D7 75\u00D750', '50 up (on edge, 75 tall)', 0, [50, 75]]],
+  pieces: [['RR2', '1980 \u00D7 75\u00D750', '75 up (flat, 50 tall \u2014 v2.4)', 0, [75, 50]]],
   tools: ['drill', 'pilot', 'clamp', 'square'],
   checks: ['Top edge reads 1390 at both ends.', 'Straight edge across post tops: RR2 top sits exactly 190 below, flush gap under it.'] },
 
 step06: { phase: 'phase01', title: 'RS \u2014 mid strut: scribe, trim, bed under RR2',
   panels: [
     { kind: 'rear', label: 'FACE', sub: 'wall lying face up', built: ['RP1', 'RP2', 'RR1', 'RR2'], new: ['RS'],
-      screws: [[1047, 240], [1082, 240], [1047, 1300], [1082, 1300]], screwChip: '\u00D72',
-      dims: [{ k: 'v', a: 225, b: 1315, x: 1150, t: '~1090 as fit', s: 'r' }] },
+      screws: [[1047, 215], [1082, 215], [1047, 1380], [1082, 1380]], screwChip: '\u00D72',
+      dims: [{ k: 'v', a: 200, b: 1340, x: 1150, t: '~1140 as fit', s: 'r' }] },
     { kind: 'rearSec', label: 'SECTION', sub: 'vertical \u2014 on the rail', built: ['RR1s', 'RR2s'], new: ['RSs'] },
     { kind: 'plan', label: 'TOP', sub: 'centred on the wall', built: ['PR1', 'PR2', 'RR2p'], new: ['RSp'] }
   ],
   insets: [
     { kind: 'rearSec', tag: 'toe-screwing \u2014 screw enters the edge at ~45\u00B0', bnd: [-80, 140, 120, 420], built: ['RR1s'], new: ['RSs'],
-      screws: [[10, 232]], minor: 50 }
+      screws: [[10, 207]], minor: 50 }
   ],
   actions: [
     'Stand RS (cut 1150) on RR1, centred (~990 from each post). Plumb it.',
-    '<b>Scribe</b>: mark where its top meets RR2\u2019s underside, take it out, <b>trim ~60 \u2192 ~1090</b> so it beds snug UNDER RR2 (top at 1315).',
+    '<b>Scribe</b>: mark where its top meets RR2\u2019s underside, take it out, <b>trim ~10 \u2192 ~1140</b> (v2.4) so it beds snug UNDER RR2 (top at 1340).',
     'Toe-screw the bottom: 2 screws at ~45\u00B0 through the strut edge into the rail.',
     '2 screws down through RR2\u2019s top edge into the strut top.'
   ],
-  pieces: [['RS', '1150 \u2192 trim ~1090 \u00D7 75\u00D750', '75 across \u00B7 50 deep (vertical)', 0, [75, 50]]],
+  pieces: [['RS', '1150 \u2192 trim ~1140 \u00D7 75\u00D750', '50 across \u00B7 75 deep (vertical) \u2014 v2.4', 0, [50, 75]]],
   tools: ['drill', 'pilot', 'saw', 'level'],
   checks: ['RS beds snug under RR2 \u2014 no gap, no force.', 'Plumb across the wall.'] },
 
@@ -165,54 +165,54 @@ step07: { phase: 'phase01', title: 'FILL ~190 \u2014 the wall completes flat',
     '2 toe-screws through its edge into RR2. The cladding nails it again later.',
     'Re-check the whole wall\u2019s diagonals \u2014 the wall now stands <b>complete</b>, no after-standing fill job left.'
   ],
-  pieces: [['FILL', '~190 \u00D7 75\u00D750', '75 across \u00B7 50 deep (vertical)', 0, [75, 50]]],
+  pieces: [['FILL', '~190 \u00D7 75\u00D750', '50 across \u00B7 75 deep (vertical) \u2014 v2.4', 0, [50, 75]]],
   tools: ['saw', 'brush', 'drill', 'pilot'],
   warnings: [['sealer', 'Seal every fresh cut end the same day \u2014 end grain drinks water.']],
-  checks: ['Mid-wall stack contiguous: 225 \u2192 1315 \u2192 1390 \u2192 1580, zero gaps.'] },
+  checks: ['Mid-wall stack contiguous: 200 \u2192 1340 \u2192 1390 \u2192 1580, zero gaps.'] },
 
 /* ---------- PHASE 02 — front wall, flat ---------- */
 step08: { phase: 'phase02', title: 'FP1 \u2014 first front post',
   panels: [
     { kind: 'front', label: 'FACE', sub: 'wall lying face up', new: ['FP1'],
-      dims: [{ k: 'h', a: 0, b: 2130, y: 1500, t: '2130' }, { k: 'v', a: 0, b: 1390, x: 2260, t: '1390', s: 'r' }] },
+      dims: [{ k: 'h', a: 0, b: 2080, y: 1500, t: '2080 (v2.4)' }, { k: 'v', a: 0, b: 1390, x: 2260, t: '1390', s: 'r' }] },
     { kind: 'frontSec', label: 'SECTION', sub: 'looking along the wall', new: ['FPs'] },
     { kind: 'plan', label: 'TOP', sub: 'door end', new: ['PF1'], ghost: ['PR1', 'PR2'] }
   ],
   actions: [
     'Same straight edge. FP1 (1390) is the door-end left corner \u2014 the middle of this wall stays <b>empty</b>: the door opening.',
-    'Label the face. Measure <b>75 up</b> from the bottom, square a line \u2014 FT lands on it.'
+    'Label the face. Measure <b>100 up</b> from the bottom, square a line \u2014 FT\u2019s bottom lands on it (its top = the 150 line, v2.4).'
   ],
-  pieces: [['FP1', '1390 \u00D7 75\u00D750', '75 across \u00B7 50 deep (vertical)', 0, [75, 50]]],
+  pieces: [['FP1', '1390 \u00D7 75\u00D750', '50 across \u00B7 75 deep (vertical) \u2014 v2.4', 0, [50, 75]]],
   tools: ['tape', 'pencil', 'marker'] },
 
 step09: { phase: 'phase02', title: 'FP2 \u2014 second front post',
   panels: [
     { kind: 'front', label: 'FACE', sub: 'wall lying face up', built: ['FP1'], new: ['FP2'],
-      dims: [{ k: 'h', a: 0, b: 2130, y: 1500, t: '2130' }] },
+      dims: [{ k: 'h', a: 0, b: 2080, y: 1500, t: '2080 (v2.4)' }] },
     { kind: 'frontSec', label: 'SECTION', sub: 'looking along the wall', new: ['FPs'] },
     { kind: 'plan', label: 'TOP', sub: 'door end', built: ['PF1'], new: ['PF2'], ghost: ['PR1', 'PR2'] }
   ],
   actions: [
     'Mirror of FP1 on the same straight edge.',
-    'Square the <b>75 line</b> across FP2 too \u2014 both posts marked.'
+    'Square the <b>100 line</b> across FP2 too \u2014 both posts marked.'
   ],
-  pieces: [['FP2', '1390 \u00D7 75\u00D750', '75 across \u00B7 50 deep (vertical)', 0, [75, 50]]],
+  pieces: [['FP2', '1390 \u00D7 75\u00D750', '50 across \u00B7 75 deep (vertical) \u2014 v2.4', 0, [50, 75]]],
   tools: ['tape', 'pencil', 'square'] },
 
 step10: { phase: 'phase02', title: 'FT \u2014 threshold, top face on the 150 line',
   panels: [
     { kind: 'front', label: 'FACE', sub: 'wall lying face up', built: ['FP1', 'FP2'], new: ['FT'], extras: ['datum150r'],
-      screws: [[107, 112], [137, 112], [1993, 112], [2023, 112]], screwChip: '\u00D72',
-      dims: [{ k: 'v', a: 0, b: 150, x: -140, t: '150', s: 'l' }, { k: 'v', a: 0, b: 75, x: 2260, t: '75', s: 'r' }] },
-    { kind: 'frontSec', label: 'SECTION', sub: 'on edge \u2014 75 tall', new: ['FPs', 'FTs'] },
+      screws: [[107, 125], [137, 125], [1993, 125], [2023, 125]], screwChip: '\u00D72',
+      dims: [{ k: 'v', a: 0, b: 150, x: -140, t: '150', s: 'l' }, { k: 'v', a: 0, b: 100, x: 2260, t: '100', s: 'r' }] },
+    { kind: 'frontSec', label: 'SECTION', sub: 'FLAT \u2014 50 tall (v2.4)', new: ['FPs', 'FTs'] },
     { kind: 'plan', label: 'TOP', sub: 'between the posts', built: ['PF1', 'PF2'], new: ['FTp'] }
   ],
   actions: [
-    'FT between the posts, bottom edge on the <b>75 lines</b> \u2192 its <b>top face lands exactly on 150</b>.',
-    'On edge. Sits 75 higher than RR1 on purpose \u2014 it is the door sill the bike wheels roll over.',
+    'FT between the posts, bottom edge on the <b>100 lines</b> \u2192 its <b>top face lands exactly on 150</b> (v2.4: FT is 50 tall).',
+    'Flat like the rear rails. Its top is the 150 door-sill line the bike wheels roll over.',
     'Diagonals equal within 3 mm, then 2 \u00D7 5.0\u00D780 per joint.'
   ],
-  pieces: [['FT', '1980 \u00D7 75\u00D750', '50 up (on edge, 75 tall)', 0, [50, 75]]],
+  pieces: [['FT', '1980 \u00D7 75\u00D750', '75 up (flat, 50 tall \u2014 v2.4)', 0, [75, 50]]],
   tools: ['drill', 'pilot', 'clamp', 'tape'],
   checks: ['Top face = 150 at both ends.', 'Diagonals equal within 3 mm.'] },
 
@@ -242,7 +242,7 @@ step12: { phase: 'phase03', title: 'Stand the rear wall + braces',
       dims: [{ k: 'v', a: 0, b: 1580, x: 1120, t: '1580', s: 'r' }], callouts: [[1100, 700]] },
     { kind: 'rear', label: 'REAR', sub: 'the wall you just built', built: ['RP1', 'RP2', 'RR1', 'RR2', 'RS', 'FILL'], extras: ['groundR', 'padsR', 'datum150r'] },
     { kind: 'plan', label: 'TOP', sub: 'rear wall in place', built: ['PR1', 'PR2', 'RR1p', 'RR2p', 'RSp', 'FILLp'], ghost: ['PF1', 'PF2', 'FTp'],
-      dims: [{ k: 'v', a: 50, b: 900, x: 2320, t: '850 next', s: 'r' }] }
+      dims: [{ k: 'v', a: 75, b: 875, x: 2320, t: '800 next (v2.4)', s: 'r' }] }
   ],
   actions: [
     'Walk the wall upright to the <b>rear line of the pads</b> (helper: one holds, one checks plumb on two faces).',
@@ -255,40 +255,41 @@ step12: { phase: 'phase03', title: 'Stand the rear wall + braces',
   warnings: [['wind', 'The wind owns an unbraced wall tonight \u2014 braces solid before anyone lets go.']],
   checks: ['Plumb on two faces of a post.', 'Braces solid before hands leave.'] },
 
-step13: { phase: 'phase03', title: 'Stand the front wall, 850 away',
+step13: { phase: 'phase03', title: 'Stand the front wall, 800 away',
   panels: [
     { kind: 'side', label: 'SIDE', sub: 'both walls standing', built: ['RP', 'RR1', 'RR2', 'RS', 'FILL', 'FP', 'FT', 'FH'], extras: SIDE_CTX,
-      dims: [{ k: 'h', a: 50, b: 900, y: -120, t: '850' }, { k: 'v', a: 0, b: 1390, x: -120, t: '1390', s: 'l' }] },
+      dims: [{ k: 'h', a: 75, b: 875, y: -120, t: '800 (v2.4)' }, { k: 'v', a: 0, b: 1390, x: -120, t: '1390', s: 'l' }] },
     { kind: 'front', label: 'FRONT', sub: 'door wall on its pads', built: ['FP1', 'FP2', 'FT', 'FH'], extras: ['groundF', 'padsF', 'blockF', 'datum150r'],
-      dims: [{ k: 'h', a: 0, b: 2130, y: -120, t: '2130' }] },
-    { kind: 'plan', label: 'TOP', sub: 'both walls, 850 apart', built: ['PR1', 'PR2', 'RR1p', 'RR2p', 'PF1', 'PF2', 'FTp'],
-      dims: [{ k: 'v', a: 50, b: 900, x: 2320, t: '850', s: 'r' }] }
+      dims: [{ k: 'h', a: 0, b: 2080, y: -120, t: '2080 (v2.4)' }] },
+    { kind: 'plan', label: 'TOP', sub: 'both walls, 800 apart', built: ['PR1', 'PR2', 'RR1p', 'RR2p', 'PF1', 'PF2', 'FTp'],
+      dims: [{ k: 'v', a: 75, b: 875, x: 2320, t: '800', s: 'r' }] }
   ],
   actions: [
-    'Stand the front wall on its pads \u2014 including the <b>bedded block</b> under the threshold (its top meets FT\u2019s underside).',
+    'Stand the front wall on its pads \u2014 including the <b>bedded block</b> under the threshold (its top meets FT\u2019s underside, now 100 up \u2014 v2.4).',
     'Brace it the same way: one per corner, header \u2192 peg forward.',
-    'Measure <b>850 post-face to post-face, BOTH sides</b> \u2014 the side rails lock it next phase.'
+    'Measure <b>800 post-face to post-face, BOTH sides</b> (v2.4: walls are 75 thick) \u2014 the side-rail overlaps lock it next phase.'
   ],
   pieces: [['BRACE', 'batten offcut \u00D72+', 'diagonal, header \u2192 peg', 0, 0, 4]],
   tools: ['drill', 'level', 'tape', 'helper'],
-  checks: ['850 both sides within a few mm.', 'Both walls plumb.'] },
+  checks: ['800 both sides within a few mm.', 'Both walls plumb.'] },
 
 /* ---------- PHASE 04 — side rails ---------- */
-step14: { phase: 'phase04', title: 'SR1 \u2014 bottom side rail (left)',
+step14: { phase: 'phase04', title: 'SR1 \u2014 bottom side rail (left), INSIDE OVERLAP',
   panels: [
     { kind: 'side', label: 'SIDE', sub: 'left wall', built: WALLS_SIDE, new: ['SRb'], labels: { SRb: 'SR1' }, extras: SIDE_CTX,
-      screws: [[75, 187], [875, 187]], screwChip: '\u00D72', dims: [{ k: 'v', a: 0, b: 150, x: -120, t: '150', s: 'l' }] },
-    { kind: 'rear', label: 'REAR', sub: 'level across from RR1', built: ['RP1', 'RP2', 'RR1', 'RR2', 'RS', 'FILL'], extras: ['groundR', 'padsR', 'datum150r', 'datumBOX'] },
-    { kind: 'plan', label: 'TOP', sub: 'between front and rear posts', built: ['PF1', 'PF2', 'PR1', 'PR2'], new: ['SR1p'], labels: { SR1p: 'SR1' } }
+      screws: [[62, 237], [888, 237]], screwChip: '\u00D72', dims: [{ k: 'v', a: 0, b: 200, x: -120, t: '200', s: 'l' }] },
+    { kind: 'rear', label: 'REAR', sub: 'level across from RR1\u2019s TOP', built: ['RP1', 'RP2', 'RR1', 'RR2', 'RS', 'FILL'], extras: ['groundR', 'padsR', 'datum150r', 'datumBOX'] },
+    { kind: 'plan', label: 'TOP', sub: 'INSIDE the posts \u2014 25 overlap per end', built: ['PF1', 'PF2', 'PR1', 'PR2'], new: ['SR1p'], labels: { SR1p: 'SR1' } }
   ],
   actions: [
-    'SR1 (850) between the front and rear posts, <b>bottom edge on the 150 line</b> \u2014 level across from RR1.',
-    'On edge. Deliberately above the threshold: the threshold is a sill, not a rail row.',
-    '2 \u00D7 5.0\u00D780 through each post into the rail end, pilots first.'
+    '<b>v2.4 \u2014 no trimming, no through-post screws:</b> hold SR1 (850) flat against the <b>INSIDE faces</b> of the corner posts, on edge (75 tall), <b>ends overlapping each post by 25</b> \u2014 800 gap + 2\u00D725 = the 850 cut exactly.',
+    '<b>Bottom edge at 200</b> \u2014 the same plane as RR1\u2019s top edge (it cannot sit at 150: RR1\u2019s end fills the wall thickness there). Level across from RR1 to check.',
+    '2 \u00D7 5.0\u00D780 per end <b>through the rail into the post</b> \u2014 face grain, 30 mm, the strongest joint in the frame. Screws spaced in the rail height (~215 / ~255), about 60 from the post\u2019s front face.'
   ],
-  pieces: [['SR1', '850 \u00D7 75\u00D750', '50 up (on edge, 75 tall)', 0, [50, 75]]],
+  pieces: [['SR1', '850 \u00D7 75\u00D750', 'on edge \u00B7 INSIDE overlap (v2.4)', 0, [50, 75]]],
   tools: ['drill', 'pilot', 'level'],
-  checks: ['Bottom edge = 150, level with RR1.'] },
+  warnings: [['split', 'Pilots first \u2014 the screws sit close to the rail\u2019s end grain.']],
+  checks: ['Bottom edge = 200, level with RR1\u2019s top.', '25 of post behind each rail end, both ends.'] },
 
 step15: { phase: 'phase04', title: 'SR2 \u2014 bottom side rail (right)',
   panels: [
@@ -297,28 +298,28 @@ step15: { phase: 'phase04', title: 'SR2 \u2014 bottom side rail (right)',
     { kind: 'plan', label: 'TOP', sub: 'right wall', built: ['PF1', 'PF2', 'PR1', 'PR2'], new: ['SR2p'], labels: { SR2p: 'SR2' } }
   ],
   actions: [
-    'Identical to SR1, right wall \u2014 the drawing shows the same side view.',
-    'Check: SR1, RR1, SR2 bottoms all on the one 150 line.'
+    'Identical to SR1, right wall \u2014 inside overlap, bottom at 200.',
+    'Check: RR1\u2019s top edge and the SR1/SR2 bottoms all read the one 200 plane.'
   ],
-  pieces: [['SR2', '850 \u00D7 75\u00D750', '50 up (on edge, 75 tall)', 0, [50, 75]]],
+  pieces: [['SR2', '850 \u00D7 75\u00D750', 'on edge \u00B7 INSIDE overlap (v2.4)', 0, [50, 75]]],
   tools: ['drill', 'pilot', 'level'] },
 
-step16: { phase: 'phase04', title: 'SR3 \u2014 TOP side rail (left), on the box line',
+step16: { phase: 'phase04', title: 'SR3 \u2014 TOP side rail (left), tucked under the box line',
   panels: [
     { kind: 'side', label: 'SIDE', sub: 'left wall', built: WALLS_SIDE.concat(['SRb']), new: ['SRt'], labels: { SRt: 'SR3' }, extras: SIDE_CTX.concat(['datumBOXs']),
-      screws: [[75, 1352], [875, 1352]], screwChip: '\u00D72', dims: [{ k: 'v', a: 0, b: 1390, x: 1120, t: '1390', s: 'r' }] },
-    { kind: 'rear', label: 'REAR', sub: 'level with RR2 \u2014 the box line', built: ['RP1', 'RP2', 'RR1', 'RR2', 'RS', 'FILL'], extras: ['groundR', 'padsR', 'datumBOX'] },
+      screws: [[62, 1302], [888, 1302]], screwChip: '\u00D72', dims: [{ k: 'v', a: 0, b: 1340, x: 1120, t: '1340 (v2.4)', s: 'r' }] },
+    { kind: 'rear', label: 'REAR', sub: 'level with RR2\u2019s underside', built: ['RP1', 'RP2', 'RR1', 'RR2', 'RS', 'FILL'], extras: ['groundR', 'padsR', 'datumBOX'] },
     { kind: 'plan', label: 'TOP', sub: 'directly above SR1', built: ['PF1', 'PF2', 'PR1', 'PR2', 'SR1p'], new: ['SR3p'], labels: { SR3p: 'SR3' } }
   ],
   actions: [
-    'SR3 horizontal, directly above SR1, <b>top edge on the box line 1390</b> (band 1315\u20131390).',
-    'Level across from RR2 / FH \u2014 four wall tops, one line.',
-    'It touches the sloped rail only at the front \u2014 the growing gap to the rear is expected (the rake + a scribed wedge offcut covers it, step 32).',
-    '2 screws per end into the posts.'
+    '<b>v2.4:</b> SR3 directly above SR1, same inside-overlap treatment (25 per post), <b>top edge at 1340</b> \u2014 the underside plane of FH/RR2 (band 1265\u20131340). It cannot reach the 1390 box line: FH/RR2 fill the wall thickness at 1340\u20131390 \u2014 the rail tucks under their ends.',
+    'Level across from RR2\u2019s / FH\u2019s underside to check.',
+    '2 \u00D7 5.0\u00D780 per end <b>through the rail into the post</b>, spaced in the rail height.',
+    'It touches the sloped rail only at the front \u2014 the growing gap to the rear is expected (the rake + a scribed wedge offcut covers it, step 32).'
   ],
-  pieces: [['SR3', '850 \u00D7 75\u00D750', '50 up (on edge, 75 tall)', 0, [50, 75]]],
+  pieces: [['SR3', '850 \u00D7 75\u00D750', 'on edge \u00B7 INSIDE overlap (v2.4)', 0, [50, 75]]],
   tools: ['drill', 'pilot', 'level'],
-  checks: ['Top edge reads 1390 at both ends, level.'] },
+  checks: ['Top edge reads 1340 at both ends, level with FH/RR2 undersides.'] },
 
 step17: { phase: 'phase04', title: 'SR4 \u2014 TOP side rail (right)',
   panels: [
@@ -328,28 +329,28 @@ step17: { phase: 'phase04', title: 'SR4 \u2014 TOP side rail (right)',
   ],
   actions: [
     'Mirror of SR3. Check across: SR3 and SR4 tops level with each other.',
-    'All four side rails in: 2 bottoms on 150, 2 tops on 1390.'
+    'All four side rails in (v2.4): 2 bottoms on the 200 plane, 2 tops at 1340 \u2014 all inside overlaps.'
   ],
-  pieces: [['SR4', '850 \u00D7 75\u00D750', '50 up (on edge, 75 tall)', 0, [50, 75]]],
+  pieces: [['SR4', '850 \u00D7 75\u00D750', 'on edge \u00B7 INSIDE overlap (v2.4)', 0, [50, 75]]],
   tools: ['drill', 'pilot', 'level'] },
 
 /* ---------- PHASE 05 — roof frame ---------- */
 step18: { phase: 'phase05', title: 'SL1 \u2014 flat on the slope, over the LEFT post line',
   panels: [
     { kind: 'plan', label: 'TOP', sub: 'over the left post line', built: ['PF1', 'PF2', 'PR1', 'PR2', 'FTp', 'RR2p'], new: ['SL1'], extras: ['envp'],
-      screws: [[37, 925], [37, 25]], screwChip: '\u00D72',
-      dims: [{ k: 'h', a: 75, b: 2055, y: 1030, t: '1980 inner face to inner face' }], det: [380, 480, 130, 'A'] },
+      screws: [[12, 925], [12, 25]], screwChip: '\u00D72',
+      dims: [{ k: 'h', a: 50, b: 2030, y: 1030, t: '1980 inner face to inner face' }], det: [380, 480, 130, 'A'] },
     { kind: 'side', label: 'SIDE', sub: 'flat on the slope \u2014 50 tall', built: WALLS_SIDE.concat(['SRb', 'SRt']), new: ['SLp'], extras: ['groundS', 'padsS', 'slope'], labels: { SLp: 'SL1' } },
     { kind: 'rear', label: 'REAR', sub: 'its rear end lands on the post tops', built: ['RP1', 'RP2', 'RR1', 'RR2', 'RS', 'FILL'], new: ['SLr1'], ghost: ['SLr2'], extras: ['groundR', 'padsR'] }
   ],
   insets: [
     { kind: 'side', tag: 'the wedge over the rear post top', bnd: [620, 1190, 1080, 1930], built: ['RP', 'RR2', 'FILL'], new: ['SLp'], extras: ['slope'], minor: 50 },
-    { kind: 'plan', tag: 'inner face flush at x = 75', bnd: [-140, 540, -80, 1120], built: ['PF1', 'PR1'], new: ['SL1'], extras: ['envp'],
-      dims: [{ k: 'h', a: 75, b: 2055, y: -50, t: '1980' }], minor: 50 }
+    { kind: 'plan', tag: 'inner face on the posts\u2019 INNER faces \u2014 x = 50 (v2.4)', bnd: [-140, 540, -80, 1120], built: ['PF1', 'PR1'], new: ['SL1'], extras: ['envp'],
+      dims: [{ k: 'h', a: 50, b: 2030, y: -50, t: '1980' }], minor: 50 }
   ],
   actions: [
-    'Carry SL1 (970) up. It lies <b>FLAT</b> (75 across, 50 tall) over the <b>whole left post line</b> (x 0\u201375), running up the slope.',
-    'Bearings: front wall-top plane \u2192 rear post tops. Flush with the posts\u2019 outer faces \u2014 <b>inner face at x=75</b> so the rails drop in at 1980.',
+    'Carry SL1 (970) up. It lies <b>FLAT</b> (75 across, 50 tall) <b>centred on the left post line</b> (v2.4: the post spans x 0\u201350 \u2014 full bearing, 25 skirt past the wall face), running up the slope.',
+    'Bearings: front wall-top plane \u2192 rear post tops. <b>Inner face at x=50</b> (the posts\u2019 inner faces) so the rails drop in at 1980 \u2014 the 25 past the outer face is the skirt.',
     'Front end: shave its underside ~12.6\u00B0 where it passes the front wall top \u2014 the tip becomes the eaves over the doors.',
     '2 screws down into each post top it crosses.'
   ],
@@ -361,13 +362,13 @@ step18: { phase: 'phase05', title: 'SL1 \u2014 flat on the slope, over the LEFT 
 step19: { phase: 'phase05', title: 'SL2 \u2014 flat on the slope, over the RIGHT post line',
   panels: [
     { kind: 'plan', label: 'TOP', sub: 'mirror over the right post line', built: ['PF1', 'PF2', 'PR1', 'PR2', 'FTp', 'RR2p', 'SL1'], new: ['SL2'], extras: ['envp'],
-      screws: [[2093, 925], [2093, 25]], screwChip: '\u00D72',
-      dims: [{ k: 'h', a: 75, b: 2055, y: 1030, t: '1980' }] },
+      screws: [[2067, 925], [2067, 25]], screwChip: '\u00D72',
+      dims: [{ k: 'h', a: 50, b: 2030, y: 1030, t: '1980' }] },
     { kind: 'side', label: 'SIDE', sub: 'same plane, same wedge', built: WALLS_SIDE.concat(['SRb', 'SRt']), new: ['SLp'], extras: ['groundS', 'padsS', 'slope'], labels: { SLp: 'SL1 + SL2' } },
     { kind: 'rear', label: 'REAR', sub: 'both rear ends home', built: ['RP1', 'RP2', 'RR1', 'RR2', 'RS', 'FILL', 'SLr1'], new: ['SLr2'], extras: ['groundR', 'padsR'] }
   ],
   actions: [
-    'Mirror of SL1: x 2055\u20132130, straight over the right post line.',
+    'Mirror of SL1: x 2030\u20132105 (inner face at 2030), straight over the right post line.',
     'Same wedge over the rear post, same front shave \u2014 mirror everything.',
     'Check: <b>1980 between the two inner faces, both ends</b> \u2014 the same 1980 world as the rails below.'
   ],
@@ -378,7 +379,7 @@ step19: { phase: 'phase05', title: 'SL2 \u2014 flat on the slope, over the RIGHT
 step20: { phase: 'phase05', title: 'RC1 \u2014 front roof rail, flat over FH',
   panels: [
     { kind: 'plan', label: 'TOP', sub: 'the same 1980 slot', built: ['PF1', 'PF2', 'PR1', 'PR2', 'SL1', 'SL2'], new: ['RC1'], extras: ['envp'],
-      screws: [[87, 25], [1993, 25]], screwChip: '\u00D72' },
+      screws: [[67, 25], [2013, 25]], screwChip: '\u00D72' },
     { kind: 'side', label: 'SIDE', sub: 'flat at the front bearing', built: WALLS_SIDE.concat(['SRb', 'SRt', 'SLp']), new: ['RCp1'], extras: ['groundS', 'padsS', 'slope'] },
     { kind: 'front', label: 'FRONT', sub: 'directly above FH \u2192 roof plane 1440', built: ['FP1', 'FP2', 'FT', 'FH', 'SLf1', 'SLf2'], new: ['RC1f'], extras: ['groundF', 'padsF'],
       dims: [{ k: 'v', a: 1390, b: 1440, x: -140, t: '1440', s: 'l' }] }
@@ -395,7 +396,7 @@ step20: { phase: 'phase05', title: 'RC1 \u2014 front roof rail, flat over FH',
 step21: { phase: 'phase05', title: 'RC2 \u2014 middle roof rail, mid-slope',
   panels: [
     { kind: 'plan', label: 'TOP', sub: 'mid-slope (z ~450\u2013500)', built: ['PF1', 'PF2', 'PR1', 'PR2', 'SL1', 'SL2', 'RC1'], new: ['RC2'], extras: ['envp'],
-      screws: [[87, 475], [1993, 475]], screwChip: '\u00D72' },
+      screws: [[67, 475], [2013, 475]], screwChip: '\u00D72' },
     { kind: 'side', label: 'SIDE', sub: 'bridges \u2014 air below is the shed', built: WALLS_SIDE.concat(['SRb', 'SRt', 'SLp', 'RCp1']), new: ['RCp2'], extras: ['groundS', 'padsS', 'slope'] },
     { kind: 'rear', label: 'REAR', sub: 'RC2 hidden mid-slope (dashed)', built: ['RP1', 'RP2', 'RR1', 'RR2', 'RS', 'FILL', 'SLr1', 'SLr2'], ghost: ['RC2r'], extras: ['groundR', 'padsR'] }
   ],
@@ -410,7 +411,7 @@ step21: { phase: 'phase05', title: 'RC2 \u2014 middle roof rail, mid-slope',
 step22: { phase: 'phase05', title: 'RC3 \u2014 on the POST TOPS, not on RR2',
   panels: [
     { kind: 'plan', label: 'TOP', sub: 'rear row, over the post tops', built: ['PF1', 'PF2', 'PR1', 'PR2', 'SL1', 'SL2', 'RC1', 'RC2'], new: ['RC3'], extras: ['envp'],
-      screws: [[87, 925], [1993, 925]], screwChip: '\u00D72' },
+      screws: [[67, 925], [2013, 925]], screwChip: '\u00D72' },
     { kind: 'side', label: 'SIDE', sub: 'rear bearing \u2192 roof plane 1630', built: WALLS_SIDE.concat(['SRb', 'SRt', 'SLp', 'RCp1', 'RCp2']), new: ['RCp3'], extras: ['groundS', 'padsS', 'slope'],
       dims: [{ k: 'v', a: 1580, b: 1630, x: 1120, t: '1630', s: 'r' }] },
     { kind: 'rear', label: 'REAR', sub: 'the true rear stack', built: ['RP1', 'RP2', 'RR1', 'RS', 'FILL', 'RR2', 'SLr1', 'SLr2'], new: ['RC3r'], extras: ['groundR', 'padsR'],
@@ -429,7 +430,7 @@ step22: { phase: 'phase05', title: 'RC3 \u2014 on the POST TOPS, not on RR2',
 step23: { phase: 'phase06', title: 'DL1 \u2014 door lining (left)',
   panels: [
     { kind: 'front', label: 'FRONT', sub: 'inside the opening', built: ['FP1', 'FP2', 'FT', 'FH'], new: ['DL1'], extras: ['groundF', 'padsF', 'blockF', 'datum150r'],
-      screws: [[86, 300], [86, 1300]], screwChip: '\u00D72', dims: [{ k: 'v', a: 150, b: 1340, x: -140, t: '1190', s: 'l' }] },
+      screws: [[61, 300], [61, 1300]], screwChip: '\u00D72', dims: [{ k: 'v', a: 150, b: 1340, x: -140, t: '1190', s: 'l' }] },
     { kind: 'side', label: 'SIDE', sub: 'hard against the post\u2019s inner face', built: WALLS_SIDE, new: ['DLs'], extras: SIDE_CTX, labels: { DLs: 'DL1' } },
     { kind: 'plan', label: 'TOP', sub: 'the door stop strip', built: ['PF1', 'PF2', 'FTp'], new: ['DL1p'] }
   ],
@@ -445,7 +446,7 @@ step23: { phase: 'phase06', title: 'DL1 \u2014 door lining (left)',
 step24: { phase: 'phase06', title: 'DL2 + the frame checkpoint',
   panels: [
     { kind: 'front', label: 'FRONT', sub: 'the true door opening', built: ['FP1', 'FP2', 'FT', 'FH', 'DL1'], new: ['DL2'],
-      screws: [[2044, 300], [2044, 1300]], screwChip: '\u00D72' },
+      screws: [[2019, 300], [2019, 1300]], screwChip: '\u00D72' },
     { kind: 'side', label: 'SIDE', sub: 'both linings in', built: WALLS_SIDE, new: ['DLs'], extras: SIDE_CTX, labels: { DLs: 'DL1+DL2' } },
     { kind: 'plan', label: 'TOP', sub: 'measure the REAL opening now', built: ['PF1', 'PF2', 'FTp', 'DL1p'], new: ['DL2p'] }
   ],
@@ -463,13 +464,13 @@ step24: { phase: 'phase06', title: 'DL2 + the frame checkpoint',
 step25: { phase: 'phase07', title: 'Sheet 1 \u2014 SW edge, dry-lay',
   panels: [
     { kind: 'plan', label: 'TOP', sub: 'windward edge first', built: ROOF_PLAN, new: ['S1'], sheet: true, extras: ['envp'], post: ['corr'],
-      dims: [{ k: 'h', a: -75, b: 685, y: 1030, t: '760' }] },
+      dims: [{ k: 'h', a: -100, b: 660, y: 1030, t: '760' }] },
     { kind: 'side', label: 'SIDE', sub: 'corrugations run down-slope', built: WALLS_SIDE.concat(['SRb', 'SRt', 'SLp', 'RCp1', 'RCp2', 'RCp3']), new: ['SHEETp'], sheet: true, extras: ['groundS', 'padsS', 'slope'] },
     { kind: 'front', label: 'FRONT', sub: '~16 proud over the doors (eaves)', built: ['FP1', 'FP2', 'FT', 'FH', 'RC1f', 'SLf1', 'SLf2'], new: ['SHEETf'], sheet: true, extras: ['groundF', 'padsF'] }
   ],
   insets: [
     { kind: 'plan', tag: 'the lap: valley over ridge, 95 = one corrugation', bnd: [430, 850, -60, 1060], built: ['S1'], new: ['S2'], sheet: true, post: ['corr'],
-      dims: [{ k: 'h', a: 590, b: 685, y: -30, t: '95' }], minor: 50 }
+      dims: [{ k: 'h', a: 565, b: 660, y: -30, t: '95' }], minor: 50 }
   ],
   actions: [
     'Pass the sheets up (2.2 kg each, one hand each).',
@@ -480,7 +481,7 @@ step25: { phase: 'phase07', title: 'Sheet 1 \u2014 SW edge, dry-lay',
   pieces: [['S1', '760 \u00D7 1000 Onduline', 'corrugations down-slope', 0, 0]],
   tools: ['ladder', 'helper', 'tape'],
   warnings: [['wind', 'Gusts wrestle a 1 m sheet \u2014 if the wind bothers the ladder, it bothers the sheet more.']],
-  checks: ['Overhang ~53 past the wall faces, roughly equal ends.'] },
+  checks: ['Overhang ~78 past the wall faces (v2.4: walls 2080 wide), roughly equal ends.'] },
 
 step26: { phase: 'phase07', title: 'Sheet 2 \u2014 one-corrugation lap',
   panels: [
@@ -517,12 +518,12 @@ step28: { phase: 'phase07', title: 'The 3-corrugation strip \u2014 NE edge',
   ],
   actions: [
     'The strip (285, cut from the 4th sheet along a valley) laps <b>UNDER</b> sheet 3 by one corrugation \u2014 its free edge is the NE eaves.',
-    'Total 2280 = <b>~53 eaves each side</b>. Slide the set side-to-side until the overhangs look equal.',
+    'Total 2280 = <b>~78 eaves each side</b> (v2.4: walls 2080). Slide the set side-to-side until the overhangs look equal.',
     'Climb down and look from the ground: equal laps, straight edges, both eaves even.'
   ],
   pieces: [['STRIP', '285 \u00D7 1000 (3 corr)', 'corrugations down-slope', 0, 0]],
   tools: ['ladder', 'helper', 'tape'],
-  checks: ['Overhangs equal both sides (~53).', 'Down-slope: ~16 proud at the doors and the rear \u2014 or slide ~20 forward to favour the doors.'] },
+  checks: ['Overhangs equal both sides (~78).', 'Down-slope: ~16 proud at the doors and the rear \u2014 or slide ~20 forward to favour the doors.'] },
 
 step29: { phase: 'phase07', title: 'Nail it down \u2014 crests only',
   panels: [
@@ -572,7 +573,7 @@ step31: { phase: 'phase08', title: 'Side courses 2\u201313',
   ],
   actions: [
     'Repeat 12 times: lap <b>25 over</b> the board below (100 exposed), thick edge down, bottom-up.',
-    'Nails: 2 per end crossing into the posts, 2 wherever a board crosses a rail (bottom now, top rail from ~course 12).',
+    'Nails: 2 per end crossing into the posts. v2.4 rails sit inside the posts (SRb 200\u2013275, SRt 1265\u20131340): course 1 nails high (~250) into SRb; the course topping ~1350 nails into SRt; all other courses = posts + laps, as always.',
     '<b>Level every 2\u20133 courses</b> \u2014 drift accumulates silently and course 14 inherits every mm.',
     'Brace off once this wall has 4+ boards \u2014 <b>one wall at a time, never both</b>.'
   ],
@@ -601,7 +602,7 @@ step32: { phase: 'phase08', title: 'Side course 14 \u2014 the rake',
 /* ---------- PHASE 09 — rear cladding ---------- */
 step33: { phase: 'phase09', title: 'Rear course 1 at 145 + corner tails',
   panels: [
-    { kind: 'rear', label: 'REAR', sub: '2188 = 2130 wall + 2 \u00D7 29 tails', built: ['RP1', 'RP2', 'RR1', 'RR2', 'RS', 'FILL', 'RC3r', 'SLr1', 'SLr2'], new: ['CLADr1'], extras: ['groundR', 'padsR', 'datum145', 'wraps'],
+    { kind: 'rear', label: 'REAR', sub: '2188 = 2080 wall + 2 \u00D7 54 tails (v2.4)', built: ['RP1', 'RP2', 'RR1', 'RR2', 'RS', 'FILL', 'RC3r', 'SLr1', 'SLr2'], new: ['CLADr1'], extras: ['groundR', 'padsR', 'datum145', 'wraps'],
       dims: [{ k: 'v', a: 0, b: 145, x: -140, t: '145', s: 'l' }], labels: { CLADr1: 'course 1' } },
     { kind: 'side', label: 'SIDE', sub: 'the tails roof over the side boards\u2019 ends', built: WALLS_SIDE.concat(['SRb', 'SRt', 'SLp', 'RCp1', 'RCp2', 'RCp3', 'CLADs1', 'CLADs_RUN', 'CLADs14']), new: ['WRAPs'], labels: { WRAPs: 'tails' } },
     { kind: 'plan', label: 'TOP', sub: 'both corners, every course', built: ['PF1', 'PF2', 'PR1', 'PR2', 'CLADsLp', 'CLADsRp'], new: ['WRp1', 'WRp2'] }
@@ -611,7 +612,7 @@ step33: { phase: 'phase09', title: 'Rear course 1 at 145 + corner tails',
       dims: [{ k: 'h', a: -29, b: 0, y: 1060, t: '29 tail' }] }
   ],
   actions: [
-    'Rear boards are <b>2188</b>: 2130 across the wall + a <b>29 square-cut tail</b> past EACH side wall.',
+    'Rear boards are <b>2188</b>: 2080 across the wall (v2.4) + a <b>54 square-cut tail</b> past EACH side wall.',
     'Start at <b>145</b> (5 below the side datum): 14 courses \u00D7 102.5 = 1435 lands flush at the 1580 plane.',
     '<b>Do NOT bend the tails around the corner</b> \u2014 timber splits, it does not fold. Leave them square, seal every end the same day: each tail roofs over the side boards\u2019 end grain.',
     'Count the stack: 14 go on, 1 spare \u2014 the ladder is no place to find a missing course.'
@@ -752,7 +753,7 @@ step41: { phase: 'phase10', title: 'The finished box',
     { kind: 'side', label: 'SIDE', sub: 'complete', built: WALLS_SIDE.concat(['SRb', 'SRt', 'SLp', 'RCp1', 'RCp2', 'RCp3', 'CLADs1', 'CLADs_RUN', 'CLADs14', 'WRAPs']), new: ['SHEETp'], sheet: true, extras: ['groundS', 'padsS', 'slope', 'datum150'],
       dims: [{ k: 'v', a: 0, b: 1580, x: 1120, t: '1580', s: 'r' }, { k: 'v', a: 0, b: 150, x: -120, t: '150', s: 'l' }] },
     { kind: 'front', label: 'FRONT', sub: 'doors overlay (hanging = later track)', built: ['FP1', 'FP2', 'FT', 'FH', 'DL1', 'DL2', 'RC1f', 'SLf1', 'SLf2', 'SHEETf'], sheet: true, ghost: ['DOORSg', 'DOORSc'], extras: ['groundF', 'padsF', 'blockF'],
-      dims: [{ k: 'h', a: 0, b: 2130, y: -120, t: '2130' }] },
+      dims: [{ k: 'h', a: 0, b: 2080, y: -120, t: '2080 (v2.4)' }] },
     { kind: 'plan', label: 'TOP', sub: 'the whole shed', built: ['PF1', 'PF2', 'PR1', 'PR2', 'CLADsLp', 'CLADsRp', 'WRp1', 'WRp2', 'SL1', 'SL2', 'RC1', 'RC2', 'RC3'], new: ['S1', 'S2', 'S3', 'ST'], sheet: true, extras: ['envp'], post: ['corr'] }
   ],
   actions: [
@@ -761,7 +762,7 @@ step41: { phase: 'phase10', title: 'The finished box',
   ],
   pieces: [],
   tools: ['photo'],
-  checks: ['Box line 1390 on all four walls; rear posts 1580 above it.', 'Roof: 4 pieces, laps facing NE, ~53 eaves, 5 rows nailed.', 'Sides 14 courses from 150, raked; rear 14 from 145, square-cut tails, flush at 1580.', 'All braces off, box rigid, every cut end sealed, 150 strip open.'] }
+  checks: ['Box line 1390 on rear + front walls (side tops tucked at 1340, v2.4); rear posts 1580 above it.', 'Roof: 4 pieces, laps facing NE, ~78 eaves, 5 rows nailed.', 'Sides 14 courses from 150, raked; rear 14 from 145, square-cut tails, flush at 1580.', 'All braces off, box rigid, every cut end sealed, 150 strip open.'] }
 
 };
 

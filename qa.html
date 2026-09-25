@@ -59,7 +59,7 @@ s.appendChild(sc);
 
 /* 5 — number audit */
 const na = el('div', 'card'); na.appendChild(el('h2', null, '5 \u00B7 Number audit (dims traced to model)'));
-const ALLOWED = new Set([2130, 950, 1390, 1580, 150, 145, 190, 1090, 850, 760, 95, 2280, 53, 1200, 960, 250, 1190, 1440, 1630, 1435, 29, 15, 30, 75, 1980, 990, 1150, 100, 5]);
+const ALLOWED = new Set([2130, 950, 1390, 1580, 150, 145, 190, 1090, 850, 760, 95, 2280, 53, 1200, 960, 250, 1190, 1440, 1630, 1435, 29, 15, 30, 75, 1980, 990, 1150, 100, 5, 2080, 2124, 200, 1340, 1140, 78, 54, 800, 25]);
 let badNums = [];
 const scanDims = (where, panels) => (panels || []).forEach(p => (p.dims || []).forEach(d => {
   (String(d.t).match(/\d+/g) || []).forEach(n => { if (!ALLOWED.has(+n)) badNums.push(where + ': "' + d.t + '" \u2192 ' + n); });

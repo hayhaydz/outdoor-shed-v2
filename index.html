@@ -13,17 +13,17 @@ bars('index', 'BIKE SHED \u00B7 ASSEMBLY GUIDE V2');
 const s = el('div', 'shell page');
 s.appendChild(el('div', 'kicker', 'Assembly guide \u00B7 v2 \u00B7 2026-09-25'));
 s.appendChild(el('h1', 'steph', 'The bike shed'));
-s.appendChild(el('div', 'divlead', '2130 wide \u00B7 950 deep \u00B7 41 steps, one piece at a time. <b>Read the parts sheet and tools page before step 01.</b>'));
+s.appendChild(el('div', 'divlead', '2080 wide (v2.4) \u00B7 950 deep \u00B7 41 steps, one piece at a time. <b>Read the parts sheet and tools page before step 01.</b>'));
 
 const WALLS = ['FP1','FP2','FT','FH','RP1','RP2','RR1','RR2','RS','FILL'];
 s.appendChild(panelBlock({ kind: 'front', label: 'FRONT', sub: 'door end \u00B7 posts 1390', built: ['FP1','FP2','FT','FH','RC1f','SLf1','SLf2'], ghost: ['DL1','DL2'],
-  extras: ['groundF','padsF','blockF'], dims: [{ k: 'h', a: 0, b: 2130, y: -120, t: '2130' }, { k: 'v', a: 0, b: 1390, x: 2260, t: '1390', s: 'r' }] }));
+  extras: ['groundF','padsF','blockF'], dims: [{ k: 'h', a: 0, b: 2080, y: -120, t: '2080 (v2.4)' }, { k: 'v', a: 0, b: 1390, x: 2260, t: '1390', s: 'r' }] }));
 s.appendChild(panelBlock({ kind: 'side', label: 'SIDE', sub: 'slope up to the rear', built: ['FP','RP','FT','FH','RR1','RR2','RS','FILL','SRb','SRt','SLp','RCp1','RCp2','RCp3'],
   extras: ['groundS','padsS','blockS','datum150','slope'],
   dims: [{ k: 'v', a: 0, b: 1580, x: 1120, t: '1580', s: 'r' }, { k: 'h', a: 50, b: 900, y: -140, t: '850' }] }));
 s.appendChild(panelBlock({ kind: 'rear', label: 'REAR', sub: 'the true stack: RR1 \u2192 RS \u2192 RR2@1390 \u2192 FILL \u2192 post top \u2192 RC3', built: ['RP1','RP2','RR1','RS','FILL','RR2','RC3r','SLr1','SLr2'],
   extras: ['groundR','padsR','datum150r','datumBOX'],
-  dims: [{ k: 'h', a: 0, b: 2130, y: 1700, t: '2130' }, { k: 'v', a: 0, b: 1580, x: 2260, t: '1580', s: 'r' }, { k: 'v', a: 0, b: 1390, x: -140, t: '1390 box', s: 'l' }],
+  dims: [{ k: 'h', a: 0, b: 2080, y: 1700, t: '2080 (v2.4)' }, { k: 'v', a: 0, b: 1580, x: 2260, t: '1580', s: 'r' }, { k: 'v', a: 0, b: 1390, x: -140, t: '1390 box', s: 'l' }],
   labels: { FILL: 'FILL ~190' } }));
 s.appendChild(panelBlock({ kind: 'plan', label: 'TOP', sub: 'front at bottom', built: ['PF1','PF2','PR1','PR2','FTp','RR2p','SL1','SL2','RC1','RC2','RC3'],
   extras: ['envp'], dims: [{ k: 'h', a: 0, b: 2130, y: -80, t: '2130' }, { k: 'v', a: 0, b: 950, x: 2320, t: '950', s: 'r' }] }));
