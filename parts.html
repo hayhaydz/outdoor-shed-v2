@@ -1,0 +1,102 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bike shed v2 — parts sheet</title>
+<link rel="stylesheet" href="shared/guide.css?v=1"></head>
+<body class="page">
+<script src="shared/model.js?v=1"></script>
+<script src="shared/draw.js?v=1"></script>
+<script src="shared/steps-data.js?v=1"></script>
+<script src="shared/ui.js?v=1"></script>
+<script>
+document.title = 'Bike shed v2 — parts sheet';
+bars('parts', 'PARTS SHEET');
+const s = el('div', 'shell page');
+s.appendChild(el('div', 'kicker', 'Read before step 01'));
+s.appendChild(el('h1', 'steph', 'Parts sheet'));
+s.appendChild(el('div', 'divlead', 'Every piece, drawn to scale on the 100 mm grid. Groups match the cutting-day labels written on the wood.'));
+
+/* piece bar: length-true bar + end glyph */
+function bar(len, sect, cls) {
+  const w = Math.min(window.innerWidth - 130, 250), pad = 8;
+  const sc = (w - 2 * pad) / Math.max(len, 2260);
+  const bh = Math.max(9, Math.min(22, (sect ? sect[1] : 50) * sc * 8));
+  const h = 34;
+  const [c, x] = mkCanvas(w, h);
+  x.save(); x.translate(pad, h / 2);
+  // mini grid
+  x.strokeStyle = PAL.gridMinor; x.lineWidth = 0.6;
+  for (let g = 0; g <= len; g += 100) { x.beginPath(); x.moveTo(g * sc, -14); x.lineTo(g * sc, 14); x.stroke(); }
+  x.fillStyle = cls === 'bat' ? '#f6f6f4' : '#ffffff';
+  x.strokeStyle = PAL.ink; x.lineWidth = 1.8;
+  const hh = Math.max(8, sect[1] * sc * (sect[1] === 22 ? 22 : 7));
+  x.fillRect(0, -hh / 2, len * sc, hh); x.strokeRect(0, -hh / 2, len * sc, hh);
+  x.restore();
+  return c;
+}
+function group(title, rows) {
+  const c = el('div', 'card'); c.appendChild(el('h2', null, title));
+  rows.forEach(r => {
+    const row = el('div', 'part-row');
+    if (r.bar) row.appendChild(bar(r.bar[0], r.bar[1], r.cls));
+    const pi = el('div', 'pi');
+    pi.innerHTML = '<b>' + r.code + '</b>' + (r.qty > 1 ? '<span class="qchip">\u00D7' + r.qty + '</span>' : '') +
+      '<div class="pd">' + r.d + '</div>';
+    row.appendChild(pi);
+    if (r.g) { const g = el('div'); g.appendChild(glyph(r.g[0], r.g[1])); row.appendChild(g); }
+    c.appendChild(row);
+  });
+  s.appendChild(c);
+}
+
+group('Frame \u00B7 75\u00D750 \u00B7 from the 8 sticks (18 pieces + 4 blocks)', [
+  { code: 'RP1 / RP2', qty: 2, bar: [1580, [75, 50]], d: 'rear corner posts \u00B7 stick S1 / S2', g: [75, 50] },
+  { code: 'RR1', qty: 1, bar: [1980, [50, 75]], d: 'rear bottom rail, on the 150 line \u00B7 S1', g: [50, 75] },
+  { code: 'RR2', qty: 1, bar: [1980, [50, 75]], d: 'rear top rail \u2014 TOP ON THE BOX LINE 1390 \u00B7 S2', g: [50, 75] },
+  { code: 'RS', qty: 1, bar: [1150, [75, 50]], d: 'cut 1150 \u2014 TRIM TO ~1090 at step 06 to bed under RR2 \u00B7 S5', g: [75, 50] },
+  { code: 'FILL', qty: 1, bar: [190, [75, 50]], d: '~190 \u2014 cut from the S3/S4 ~225 offcut \u00B7 above RR2 (step 07)', g: [75, 50] },
+  { code: 'FP1 / FP2', qty: 2, bar: [1390, [75, 50]], d: 'front corner posts \u00B7 S3 / S4', g: [75, 50] },
+  { code: 'FT', qty: 1, bar: [1980, [50, 75]], d: 'threshold, top face on the 150 line \u00B7 S3', g: [50, 75] },
+  { code: 'FH', qty: 1, bar: [1980, [75, 50]], d: 'front header, FLAT, top on the box line \u00B7 S4', g: [75, 50] },
+  { code: 'SR1\u2013SR4', qty: 4, bar: [850, [50, 75]], d: 'side rails: 2 bottom (150 line) + 2 top (box line) \u00B7 S8', g: [50, 75] },
+  { code: 'SL1 / SL2', qty: 2, bar: [970, [75, 50]], d: 'roof side pieces, FLAT on the slope over the post lines \u00B7 S6 / S7', g: [75, 50] },
+  { code: 'RC1 / RC2 / RC3', qty: 3, bar: [1980, [75, 50]], d: 'roof rails, flat: front (over FH) \u00B7 mid \u00B7 rear (on the post tops) \u00B7 S5 / S6 / S7', g: [75, 50] },
+  { code: 'BLOCK', qty: 4, bar: [140, [75, 50]], d: 'spacer blocks 140, from offcuts \u2014 pocket them' }
+]);
+group('Battens \u00B7 50\u00D722 \u00B7 from the 3 sticks (10 pieces)', [
+  { code: 'DL1 / DL2', qty: 2, bar: [1200, [50, 22]], cls: 'bat', d: 'door linings (door stops) \u00B7 B1', g: [50, 22] },
+  { code: 'DS1\u2013DS4', qty: 4, bar: [1200, [50, 22]], cls: 'bat', d: 'door stiles \u2014 the doors\u2019 full height \u00B7 B1 / B2 / B3', g: [50, 22] },
+  { code: 'DR1\u2013DR4', qty: 4, bar: [700, [50, 22]], cls: 'bat', d: 'door rails, laid OVER the stiles \u00B7 B2 / B3', g: [50, 22] },
+  { code: 'DIAG \u00D72', qty: 2, bar: [990, [50, 22]], cls: 'bat', d: '~990, SCRIBED from the B3 remainder at step 38', g: [50, 22] },
+  { code: 'B3 remainder', qty: 1, d: '~2.1 m kept whole \u2014 becomes the diagonals \u00B7 no batten is spare: offcuts reserved (front drip edge / door catches)' }
+]);
+group('Boards \u00B7 22\u00D7125 feather-edge (cut to the as-built shed)', [
+  { code: 'REAR', qty: 15, bar: [2188, [125, 22]], d: '2188 = 2130 wall + 2 \u00D729 square-cut corner tails \u2014 NEVER folded, ends sealed \u00B7 14 courses + 1 spare' },
+  { code: 'SIDES', qty: 28, bar: [950, [125, 22]], d: 'measured rule: real SR + 2 \u00D7 real post depth \u2248 944 \u00B7 14 courses \u00D72 + 2 spare' },
+  { code: 'DOORS', qty: 24, bar: [960, [125, 22]], d: '960 \u00B7 12 courses \u00D72 doors' }
+]);
+group('Roof \u00B7 Onduline 760 \u00D7 1000 \u00D7 2.6', [
+  { code: 'S1\u2013S3', qty: 3, bar: [1000, [760, 26]], d: '3 full sheets, corrugations down-slope' },
+  { code: 'STRIP', qty: 1, bar: [1000, [285, 26]], d: '285 (3 corrugations) \u2014 cut the 4th sheet along a valley \u00B7 remainder = repair spare' }
+]);
+group('Fixings + consumables', [
+  { code: '5.0\u00D780', qty: 100, d: 'frame screws \u00B7 62 counted: RR1 4 \u00B7 RR2 4 \u00B7 RS 4 \u00B7 FILL 2 \u00B7 FT 4 \u00B7 FH 4 \u00B7 SR1\u20134 16 \u00B7 SL1-2 8 \u00B7 RC1-3 12 \u00B7 DL1-2 4 \u00B7 + ~16\u201332 recoverable brace screws \u00B7 3 mm pilot near every end' },
+  { code: '4.0\u00D745 / 4.0\u00D765', qty: 0, d: 'door frame screws \u00B7 ~32 total: \u00D716 45s (rail ends, 2-layer 44 stack) + \u00D716 65s (diagonal, 3-layer 66 stack) \u00B7 hidden joints only' },
+  { code: 'RINGSHANK', qty: 0, d: '50 mm cladding nails \u00B7 ~460 total: sides ~124 (2 posts/board + rails c1, c12\u201313) \u00B7 rear ~94 (3 verticals/board + rails c1, c12\u201314) \u00B7 doors ~240 (5 crossings/board) \u00B7 2 per crossing, never the feather edge \u00B7 3 boxes in hand \u2014 COUNT THEM before cladding day' },
+  { code: 'ONDULINE 65', qty: 200, d: 'roof nails with washers \u00B7 ~200 in hand (100 owned + 322501 top-up, recd 21 Sep) \u00B7 ~90\u2013105 used \u00B7 crests only \u00B7 \u226520 per full sheet' },
+  { code: 'SEALER', qty: 1, d: 'end-grain sealer + brush \u00B7 every fresh cut, same day \u00B7 ~80 cut ends planned vs ~60 per 500 ml \u2014 brush thin, top up if it dries up' }
+]);
+
+const note = el('div', 'card');
+note.appendChild(el('h2', null, 'Stick \u2192 piece map'));
+note.appendChild(el('div', null, '<table><tr><th>Stick</th><th>Cuts</th><th>Pieces</th><th>Offcut</th></tr>' +
+  '<tr><td>S1 / S2</td><td>1980 + 1580</td><td>RR1 + RP1 \u00B7 RR2 + RP2</td><td>~35</td></tr>' +
+  '<tr><td>S3 / S4</td><td>1980 + 1390</td><td>FT + FP1 \u00B7 FH + FP2</td><td>~225 \u2192 FILL ~190</td></tr>' +
+  '<tr><td>S5</td><td>1980 + 1150</td><td>RC1 + RS</td><td>~465</td></tr>' +
+  '<tr><td>S6 / S7</td><td>1980 + 970</td><td>RC2 + SL1 \u00B7 RC3 + SL2</td><td>~645</td></tr>' +
+  '<tr><td>S8</td><td>850 \u00D74</td><td>SR1\u2013SR4</td><td>~185 \u2192 blocks</td></tr></table>'));
+note.appendChild(el('div', 'note-dim', 'Timber is drawn nominal 75\u00D750 / 50\u00D722 \u2014 measured actuals run 68\u201373 \u00D7 45\u201348. Lengths are unaffected; scribed pieces (RS, DIAG, side boards) absorb the difference.'));
+s.appendChild(note);
+s.appendChild(el('a', 'bigbtn', 'NEXT \u2014 TOOLS + GOLDEN RULES')).href = 'tools.html';
+document.body.appendChild(s);
+</script>
+</body></html>

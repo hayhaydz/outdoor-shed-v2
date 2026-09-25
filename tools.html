@@ -1,0 +1,55 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bike shed v2 — tools + golden rules</title>
+<link rel="stylesheet" href="shared/guide.css?v=1"></head>
+<body class="page">
+<script src="shared/model.js?v=1"></script>
+<script src="shared/draw.js?v=1"></script>
+<script src="shared/steps-data.js?v=1"></script>
+<script src="shared/ui.js?v=1"></script>
+<script>
+document.title = 'Bike shed v2 — tools + golden rules';
+bars('tools', 'TOOLS + GOLDEN RULES');
+const s = el('div', 'shell page');
+s.appendChild(el('div', 'kicker', 'Read before step 01'));
+s.appendChild(el('h1', 'steph', 'Tools + golden rules'));
+
+function toolRow(list) {
+  const row = el('div', 'tools');
+  list.forEach(t => { const sp = el('span', 'tl'); sp.appendChild(picto(t[0])); sp.appendChild(document.createTextNode(t[1])); row.appendChild(sp); });
+  return row;
+}
+const t1 = el('div', 'card'); t1.appendChild(el('h2', null, 'Tools'));
+t1.appendChild(toolRow([['drill', 'Drill + PZ2'], ['pilot', '3 mm pilot bit'], ['saw', 'Hand saw, fine tooth'], ['level', 'Level 600\u20131000'], ['tape', 'Tape 5 m'], ['square', 'Combination square'], ['clamp', 'Clamps \u00D74'], ['hammer', 'Hammer'], ['ladder', 'Ladder']]));
+t1.appendChild(el('div', 'note-dim', 'Every screw joint: clamp \u2192 3 mm pilots (~25 in from edges, staggered) \u2192 screws. Two seconds of piloting saves the joint.'));
+s.appendChild(t1);
+
+const t2 = el('div', 'card'); t2.appendChild(el('h2', null, 'Consumables'));
+t2.appendChild(toolRow([['brush', 'End-grain sealer'], ['marker', 'Marker'], ['pencil', 'Pencil']]));
+t2.appendChild(el('div', 'note-dim', 'Sealer on every fresh cut end, same day \u00B7 5.0\u00D780 \u00D7100 \u00B7 4.0\u00D745 + 4.0\u00D765 \u00B7 ringshanks \u00B7 ~90\u2013105 Onduline nails.'));
+s.appendChild(t2);
+
+const g = el('div', 'card'); g.appendChild(el('h2', null, 'The four golden rules'));
+[
+  ['3 mm pilot near every end', 'A screw is a fat steel wedge \u2014 near an end it splits the wood. A 3 mm hole gives it room. Every screw within 100 mm of an end.'],
+  ['Two screws minimum per joint', 'One screw lets the joint pivot. Two lock it.'],
+  ['Diagonals equal before rigid', 'Corner-to-corner equal within 3 mm = square corners. Check BEFORE the second clamp comes off.'],
+  ['Braces stay until boards', 'The frame is floppy on purpose \u2014 cladding is the structure. One brace per corner until each wall has 4+ boards; one wall at a time.']
+].forEach((r, i) => {
+  const d = el('div', 'rule');
+  d.appendChild(el('div', 'rn', null, String(i + 1)));
+  d.appendChild(el('div', null, '<div class="rt">' + r[0] + '</div><div class="rd">' + r[1] + '</div>'));
+  g.appendChild(d);
+});
+s.appendChild(g);
+
+const b = el('div', 'card'); b.appendChild(el('h2', null, 'The base, in one panel'));
+b.appendChild(panelBlock({ kind: 'plan', label: 'TOP', sub: '5 pads \u2014 the only things that touch ground', extras: ['padsPlan'], ghost: ['PF1', 'PF2', 'PR1', 'PR2', 'FTp'],
+  dims: [{ k: 'h', a: 0, b: 2130, y: -80, t: '2130' }] }));
+b.appendChild(el('div', 'note-dim', '4 corner pads level \u00B15 mm \u00B7 threshold block bedded deeper, top +75 above the pads (a 75\u00D750 offcut on a pad is the gauge) \u00B7 soft ground = bigger pads.'));
+s.appendChild(b);
+
+s.appendChild(el('a', 'bigbtn', 'BEGIN \u2014 PHASE 00, THE BASE')).href = 'phase00.html';
+document.body.appendChild(s);
+</script>
+</body></html>

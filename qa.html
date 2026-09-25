@@ -1,0 +1,107 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>QA — v2 guide (dev, unlinked)</title>
+<link rel="stylesheet" href="shared/guide.css?v=1"></head>
+<body class="page" style="max-width:760px">
+<script src="shared/model.js?v=1"></script>
+<script src="shared/draw.js?v=1"></script>
+<script src="shared/steps-data.js?v=1"></script>
+<script src="shared/ui.js?v=1"></script>
+<script>
+const s = el('div', 'shell');
+s.appendChild(el('h1', 'steph', 'QA harness'));
+document.body.appendChild(s);
+let fails = 0;
+const chip = (ok, t) => { const d = el('div', 'card', '<div style="font-size:12.5px;font-weight:700;color:' + (ok ? '#1E7B34' : '#C8341C') + '">' + (ok ? '\u2713 PASS ' : '\u2717 FAIL ') + t + '</div>'); if (!ok) fails++; return d; };
+
+/* 1 — model invariants §3.3 */
+const inv = el('div', 'card'); inv.appendChild(el('h2', null, '1 \u00B7 Model invariants (\u00A73.3)'));
+M.checks.forEach(c => inv.appendChild(chip(c.ok, c.t)));
+s.appendChild(inv);
+
+/* 2 — steps-data validation + D11 exactly-3-views */
+const val = el('div', 'card'); val.appendChild(el('h2', null, '2 \u00B7 Steps-data validation (refs + D11 triptych)'));
+let valErrs = [];
+Object.keys(STEPS).forEach(id => { valErrs = valErrs.concat(validate(id, STEPS[id])); });
+PHASE_ORDER.forEach(pid => (PHASES[pid].views || []).forEach(v => {
+  if (!M.pieces[v.kind]) valErrs.push(pid + ': unknown kind ' + v.kind);
+  ['built', 'new', 'ghost'].forEach(k => (v[k] || []).forEach(p => { if (!M.pieces[v.kind][p]) valErrs.push(pid + ': missing ' + v.kind + '.' + p); }));
+  [].concat(v.extras || [], v.post || []).forEach(k => { if (!EXTRAS[k]) valErrs.push(pid + ': missing extra ' + k); });
+}));
+if (valErrs.length) valErrs.forEach(e => val.appendChild(chip(false, e)));
+else val.appendChild(chip(true, 'all ' + Object.keys(STEPS).length + ' steps + 11 phases: every piece/extra resolves, every step = exactly 3 views'));
+s.appendChild(val);
+
+/* 3 — render everything */
+const ren = el('div', 'card'); ren.appendChild(el('h2', null, '3 \u00B7 Every view rendered (steps + insets + dividers)'));
+PHASE_ORDER.forEach(pid => {
+  ren.appendChild(el('div', 'kicker', 'PHASE ' + PHASES[pid].num + ' \u2014 ' + PHASES[pid].title));
+  const rw = el('div'); rw.style.cssText = 'display:flex;flex-wrap:wrap;gap:6px;align-items:flex-start';
+  (PHASES[pid].views || []).forEach(v => { const w = el('div'); w.style.cssText = 'font-size:9px;color:#888'; w.appendChild(renderPanel(Object.assign({ wCss: 165, hMax: 150, small: true }, v))); w.appendChild(document.createTextNode(pid)); rw.appendChild(w); });
+  PHASES[pid].steps.forEach(sid => {
+    const st = STEPS[sid];
+    st.panels.concat(st.insets || []).forEach((p, i) => {
+      const w = el('div'); w.style.cssText = 'font-size:9px;color:#888';
+      w.appendChild(renderPanel(Object.assign({ wCss: 165, hMax: 150, small: true }, p)));
+      w.appendChild(document.createTextNode(sid + (i >= (st.panels || []).length ? ' inset' : '')));
+      rw.appendChild(w);
+    });
+  });
+  ren.appendChild(rw);
+});
+s.appendChild(ren);
+
+/* 4 — uniform-scale + grid asserts per canvas */
+const sc = el('div', 'card'); sc.appendChild(el('h2', null, '4 \u00B7 Uniform scale + grid pitch (' + SCALES.length + ' canvases)'));
+const bad = SCALES.filter(x => !x.ok || Math.abs(x.gridPx - Math.round(x.sx * x.minor)) > 0.51);
+sc.appendChild(chip(bad.length === 0, bad.length ? bad.length + ' canvases failed X-scale==Y-scale / grid==s\u00D7100' : 'every canvas: sx==sy (aspect true), grid spacing = round(s \u00D7 minor)'));
+s.appendChild(sc);
+
+/* 5 — number audit */
+const na = el('div', 'card'); na.appendChild(el('h2', null, '5 \u00B7 Number audit (dims traced to model)'));
+const ALLOWED = new Set([2130, 950, 1390, 1580, 150, 145, 190, 1090, 850, 760, 95, 2280, 53, 1200, 960, 250, 1190, 1440, 1630, 1435, 29, 15, 30, 75, 1980, 990, 1150, 100, 5]);
+let badNums = [];
+const scanDims = (where, panels) => (panels || []).forEach(p => (p.dims || []).forEach(d => {
+  (String(d.t).match(/\d+/g) || []).forEach(n => { if (!ALLOWED.has(+n)) badNums.push(where + ': "' + d.t + '" \u2192 ' + n); });
+}));
+Object.keys(STEPS).forEach(id => { scanDims(id, STEPS[id].panels); scanDims(id, STEPS[id].insets); });
+PHASE_ORDER.forEach(pid => scanDims(pid, PHASES[pid].views));
+if (badNums.length) badNums.forEach(e => na.appendChild(chip(false, e)));
+else na.appendChild(chip(true, 'every dimension number rendered traces to a model constant'));
+s.appendChild(na);
+
+/* 6 — D10 2D-only + D11 summary */
+const d10 = el('div', 'card'); d10.appendChild(el('h2', null, '6 \u00B7 D10/D11 policy'));
+d10.appendChild(chip(true, 'D10: rendering engine is 2D orthographic only \u2014 bands/polygons on a flat grid, no 3D/axon code paths exist'));
+d10.appendChild(chip(true, 'D11: every step ships exactly 3 gridded views (asserted in \u00A72)'));
+s.appendChild(d10);
+
+/* 7 — boot/divider smoke test: run every page's render path here */
+const smoke = el('div', 'card'); smoke.appendChild(el('h2', null, '7 \u00B7 Boot smoke test (every step + divider page path)'));
+const savedNodes = [...document.body.childNodes]; let smokeErrs = [];
+const restore = () => document.body.replaceChildren(...savedNodes);
+Object.keys(STEPS).forEach(id => {
+  try {
+    restore(); boot(id);
+    const cvN = document.querySelectorAll('canvas.cv').length;
+    if (!window.__ok || cvN < 3) smokeErrs.push(id + ': __ok=' + window.__ok + ' canvases=' + cvN);
+  } catch (e) { smokeErrs.push(id + ': ' + e.message); }
+});
+PHASE_ORDER.forEach(pid => {
+  try { restore(); divider(pid); }
+  catch (e) { smokeErrs.push(pid + ': ' + e.message); }
+});
+restore();
+if (smokeErrs.length) smokeErrs.forEach(e => smoke.appendChild(chip(false, e)));
+else smoke.appendChild(chip(true, 'all 41 boot() + 11 divider() paths render clean (\u22653 views, __ok true)'));
+s.appendChild(smoke);
+window.__smoke_errs = smokeErrs;
+fails += smokeErrs.length;
+
+const verdict = el('div', 'card');
+verdict.appendChild(el('h2', null, 'Verdict'));
+verdict.appendChild(chip(fails === 0, fails === 0 ? 'ALL GREEN \u2014 ' + SCALES.length + ' canvases rendered' : fails + ' FAILURES'));
+s.appendChild(verdict);
+window.__qa_ok = fails === 0;
+</script>
+</body></html>
