@@ -19,11 +19,11 @@ const PHASES = {
     views: [{ kind: 'front', label: 'FRONT', sub: 'linings inside the opening', built: ['FP1', 'FP2', 'FT', 'FH'], new: ['DL1', 'DL2'], dims: [{ k: 'v', a: 150, b: 1340, x: -140, t: '1190', s: 'l' }] }] },
   phase07: { num: '07', title: 'Roof sheets', steps: ['step25', 'step26', 'step27', 'step28', 'step29'], lead: 'Dry-lay the set from the SW edge \u2014 one-corrugation laps facing NE \u2014 adjust, then nail the crests.', handle: '3 sheets + 1 strip (285) \u00B7 ~90\u2013105 nails', meta: [['ladder', 'On the roof'], ['wind', 'Not in gusts']],
     views: [{ kind: 'plan', label: 'TOP', sub: 'the 4-piece set', built: ['PF1', 'PF2', 'PR1', 'PR2', 'SL1', 'SL2', 'RC1', 'RC2', 'RC3'], new: ['S1', 'S2', 'S3', 'ST'], sheet: true, extras: ['envp'], post: ['corr'] }] },
-  phase08: { num: '08', title: 'Side cladding', steps: ['step30', 'step31', 'step32'], lead: '14 courses a side, first on the 150 line, top course raked to the slope. One wall at a time.', handle: '28 boards (944\u2013950) + 2 spare', meta: [['hammer', '~1\u00BE h'], ['level', 'Level every 2\u20133']],
+  phase08: { num: '08', title: 'Side cladding', steps: ['step30', 'step31', 'step32'], lead: 'Courses 1\u201313 DONE Sat 26 Sep (both walls to the 1390 box line). Remaining: the raked top course under the roof edge \u2014 SCREWED, not nailed (decision 27 Sep: evening noise + wrist).', handle: '28 boards (944\u2013950) + 2 spare \u00B7 4.0\u00D765 screws + 3 mm pilots', meta: [['drill', 'Driver only \u2014 no hammer'], ['level', 'Level every 2\u20133']],
     views: [{ kind: 'side', label: 'SIDE', sub: 'courses 1\u201314 + rake', built: ['FP', 'RP', 'FT', 'FH', 'RR1', 'RR2', 'RS', 'FILL', 'SRb', 'SRt', 'SLp', 'RCp1', 'RCp2', 'RCp3'], new: ['CLADs1', 'CLADs_RUN', 'CLADs14'], extras: ['groundS', 'padsS', 'datum150', 'slope'], labels: { CLADs1: 'course 1', CLADs_RUN: 'courses 2\u201313', CLADs14: 'rake' } }] },
-  phase09: { num: '09', title: 'Rear cladding', steps: ['step33', 'step34', 'step35'], lead: '14 courses from 145, every board oversailing both corners with square-cut tails — nothing folds. Weatherproof gate: braces come off here.', handle: '15 boards (2188) + 1 spare \u00B7 sealer', meta: [['ladder', 'Ladder work'], ['wind', 'Boards catch wind']],
+  phase09: { num: '09', title: 'Rear cladding', steps: ['step33', 'step34', 'step35'], lead: 'Courses to ~1390 DONE Sat 26. Remaining: top ~2 courses to the 1580 plane + four FLAT corner boards \u2014 nothing folds, nothing bends (27 Sep). Weatherproof gate: braces off here.', handle: 'Top courses \u00D72 \u00B7 4 corner boards (ZERO-BUY: spares/offcuts, 19 \u00A74b) \u00B7 4.0\u00D765 + sealer', meta: [['drill', 'Driver only \u2014 no hammer'], ['wind', 'Boards catch wind']],
     views: [{ kind: 'rear', label: 'REAR', sub: '14 courses, square-cut corner tails', built: ['RP1', 'RP2', 'RR1', 'RR2', 'RS', 'FILL', 'RC3r', 'SLr1', 'SLr2'], new: ['CLADr_ALL'], extras: ['groundR', 'padsR', 'datum145', 'wraps'], post: ['lapsR'], labels: { CLADr_ALL: 'courses 1\u201314' } }] },
-  phase10: { num: '10', title: 'Doors + finish', steps: ['step36', 'step37', 'step38', 'step39', 'step40', 'step41'], lead: 'Two layered sandwiches built flat \u2014 never hung in this guide. Then the final walk-around.', handle: 'Stiles \u00D74 \u00B7 rails \u00D74 \u00B7 diagonals \u00D72 \u00B7 24 boards', meta: [['drill', 'Evening track'], ['photo', 'Final survey']],
+  phase10: { num: '10', title: 'Doors + finish', steps: ['step36', 'step37', 'step38', 'step39', 'step40', 'step41'], lead: 'Two layered sandwiches built flat, boarded with SCREWS (27 Sep) \u2014 then hung + locked the same week per the final-week plan (docs 19\u201320).', handle: 'Stiles \u00D74 \u00B7 rails \u00D74 \u00B7 diagonals \u00D72 \u00B7 24 boards (960) \u00B7 4.0\u00D745 skins \u00B7 M5 ironmongery (owned)', meta: [['drill', 'Evening track'], ['photo', 'Final survey']],
     views: [{ kind: 'door', label: 'DOOR', sub: 'the layered sandwich', built: ['DSa', 'DSb', 'DRa', 'DRb'], new: ['DIAG', 'BOARDS'], post: ['lapsD'], dims: [{ k: 'v', a: 0, b: 1200, x: 1080, t: '1200', s: 'r' }] }] }
 };
 const PHASE_ORDER = ['phase00', 'phase01', 'phase02', 'phase03', 'phase04', 'phase05', 'phase06', 'phase07', 'phase08', 'phase09', 'phase10'];
@@ -535,15 +535,15 @@ step29: { phase: 'phase07', title: 'Nail it down \u2014 crests only',
     { kind: 'plan', tag: 'crest nailing \u2014 never a valley', bnd: [280, 940, 360, 600], built: ['S2'], sheet: true, post: ['corr', 'nails'], minor: 50 }
   ],
   actions: [
+    '\u2713 <b>DONE Sun 27 Sep</b> \u2014 sheets + strip on, all rows fixed. <b>3 DEFECT NAILS</b> (2 deflected off knots, 1 snapped): do NOT pry them out \u2014 a torn sheet is a real repair. Snip flush, mastic over, one replacement nail 60\u201380 along the row into CLEAR grain (aim between knots off the frame photo) \u2014 19 \u00A73.',
     'Nail through the <b>CRESTS only</b> \u2014 a valley hole IS a leak.',
-    'At each of the 5 rows (SL1 \u00B7 RC1 \u00B7 RC2 \u00B7 RC3 \u00B7 SL2): every crest of every sheet + every lap crest.',
     'Nail vertical, hit until the <b>washer just squashes</b> \u2014 stop. Overdriving cracks, underdriving lifts.',
-    'Count as you go: <b>~90\u2013105</b> expected.'
+    'Replacement nails: one light tap to start, then firm single hits \u2014 ~4 taps total, do them in a daytime minute.'
   ],
   pieces: [['NAILS', 'Onduline 65 mm', 'vertical, washer just seats', 0, 0, 105]],
   tools: ['hammer', 'ladder'],
   warnings: [['wind', 'Never leave a lap unnailed overnight in rain \u2014 finish the laps first if nails run short.']],
-  checks: ['No crest missed on any row.', 'Drip test: water clears the door faces and wall boards.'] },
+  checks: ['No crest missed on any row.', 'Defect spots: snipped, mastic\u2019d, replacement nails into clear grain \u2014 first-rain check inside.', 'Drip test: water clears the door faces and wall boards.'] },
 
 /* ---------- PHASE 08 — side cladding ---------- */
 step30: { phase: 'phase08', title: 'Side course 1 \u2014 bottom on the 150 line',
@@ -554,13 +554,13 @@ step30: { phase: 'phase08', title: 'Side course 1 \u2014 bottom on the 150 line'
     { kind: 'plan', label: 'TOP', sub: 'covers the posts\u2019 side faces', built: ['PF1', 'PF2', 'PR1', 'PR2'], new: ['CLADsLp'] }
   ],
   actions: [
+    '\u2713 <b>DONE Sat 26 Sep</b> \u2014 course 1 stands on both walls (kept for re-dos/repairs).',
     'Measure <b>150 up from the post BOTTOMS</b> (the pads are the zero, not the soil), both ends, join with a level line.',
     'First board: bottom edge on the line, <b>thick edge DOWN</b>, spanning the full 950 \u2014 ends cover the posts\u2019 side faces.',
-    'Level along its TOP \u2014 clear soil rather than move the board.',
-    '2 ringshanks per crossing, ~25 in from edges, never the feather-thin edge.'
+    '2 \u00D7 <b>4.0\u00D765 screws</b> per crossing (3 mm pilots), ~25 in from edges, never the feather-thin edge.'
   ],
   pieces: [['BOARD', '944\u2013950 \u00D7 22\u00D7125', '125 face out \u00B7 thick edge down', 0, [125, 22]]],
-  tools: ['hammer', 'level', 'tape'],
+  tools: ['drill', 'pilot', 'level', 'tape'],
   warnings: [['warn', 'The 150 gap underneath is INTENTIONAL ventilation \u2014 never board over it.']],
   checks: ['Bottom edge on 150, level along the top.'] },
 
@@ -572,13 +572,13 @@ step31: { phase: 'phase08', title: 'Side courses 2\u201313',
     { kind: 'plan', label: 'TOP', sub: 'the wall thickens by one board', built: ['PF1', 'PF2', 'PR1', 'PR2'], new: ['CLADsLp'] }
   ],
   actions: [
-    'Repeat 12 times: lap <b>25 over</b> the board below (100 exposed), thick edge down, bottom-up.',
-    'Nails: 2 per end crossing into the posts. v2.4 rails sit inside the posts (SRb 200\u2013275, SRt 1265\u20131340): course 1 nails high (~250) into SRb; the course topping ~1350 nails into SRt; all other courses = posts + laps, as always.',
-    '<b>Level every 2\u20133 courses</b> \u2014 drift accumulates silently and course 14 inherits every mm.',
-    'Brace off once this wall has 4+ boards \u2014 <b>one wall at a time, never both</b>.'
+    '\u2713 <b>DONE Sat 26 Sep</b> \u2014 ~12 courses per wall, to the 1390 box line.',
+    'Repeat: lap <b>25 over</b> the board below (100 exposed), thick edge down, bottom-up.',
+    'Screws: 2 \u00D7 4.0\u00D765 per end crossing into the posts, 3 mm pilots. v2.4 rails sit inside the posts (SRb 200\u2013275, SRt 1265\u20131340): course 1 fixes high (~250) into SRb; the course topping ~1350 fixes into SRt; all other courses = posts + laps, as always.',
+    '<b>Level every 2\u20133 courses</b> \u2014 drift accumulates silently and the rake inherits every mm. Brace off per wall once it has 4+ boards \u2014 <b>one wall at a time, never both</b>.'
   ],
   pieces: [['BOARD', '944\u2013950 \u00D7 22\u00D7125 \u00D712', '125 face out \u00B7 thick edge down', 0, [125, 22], 12]],
-  tools: ['hammer', 'level', 'tape'],
+  tools: ['drill', 'pilot', 'level', 'tape'],
   checks: ['Course 13 top edge at ~1450, level.'] },
 
 step32: { phase: 'phase08', title: 'Side course 14 \u2014 the rake',
@@ -590,14 +590,14 @@ step32: { phase: 'phase08', title: 'Side course 14 \u2014 the rake',
       labels: { CLADsLp: 'LEFT', CLADsRp: 'RIGHT \u2014 repeat' } }
   ],
   actions: [
-    'Hold the board unnailed at course-14 height; measure <b>down from the sloped rail</b> at each end, add the 25 lap, connect \u2014 that line IS the slope (12.6\u00B0).',
-    'Cut, seal the cut end, nail it on.',
-    'The growing triangular gap near the rear corner is EXPECTED \u2014 fill it with a scribed wedge offcut (side-board offcut, cut ends sealed).',
-    '<b>Repeat steps 30\u201332 for the right wall</b>: same 150 line, same laps, same rake.'
+    '<b>THE ROOF IS THE DATUM NOW</b> (the sheet\u2019s side edge is exactly parallel to the hidden rail): hold the board in place uncut, bottom lapping 22\u201325 over the course below. Lay a straight 1\u20131.2 m batten <b>ON the sheet</b>, overhanging its edge ~40\u201350, pencil along its underside \u2014 repeat at both ends of the wall.',
+    'Take it down; draw the cut line <b>10\u201315 mm ABOVE</b> the scribed line (the ~53 mm sheet overhang hides the top edge without touching the sheet) \u2014 two ticks + straightedge. Cut, <b>seal the cut end</b>.',
+    'Offer back: top tucked under the eaves overhang. Fix: 2 \u00D7 <b>4.0\u00D765</b> at each post crossing (3 mm pilots) + 2 into the SRt band (1265\u20131340).',
+    '<b>Repeat up the wall</b> until it closes under the roof line, then mirror the right wall. The shrinking rear-corner triangle is EXPECTED \u2014 it vents the eaves and the corner board (step 35) tidies it. Screw a scribed wedge offcut over it only if a gap is huge.'
   ],
-  pieces: [['BOARD', '944\u2013950, cut 12.6\u00B0', 'top edge raked', 0, [125, 22]]],
-  tools: ['saw', 'hammer', 'level', 'brush'],
-  checks: ['Rake line parallel to the sloped rail.', 'Right wall mirrored, both walls\u2019 braces now off.'] },
+  pieces: [['BOARD', '944\u2013950, scribed to the sheet', 'top edge raked', 0, [125, 22]]],
+  tools: ['saw', 'drill', 'pilot', 'brush'],
+  checks: ['Rake cut parallel to the sheet edge \u2014 top hidden under the overhang, not touching the sheet.', 'Right wall mirrored, both walls\u2019 braces now off.'] },
 
 /* ---------- PHASE 09 — rear cladding ---------- */
 step33: { phase: 'phase09', title: 'Rear course 1 at 145 + corner tails',
@@ -612,13 +612,13 @@ step33: { phase: 'phase09', title: 'Rear course 1 at 145 + corner tails',
       dims: [{ k: 'h', a: -29, b: 0, y: 1060, t: '29 tail' }] }
   ],
   actions: [
+    '\u2713 <b>DONE Sat 26 Sep</b> \u2014 lower courses on with their tails. (If any low board got the old wrapped method: no undoing \u2014 the corner boards at step 35 simply overlay the lot.)',
     'Rear boards are <b>2188</b>: 2080 across the wall (v2.4) + a <b>54 square-cut tail</b> past EACH side wall.',
     'Start at <b>145</b> (5 below the side datum): 14 courses \u00D7 102.5 = 1435 lands flush at the 1580 plane.',
-    '<b>Do NOT bend the tails around the corner</b> \u2014 timber splits, it does not fold. Leave them square, seal every end the same day: each tail roofs over the side boards\u2019 end grain.',
-    'Count the stack: 14 go on, 1 spare \u2014 the ladder is no place to find a missing course.'
+    '<b>Do NOT bend the tails around the corner</b> \u2014 timber splits, it does not fold. Leave them square, seal every end the same day: each tail roofs over the side boards\u2019 end grain.'
   ],
   pieces: [['BOARD', '2188 \u00D7 22\u00D7125', '125 face out \u00B7 thick edge down \u00B7 ends square', 0, [125, 22]]],
-  tools: ['hammer', 'level', 'ladder', 'brush'],
+  tools: ['drill', 'pilot', 'level', 'ladder', 'brush'],
   warnings: [['warn', 'Never fold or kerf a board around the corner — it WILL crack. Square-cut tails are the detail.']],
   checks: ['Course 1 bottom on 145; tails square-cut and sealed both corners.'] },
 
@@ -630,30 +630,30 @@ step34: { phase: 'phase09', title: 'Rear courses 2\u201314 \u2014 eased laps to 
     { kind: 'plan', label: 'TOP', sub: 'corners close', built: ['PF1', 'PF2', 'PR1', 'PR2', 'CLADsLp', 'CLADsRp'], new: ['WRp1', 'WRp2'] }
   ],
   actions: [
-    'Thirteen more, bottom-up: eased laps <b>~22\u201325</b> so course 14 lands <b>flush at the 1580 plane</b>.',
-    'Every course: <b>face nails only</b> \u2014 2 into RP1, 2 into RS, 2 into RP2 (the frame photo is your map). <b>No nails in the tails</b>: nothing solid sits behind them.',
-    'Level-check every 2\u20133 courses.',
-    'Shy at the top? Nudge the last lap to ~18\u201320. Proud? Ease the last two up 3 each. Disaster? The spare covers it.'
+    '\u2713 <b>To ~1390 Sat 26. REMAINING: the top ~2 courses</b> \u2014 ease the laps so the LAST course lands <b>flush at the 1580 plane</b> (the 2 spare 2188s cover disasters).',
+    'Plain boards, <b>no wrapping</b> \u2014 used as-cut at 2188; they run ~29 past each corner line and the corner boards (step 35) cover those ends. The last course tucks under the rear sheet edge\u2019s ~16 overhang.',
+    'Every course: <b>face screws only</b> \u2014 2 \u00D7 4.0\u00D765 into RP1, RS, RP2 (3 mm pilots; the frame photo is your map). <b>No fixings in the tails</b>: nothing solid sits behind them.',
+    'Level-check every 2\u20133 courses. Small gaps at the very top corners are normal \u2014 sealer on any exposed end grain.'
   ],
   pieces: [['BOARD', '2188 \u00D7 22\u00D7125 \u00D713', '125 face out \u00B7 thick edge down', 0, [125, 22], 13]],
-  tools: ['hammer', 'level', 'ladder'],
+  tools: ['drill', 'pilot', 'level', 'ladder'],
   checks: ['Course 14 flush with the 1580 plane.'] },
 
-step35: { phase: 'phase09', title: 'Corners + braces OFF \u2014 box weatherproof',
+step35: { phase: 'phase09', title: 'Corner boards + braces OFF \u2014 box weatherproof',
   panels: [
     { kind: 'rear', label: 'REAR', sub: 'complete', built: ['RP1', 'RP2', 'RR1', 'RR2', 'RS', 'FILL', 'RC3r', 'SLr1', 'SLr2', 'CLADr_ALL'], extras: ['groundR', 'padsR', 'datum145', 'wraps'], post: ['lapsR'] },
     { kind: 'side', label: 'SIDE', sub: 'braces off \u2014 the boards ARE the structure', built: WALLS_SIDE.concat(['SRb', 'SRt', 'SLp', 'RCp1', 'RCp2', 'RCp3', 'CLADs1', 'CLADs_RUN', 'CLADs14', 'WRAPs']), extras: ['groundS', 'padsS', 'bracesOff'] },
     { kind: 'plan', label: 'TOP', sub: 'all four walls closed', built: ['PF1', 'PF2', 'PR1', 'PR2', 'CLADsLp', 'CLADsRp', 'WRp1', 'WRp2'], ghost: ['S1', 'S2', 'S3', 'ST'] }
   ],
   actions: [
-    'From each side, the row of square tails steps just past the wall line, roofing over the side boards\u2019 end grain \u2014 nothing folded, nothing snapped.',
-    'Small top-corner gaps are normal \u2014 dab sealer on any exposed end grain.',
-    '<b>LAST braces off now</b> \u2014 every wall has far more than 4 boards.',
-    'Rack test: push corner-to-corner \u2014 rock solid.'
+    'Four <b>FLAT vertical corner boards</b> \u2014 one per corner, screwed flat to the post face, outer edge flush with the corner line. <b>NOTHING bends or wraps</b> (user decision 27 Sep). They cover the side cladding\u2019s end-grain columns, the rear courses\u2019 board ends, and frame the front so the doors close past the ~15 outer gaps.',
+    'Scribe each top under the sheet edge exactly like the rakes (step 32): <b>fronts finish ~1375, rears ~1565</b>. Seal every cut; small top-corner gaps are normal \u2014 dab sealer on exposed end grain.',
+    'Fix: <b>3\u20134 \u00D7 4.0\u00D765</b> per board into the post (top / mid / bottom, 3 mm pilots; the front top screw can catch the header band, the rear top screw the FILL/RR2 zone). Material is <b>ZERO-BUY</b>: rear top courses get first claim on 2 m+ boards (count them first) \u2192 halve a spare long board (2 jointless boards per half) \u2192 else one full 1.05 m board per corner + offcut fill low down.',
+    '<b>LAST braces off now</b> (one wall at a time) \u2192 rack test corner-to-corner. <b>THE BOX IS WEATHERPROOF \u2014 the go/no-go gate.</b> Hooks later fix THROUGH the front corner boards (step 41); doors hang outboard of them, no re-sizing.'
   ],
-  pieces: [],
-  tools: ['brush', 'hammer'],
-  checks: ['Rack test: solid.', 'Roof edges clear of doors and walls; no daylight through any lap.', 'Every cut end sealed; the 150 strip still open.'] },
+  pieces: [['CORNER BOARD', 'scribed top \u00D74 \u00B7 zero-buy stock', 'flat on the post face \u00B7 thick edge toward the opening (front pair)', 0, [125, 22], 4]],
+  tools: ['drill', 'pilot', 'saw', 'brush'],
+  checks: ['Four corner boards on, tops sealed under the sheet edge.', 'Rack test: solid.', 'Every cut end sealed; the 150 strip still open.'] },
 
 /* ---------- PHASE 10 — doors + finish ---------- */
 step36: { phase: 'phase10', title: 'Door 1 \u2014 stiles + 960 spacers',
@@ -722,14 +722,14 @@ step39: { phase: 'phase10', title: 'Board the door \u2014 12 courses',
       dims: [{ k: 'h', a: 0, b: 15, y: 90, t: '15' }, { k: 'h', a: 975, b: 1155, y: 90, t: '30' }] }
   ],
   actions: [
-    'Start at the BOTTOM: first board flush with the stile bottoms, thick edge down. 25 lap / 100 exposure.',
+    'Start at the BOTTOM: first board flush with the stile bottoms, thick edge down. 25 lap / 100 exposure. Seal every cut end.',
     '<b>12 courses \u00D7 100 = 1200 = exactly the stile height</b> \u2014 course 12 lands flush. No easing needed.',
-    '2 ringshank nails per crossing (~5 crossings per board), 25 in from edges, never the feather edge.',
+    '2 \u00D7 <b>4.0\u00D745 screws</b> per REAL crossing (2 stiles + diagonal + occasional rail \u2248 3\u20134 per board), 3 mm pilots, 25 in from edges, never the feather edge.',
     'Seal the bottom board\u2019s bottom edge \u2014 it lives in the splash zone.'
   ],
   pieces: [['BOARD', '960 \u00D7 22\u00D7125 \u00D712', '125 face out \u00B7 thick edge down', 0, [125, 22], 12]],
-  tools: ['hammer', 'brush', 'square'],
-  warnings: [['warn', 'NAILED, never screwed \u2014 the door\u2019s outside cannot be dismantled with a screwdriver. That is the point.']],
+  tools: ['drill', 'pilot', 'brush', 'square'],
+  warnings: [['warn', 'SCREWED, not nailed (decision 27 Sep: evening noise + wrist) \u2014 and an improvement: \u00D745 pokes \u22646 mm through the 22 battens where the planned 50 mm nails would have poked ~15. Boards can be re-tightened after the first wet season; the anchor + chain is the real asset protection.']],
   checks: ['Course 12 flush with the stile tops.'] },
 
 step40: { phase: 'phase10', title: 'Door 2 \u2014 identical but MIRRORED',
@@ -746,7 +746,7 @@ step40: { phase: 'phase10', title: 'Door 2 \u2014 identical but MIRRORED',
     'The 60 mm of shared gaps: ~15 outer edges, ~30 centre meeting edge.'
   ],
   pieces: [['DOOR 2', '960 \u00D7 1200', 'mirror of door 1', 0, 0]],
-  tools: ['clamp', 'drill', 'hammer', 'marker'] },
+  tools: ['clamp', 'drill', 'pilot', 'marker'] },
 
 step41: { phase: 'phase10', title: 'The finished box',
   panels: [
@@ -757,12 +757,13 @@ step41: { phase: 'phase10', title: 'The finished box',
     { kind: 'plan', label: 'TOP', sub: 'the whole shed', built: ['PF1', 'PF2', 'PR1', 'PR2', 'CLADsLp', 'CLADsRp', 'WRp1', 'WRp2', 'SL1', 'SL2', 'RC1', 'RC2', 'RC3'], new: ['S1', 'S2', 'S3', 'ST'], sheet: true, extras: ['envp'], post: ['corr'] }
   ],
   actions: [
-    'Frame, roof, cladding, both door panels built. Hanging (hinges, hasp) is deliberately NOT this guide \u2014 it happens on the doors track.',
-    'Final walk-around with the checklist below \u2014 then chain the bike to the anchor and lock it.'
+    'Both panels built flat \u2014 <b>hang + lock this week</b> (docs 19\u201320, helper + daylight): doors up on packers \u2192 <b>bands on with owned M5 CSK</b>, every hole, snug to seat (3.5 mm pilots) \u2192 mark + fix <b>hooks THROUGH the front corner boards with 5.0\u00D780</b> (4 mm pilots, threads soaped; a 3\u20138 mm tip may poke inside at the hinge line \u2014 snip/file flush) \u2192 hang + adjust (washer-pack the band eye if a door scrapes its board) \u2192 <b>hasp M5</b> across the ~30 centre gap \u2192 turn-buttons (batten offcuts) \u2192 padlock.',
+    'Anchor first if not yet in: Ryde cement-in + Postcrete through the still-open front (~45 min). Chain loops anchor \u2192 bike frames, off the ground.',
+    'Roof: mastic the 3 defect spots when the tube lands; first-rain check inside. Then the final walk-around with the checklist \u2014 bike in, locked, done.'
   ],
   pieces: [],
-  tools: ['photo'],
-  checks: ['Box line 1390 on rear + front walls (side tops tucked at 1340, v2.4); rear posts 1580 above it.', 'Roof: 4 pieces, laps facing NE, ~78 eaves, 5 rows nailed.', 'Sides 14 courses from 150, raked; rear 14 from 145, square-cut tails, flush at 1580.', 'All braces off, box rigid, every cut end sealed, 150 strip open.'] }
+  tools: ['photo', 'helper'],
+  checks: ['Box line 1390 on rear + front walls (side tops tucked at 1340, v2.4); rear posts 1580 above it.', 'Roof: 4 pieces, laps facing NE, ~78 eaves, 5 rows nailed \u2014 3 defect spots snipped + mastic\u2019d, watched at first rain.', 'Sides closed under the roof line (scribed rakes); rear flush at 1580; four flat corner boards \u2014 nothing bent anywhere.', 'All braces off, box rigid, every cut end sealed, 150 strip open.', 'Doors hung on M5 bands + 5.0\u00D780 hooks, hasp + padlock on \u2014 bike in, chained to the anchor.'] }
 
 };
 

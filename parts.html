@@ -1,12 +1,12 @@
 <!doctype html>
 <html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Bike shed v2 — parts sheet</title>
-<link rel="stylesheet" href="shared/guide.css?v=1"></head>
+<link rel="stylesheet" href="shared/guide.css?v=2"></head>
 <body class="page">
-<script src="shared/model.js?v=1"></script>
-<script src="shared/draw.js?v=1"></script>
-<script src="shared/steps-data.js?v=1"></script>
-<script src="shared/ui.js?v=1"></script>
+<script src="shared/model.js?v=2"></script>
+<script src="shared/draw.js?v=2"></script>
+<script src="shared/steps-data.js?v=2"></script>
+<script src="shared/ui.js?v=2"></script>
 <script>
 document.title = 'Bike shed v2 — parts sheet';
 bars('parts', 'PARTS SHEET');
@@ -72,18 +72,22 @@ group('Battens \u00B7 50\u00D722 \u00B7 from the 3 sticks (10 pieces)', [
 group('Boards \u00B7 22\u00D7125 feather-edge (cut to the as-built shed)', [
   { code: 'REAR', qty: 15, bar: [2188, [125, 22]], d: '2188 = 2080 wall (v2.4) + 2 \u00D754 square-cut corner tails \u2014 NEVER folded, ends sealed \u00B7 14 courses + 1 spare' },
   { code: 'SIDES', qty: 28, bar: [950, [125, 22]], d: 'measured rule: real SR + 2 \u00D7 real post depth \u2248 944 \u00B7 14 courses \u00D72 + 2 spare' },
-  { code: 'DOORS', qty: 24, bar: [960, [125, 22]], d: '960 \u00B7 12 courses \u00D72 doors' }
+  { code: 'DOORS', qty: 24, bar: [960, [125, 22]], d: '960 \u00B7 12 courses \u00D72 doors \u2014 still to cut from the 1.05 m stack (final week)' },
+  { code: 'CORNER \u00D74', qty: 4, d: 'FLAT vertical corner boards (27 Sep) \u2014 ZERO-BUY (19 \u00A74b): rear top courses get first claim on 2 m+ boards \u2192 halve a spare long board (2 jointless per half) \u2192 else full 1.05 m board + offcut fill low down \u00B7 tops scribed ~1375 front / ~1565 rear' }
 ]);
 group('Roof \u00B7 Onduline 760 \u00D7 1000 \u00D7 2.6', [
   { code: 'S1\u2013S3', qty: 3, bar: [1000, [760, 26]], d: '3 full sheets, corrugations down-slope' },
   { code: 'STRIP', qty: 1, bar: [1000, [285, 26]], d: '285 (3 corrugations) \u2014 cut the 4th sheet along a valley \u00B7 remainder = repair spare' }
 ]);
-group('Fixings + consumables', [
-  { code: '5.0\u00D780', qty: 100, d: 'frame screws \u00B7 62 counted: RR1 4 \u00B7 RR2 4 \u00B7 RS 4 \u00B7 FILL 2 \u00B7 FT 4 \u00B7 FH 4 \u00B7 SR1\u20134 16 \u00B7 SL1-2 8 \u00B7 RC1-3 12 \u00B7 DL1-2 4 \u00B7 + ~16\u201332 recoverable brace screws \u00B7 3 mm pilot near every end' },
-  { code: '4.0\u00D745 / 4.0\u00D765', qty: 0, d: 'door frame screws \u00B7 ~32 total: \u00D716 45s (rail ends, 2-layer 44 stack) + \u00D716 65s (diagonal, 3-layer 66 stack) \u00B7 hidden joints only' },
-  { code: 'RINGSHANK', qty: 0, d: '50 mm cladding nails \u00B7 ~460 total: sides ~124 (2 posts/board + rails c1, c12\u201313) \u00B7 rear ~94 (3 verticals/board + rails c1, c12\u201314) \u00B7 doors ~240 (5 crossings/board) \u00B7 2 per crossing, never the feather edge \u00B7 3 boxes in hand \u2014 COUNT THEM before cladding day' },
-  { code: 'ONDULINE 65', qty: 200, d: 'roof nails with washers \u00B7 ~200 in hand (100 owned + 322501 top-up, recd 21 Sep) \u00B7 ~90\u2013105 used \u00B7 crests only \u00B7 \u226520 per full sheet' },
-  { code: 'SEALER', qty: 1, d: 'end-grain sealer + brush \u00B7 every fresh cut, same day \u00B7 ~80 cut ends planned vs ~60 per 500 ml \u2014 brush thin, top up if it dries up' }
+group('Fixings + consumables \u00B7 ZERO-BUY since 28 Sep (19 \u00A710 audit)', [
+  { code: '5.0\u00D780', qty: 0, d: '~30\u201334 LEFT (66\u201370 went into the frame Sat 26) \u00B7 <b>\u00D78\u201312 RESERVED for the door hooks</b> (CSK head fits the M5 holes, ~60 into the post through the corner board) \u00B7 NOT for cladding \u2014 80 mm pokes through 50 members and splits feather edge' },
+  { code: '4.0\u00D765', qty: 200, d: 'WALLS + door diagonals: side rakes \u00B7 rear top courses \u00B7 4 corner boards \u00B7 optional header batten (\u224850) \u2014 43 mm bite into the 47\u201350 members, no poke-through \u00B7 + \u00D716 for the 3-layer diagonal stacks \u00B7 3 mm pilots' },
+  { code: '4.0\u00D745', qty: 200, d: 'DOORS ONLY: \u00D716\u201324 frame rail ends + ~150\u2013192 skins at REAL crossings (2 stiles + diagonal + occasional rail \u2248 3\u20134/board) \u00B7 pokes \u22646 mm through 22 battens \u2014 better than the planned 50 mm nails \u00B7 the ledger is tight: real crossings only' },
+  { code: 'M5 CSK', qty: 0, d: '<b>COUNT + MEASURE TONIGHT \u2014 it gates the whole zero-buy plan</b> \u00B7 need ~38 at 45\u201360 mm: hinge bands ~24 \u00B7 hasp + staple 8 \u00B7 turn-buttons 6 \u00B7 3.5 mm pilots \u00B7 4.0\u00D745 substitutes if short (then bands drop to 4/band)' },
+  { code: 'SMOOTH NAILS', qty: 0, d: '~290 left \u2014 FALLBACK ONLY (the bought Wickes 287489 is smooth-shank, not ringshank; 27 Sep: all remaining cladding + door skins went SCREWED) \u00B7 usable in a daytime hammer window if a screw line runs dry' },
+  { code: 'ONDULINE 65', qty: 200, d: 'roof nailed Sun 27 \u2014 ~90\u2013105 used \u00B7 <b>3 DEFECT nails</b>: snip flush + mastic + one replacement each into clear grain (19 \u00A73) \u00B7 check the tub before ordering more' },
+  { code: 'MASTIC', qty: 1, d: 'bitumen roof mastic (on order, ~\u00A36) \u2014 the 3 defect heads/washers + any torn edge \u00B7 press in with a gloved finger' },
+  { code: 'SEALER', qty: 1, d: 'end-grain sealer + brush \u00B7 every fresh cut, same day \u00B7 rake cuts, corner-board tops, all 24 door-board ends this week' }
 ]);
 
 const note = el('div', 'card');
