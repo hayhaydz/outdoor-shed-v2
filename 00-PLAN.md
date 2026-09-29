@@ -1,6 +1,7 @@
 # 00 — PLAN · v2 Guide (IKEA-style, mobile-first, accurate)
 
 
+> **v2.6 PATCH (29 Sep):** **NEW PHASE 11 — the anchor** (steps 42–45, source `../v2-2026-09-17/21-anchor-pour-baby-steps.md`): the bucket pour as baby steps — everything-ready-first → bag 1 (half → 1 L bottle → poke → rest) → bag 2 (stop ~25 below the rim) → 5–7 day cure + chain high/off-ground. Bought 29 Sep: 2 × Build It Postfix 20 kg (Toolstation AH689, £6.99 ea — site fetch finally worked) + the 27 L bucket ≈ **45 kg block** (2 bags ≈ 26–27 L compacted, water ~5–6 L total in 1 L-bottle measures). Model: new kinds `anchor` (bucket cross-section) + `anchorPlan`, plan pieces `ANCHp`/`BIKE1`/`BIKE2`; draw: EXTRAS `rimA`/`chainA`/`chainP`, pictos `bottle`/`timer`. Now **45 steps, 12 phases**; qa number-audit ALLOWED extended with the anchor dims.
 > **v2.5 AS-BUILT PATCH (28 Sep evening):** guide content re-synced to the final-week decisions (source: `../v2-2026-09-17/19-status-2026-09-27-final-week.md` + `20-baby-steps-to-friday.md`, plus the 28-Sep revisions inside `02`/`03`/`11`/`12`/`16`). Deltas applied to steps 29–41, parts + tools pages: **(1) all remaining cladding + door skins fixed with SCREWS, not nails** — walls/corner boards 4.0×65, door skins 4.0×45, 3 mm pilots, zero evening hammering (noise + wrist + the smooth-shank reality of the bought nails); **(2) hinge bands + hasp now M5 CSK from stock** (AG160 holes are CSK ~M5; the M10 bolt scheme is parked as a documented future upgrade — `02` §3d); hooks = 5.0×80 ×8–12; **(3) corners closed by four FLAT vertical corner boards** screwed to the post faces (extends D12 — nothing bends anywhere); **(4) rake datum = the roof sheet edge** (the sloped rail is hidden under the fixed roof); **(5) roof as-fixed carries 3 defect nails** → snip/mastic/replace into clear grain; **(6) fixings are ZERO-BUY** per the 28 Sep stock audit (`19` §10 — the M5 count gates it); ironmongery all owned (28 Sep). Build status: frame up Sat 26, roof on Sun 27, walls to the box line — D9's "nothing built yet" is historical.
 > **v2.4 AS-BUILT (25 Sep evening):** frame flipped — walls 75 thick, rails 50 tall, posts 50 across; side rails = inside overlaps (SRb 200–275, SRt 1265–1340); SLs centred on the post lines (inner faces x=50/2030); overall 2080, envelope 2124, eaves ~78; RS trims to ~1140; rear tails 2×54. Bands below updated where load-bearing. Full record: `../v2-2026-09-17/18-v2.4-as-built-orientation-flip.md`.
 **Date:** 2026-09-25 · **Status:** approved plan, build not yet started
@@ -163,8 +164,8 @@ Zero dependencies, no build step, works offline from `file://` on a phone.
   index.html                 cover: title block, 3 corrected elevations, lead, parts table link
   parts.html                 IKEA page-1 parts sheet (NEW)
   tools.html                 tools + consumables + golden rules (NEW)
-  phase00.html … phase10.html   11 phase dividers (NEW)
-  step01.html … step41.html     41 steps (regenerated stubs, same 9-line pattern as v1)
+  phase00.html … phase11.html   12 phase dividers (NEW)
+  step01.html … step45.html     45 steps (regenerated stubs, same 9-line pattern as v1)
   qa.html                    dev harness: renders every view + invariant chips (NEW, unlinked)
   shared/
     model.js                 constants, piece table, derived views, asserts   (NEW)
@@ -283,6 +284,7 @@ Big number, phase title, **2D multi-view mini sheet of the phase's assembly on t
 | 08 | Side cladding | 30–32 | left wall, then mirror |
 | 09 | Rear cladding | 33–35 | square-cut tails (no folding), braces off, weatherproof |
 | 10 | Doors + finish | 36–41 | built flat, never hung here |
+| 11 | The anchor | 42–45 | 2-bag bucket pour, baby steps (doc 21, v2.6) |
 
 ### 8.5 Steps 01–41 (each: shell per §7 · **triptych front/side/top per §6.3** · panels per §6)
 
@@ -323,6 +325,7 @@ Every step renders V1 + V2 + TOP regardless of the primary view below — the ta
 | 39 | boards ×12 | door | bottom-up; nails not screws (security note) |
 | 40 | door 2 mirrored | door | mirrored diagonal; hinge-side labels |
 | 41 | the finished box | all 3 elevations | final check list: 1390 box, 1580 rear, 150 strip open, roof rows, seals |
+| 42–45 | the anchor pour | bucket SECTION | new kinds `anchor`/`anchorPlan`; 42 ready-first, 43 bag 1, 44 bag 2 stop-below-rim, 45 cure + chain |
 
 Screw budgets carried/adjusted from v1 + docs (~64 frame-day screws; door screws 4.0×45/65; nails 2 per crossing).
 

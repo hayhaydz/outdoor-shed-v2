@@ -271,6 +271,8 @@ function picto(name, warnStyle) {
     case 'heavy': x.beginPath(); x.rect(7, 6, 12, 9); L(); x.beginPath(); x.moveTo(13, 15); x.lineTo(13, 19); x.moveTo(10, 17); x.lineTo(13, 20); x.lineTo(16, 17); L(); x.font = f(9, 800); x.textAlign = 'center'; x.fillText('2', 4, 24); break;
     case 'square2': x.beginPath(); x.rect(4, 10, 18, 8); L(); x.beginPath(); x.moveTo(13, 6); x.lineTo(13, 2); x.moveTo(10, 4); x.lineTo(13, 1); x.lineTo(16, 4); L(); break;
     case 'photo': x.beginPath(); x.rect(4, 7, 18, 13); L(); x.beginPath(); x.arc(13, 13.5, 3.5, 0, 7); L(); x.beginPath(); x.moveTo(17, 9); x.lineTo(19, 6.5); L(); break;
+    case 'bottle': x.beginPath(); x.rect(8, 10, 10, 14); L(); x.beginPath(); x.rect(10, 4, 6, 6); L(); x.font = f(8, 800); x.textAlign = 'center'; x.fillText('1L', 13, 21); break;
+    case 'timer': x.beginPath(); x.arc(13, 14, 9, 0, 7); L(); x.beginPath(); x.moveTo(13, 14); x.lineTo(13, 8.5); x.moveTo(13, 14); x.lineTo(17, 16); L(); break;
     case 'warn': tri(); L(); x.beginPath(); x.moveTo(13, 10); x.lineTo(13, 16); x.moveTo(13, 18.6); x.lineTo(13, 19.4); x.lineWidth = 2; L(); break;
     case 'tick': x.beginPath(); x.arc(13, 13, 10, 0, 7); x.strokeStyle = PAL.check; L(); x.strokeStyle = PAL.check; x.beginPath(); x.moveTo(8, 13.5); x.lineTo(11.5, 17); x.lineTo(18.5, 9.5); x.lineWidth = 2.2; L(); break;
   }
@@ -332,6 +334,18 @@ const EXTRAS = {
     c.beginPath(); c.moveTo(ex, ey); c.lineTo(ex - 8, ey + 3); c.lineTo(ex - 3, ey + 8); c.closePath(); c.fillStyle = PAL.dim; c.fill();
     c.restore();
     chipDraw(c, t.X(600), t.Y(560), 'STAND UP');
+  },
+  /* ---- phase 11: the anchor ---- */
+  rimA: (c, t) => datumDraw(c, t, -70, 380, 340, '340', 'RIM —'),
+  chainA: (c, t) => {
+    c.save(); c.setLineDash([8, 5]); c.strokeStyle = PAL.dim; c.lineWidth = 1.6;
+    c.beginPath(); c.moveTo(t.X(140), t.Y(428)); c.lineTo(t.X(500), t.Y(428)); c.stroke(); c.restore();
+    chipDraw(c, t.X(320), t.Y(428), 'CHAIN — high, off the ground');
+  },
+  chainP: (c, t) => {
+    c.save(); c.setLineDash([8, 5]); c.strokeStyle = PAL.dim; c.lineWidth = 1.6;
+    c.beginPath(); c.moveTo(t.X(1700), t.Y(700)); c.lineTo(t.X(1230), t.Y(420)); c.stroke(); c.restore();
+    chipDraw(c, t.X(1465), t.Y(565), 'CHAIN — high, tight');
   }
 };
 

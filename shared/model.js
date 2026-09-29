@@ -102,7 +102,9 @@ const M = (() => {
       WRp1: [-54, 0, 950, 1004], WRp2: [2080, 2134, 950, 1004], // D12: tails poke past the rear plane
       DL1p: [50, 72, 0, 75], DL2p: [2008, 2030, 0, 75],
       S1: [-100, 660, 22, 966], S2: [565, 1325, 22, 966], S3: [1230, 1990, 22, 966], ST: [1895, 2180, 22, 966], // v2.4: run centred, 100 eaves per side
-      ENV: [0, 2080, 0, 950]
+      ENV: [0, 2080, 0, 950],
+      ANCHp: [1560, 1840, 560, 840],          // phase 11: the 280×280 bucket block, rear right
+      BIKE1: [1130, 1310, 140, 660], BIKE2: [1360, 1540, 140, 660] // parked frames (ghosts, chain reach)
     },
 
     door: { // (x,y) door 1 face up, hinge side LEFT
@@ -130,6 +132,28 @@ const M = (() => {
       PPa: [0, 50, 0, 75], PPb: [2030, 2080, 0, 75],
       DLa: [50, 72, 0, 75], DLb: [2008, 2030, 0, 75],
       D1: [-10, 950, -22, 0], D2: [1130, 2090, -22, 0]
+    },
+
+    /* ---- PHASE 11 — the anchor (doc 21). Bucket section schematic, mm-ish, on the 100 grid.
+       Interior 280 wide × 340 tall · floor y=0 · rim y=340 · pour stops 25 below (315). ---- */
+    anchor: { // (x,y) cross-section through the bucket
+      BKT: [[-14, 0], [-14, 352], [0, 352], [0, 14], [266, 14], [266, 352], [280, 352], [280, 0], [-14, 0]], // walls+floor U
+      PWDR_A: [0, 280, 0, 85],        // half of bag 1 (~6–7 L powder)
+      PWDR_B: [0, 280, 0, 170],       // bag 1 complete (~13 L)
+      PWDR_C: [0, 280, 0, 315],       // bag 2 complete — STOP, 25 below the rim
+      WTRa: [0, 280, 85, 93],         // 1 L sitting on the half-bag surface
+      WTRb: [0, 280, 170, 178],
+      WTRc: [0, 280, 315, 323],
+      ANC_BODY: [100, 180, 140, 315], // Ryde 180 body, buried top at the pour top
+      HOOP_L: [104, 112, 315, 402], HOOP_R: [168, 176, 315, 402], HOOP_T: [104, 176, 402, 414], // hoop proud, clears chain+lock
+      SPAR: [-90, 370, 356, 374],     // temporary brace batten taped to the hoop
+      BOTTLE: [350, 430, 0, 230]      // the 1 L measure
+    },
+
+    anchorPlan: { // (x,z) the bucket from above
+      ApW1: [-14, 294, -14, 0], ApW2: [-14, 294, 340, 354], ApW3: [-14, 0, 0, 354], ApW4: [280, 294, 0, 354],
+      ApPLATE: [100, 180, 130, 210],  // buried body
+      ApHOOP: [92, 188, 216, 232]     // the hoop bar — chain threads here
     }
   };
 
@@ -150,7 +174,9 @@ const M = (() => {
     rearSec:  { ax: 'z·y', cap: 'SECTION — looking along the wall', env: [-160, 220, -80, 1800] },
     frontSec: { ax: 'z·y', cap: 'SECTION — looking along the wall', env: [-160, 220, -80, 1620] },
     doorSec:  { ax: 'x·h', cap: 'SECTION — the layer stack',        env: [-140, 1120, -80, 260] },
-    doorPlan: { ax: 'x·z', cap: 'PLAN — doors overlay the opening', env: [-120, 2260, -120, 220] }
+    doorPlan: { ax: 'x·z', cap: 'PLAN — doors overlay the opening', env: [-120, 2260, -120, 220] },
+    anchor:     { ax: 'x·y', cap: 'SECTION — through the bucket', env: [-150, 530, -90, 480] },
+    anchorPlan: { ax: 'x·z', cap: 'TOP — the bucket',             env: [-120, 420, -110, 470] }
   };
 
   const view = kind => pieces[kind] || null;

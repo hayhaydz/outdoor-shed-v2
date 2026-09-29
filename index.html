@@ -1,19 +1,19 @@
 <!doctype html>
 <html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Bike shed v2 — assembly guide</title>
-<link rel="stylesheet" href="shared/guide.css?v=2"></head>
+<link rel="stylesheet" href="shared/guide.css?v=3"></head>
 <body class="page">
-<script src="shared/model.js?v=2"></script>
-<script src="shared/draw.js?v=2"></script>
-<script src="shared/steps-data.js?v=2"></script>
-<script src="shared/ui.js?v=2"></script>
+<script src="shared/model.js?v=3"></script>
+<script src="shared/draw.js?v=3"></script>
+<script src="shared/steps-data.js?v=3"></script>
+<script src="shared/ui.js?v=3"></script>
 <script>
 document.title = 'Bike shed v2 — assembly guide';
 bars('index', 'BIKE SHED \u00B7 ASSEMBLY GUIDE V2');
 const s = el('div', 'shell page');
-s.appendChild(el('div', 'kicker', 'Assembly guide \u00B7 v2.5 as-built \u00B7 updated 2026-09-28'));
+s.appendChild(el('div', 'kicker', 'Assembly guide \u00B7 v2.6 as-built \u00B7 updated 2026-09-29'));
 s.appendChild(el('h1', 'steph', 'The bike shed'));
-s.appendChild(el('div', 'divlead', '2080 wide (v2.4) \u00B7 950 deep \u00B7 41 steps, one piece at a time. <b>Read the parts sheet and tools page before step 01.</b>'));
+s.appendChild(el('div', 'divlead', '2080 wide (v2.4) \u00B7 950 deep \u00B7 45 steps, one piece at a time. <b>Read the parts sheet and tools page before step 01.</b>'));
 
 const st = el('div', 'card');
 st.appendChild(el('h2', null, 'WHERE THE BUILD STANDS \u2014 Mon 28 Sep'));
@@ -21,6 +21,7 @@ st.appendChild(el('h2', null, 'WHERE THE BUILD STANDS \u2014 Mon 28 Sep'));
  '<b>\u2713 Roof</b> \u2014 sheets + strip on, all rows fixed Sun 27. 3 defect nails \u2192 snip + mastic + replacement into clear grain (19 \u00A73).',
  '<b>\u2713 Walls to the 1390 box line</b> (both sides + rear). Remaining: <b>side rakes \u00B7 rear top ~2 courses \u00B7 four FLAT corner boards</b> (19 \u00A74/\u00A74b) \u2014 one evening.',
  '<b>Doors</b> \u2014 24 boards \u00D7960 still to cut; hang + lock by Fri (20). <b>All remaining fixing = SCREWS, zero hammering</b> (27 Sep).',
+ '<b>Anchor</b> \u2014 bought 29 Sep: 2 \u00D7 Build It Postfix (AH689) + the 27 L bucket \u2248 45 kg block. <b>Phase 11</b> (steps 42\u201345) = the pour, baby steps \u2014 Thursday, doc 21.',
  '<b>Plan of record for the final week:</b> 19-status + 20-baby-steps (in v2-2026-09-17/). Dead: Sat 3. Deadline: Sun 4.'].forEach(t => st.appendChild(el('li', null, t)));
 s.appendChild(st);
 
@@ -47,7 +48,7 @@ s.appendChild(ideas);
 
 const seq = el('div', 'card');
 seq.appendChild(el('h2', null, 'Sequence'));
-seq.appendChild(el('div', null, 'base \u2192 rear wall flat \u2192 front wall flat \u2192 stand the box \u2192 side rails \u2192 roof frame \u2192 linings \u2192 sheets \u2192 side cladding \u2192 rear cladding \u2192 doors + finish. Phase dividers mark each jump; every step shows FRONT \u00B7 SIDE \u00B7 TOP.'));
+seq.appendChild(el('div', null, 'base \u2192 rear wall flat \u2192 front wall flat \u2192 stand the box \u2192 side rails \u2192 roof frame \u2192 linings \u2192 sheets \u2192 side cladding \u2192 rear cladding \u2192 doors + finish \u2192 the anchor. Phase dividers mark each jump; every step shows FRONT \u00B7 SIDE \u00B7 TOP.'));
 s.appendChild(seq);
 
 const go = el('div', 'beginrow');

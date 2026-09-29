@@ -1,12 +1,12 @@
 <!doctype html>
 <html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>QA — v2 guide (dev, unlinked)</title>
-<link rel="stylesheet" href="shared/guide.css?v=2"></head>
+<link rel="stylesheet" href="shared/guide.css?v=3"></head>
 <body class="page" style="max-width:760px">
-<script src="shared/model.js?v=2"></script>
-<script src="shared/draw.js?v=2"></script>
-<script src="shared/steps-data.js?v=2"></script>
-<script src="shared/ui.js?v=2"></script>
+<script src="shared/model.js?v=3"></script>
+<script src="shared/draw.js?v=3"></script>
+<script src="shared/steps-data.js?v=3"></script>
+<script src="shared/ui.js?v=3"></script>
 <script>
 const s = el('div', 'shell');
 s.appendChild(el('h1', 'steph', 'QA harness'));
@@ -29,7 +29,7 @@ PHASE_ORDER.forEach(pid => (PHASES[pid].views || []).forEach(v => {
   [].concat(v.extras || [], v.post || []).forEach(k => { if (!EXTRAS[k]) valErrs.push(pid + ': missing extra ' + k); });
 }));
 if (valErrs.length) valErrs.forEach(e => val.appendChild(chip(false, e)));
-else val.appendChild(chip(true, 'all ' + Object.keys(STEPS).length + ' steps + 11 phases: every piece/extra resolves, every step = exactly 3 views'));
+else val.appendChild(chip(true, 'all ' + Object.keys(STEPS).length + ' steps + 12 phases: every piece/extra resolves, every step = exactly 3 views'));
 s.appendChild(val);
 
 /* 3 — render everything */
@@ -59,7 +59,7 @@ s.appendChild(sc);
 
 /* 5 — number audit */
 const na = el('div', 'card'); na.appendChild(el('h2', null, '5 \u00B7 Number audit (dims traced to model)'));
-const ALLOWED = new Set([2130, 950, 1390, 1580, 150, 145, 190, 1090, 850, 760, 95, 2280, 53, 1200, 960, 250, 1190, 1440, 1630, 1435, 29, 15, 30, 75, 1980, 990, 1150, 100, 5, 2080, 2124, 200, 1340, 1140, 78, 54, 800, 25]);
+const ALLOWED = new Set([2130, 950, 1390, 1580, 150, 145, 190, 1090, 850, 760, 95, 2280, 53, 1200, 960, 250, 1190, 1440, 1630, 1435, 29, 15, 30, 75, 1980, 990, 1150, 100, 5, 2080, 2124, 200, 1340, 1140, 78, 54, 800, 25, 2, 13, 26, 27, 45, 180, 340]); // phase 11 adds: 2 bags, 13 L/bag, 26–27 L total, 45 kg block, Ryde 180 body, rim 340
 let badNums = [];
 const scanDims = (where, panels) => (panels || []).forEach(p => (p.dims || []).forEach(d => {
   (String(d.t).match(/\d+/g) || []).forEach(n => { if (!ALLOWED.has(+n)) badNums.push(where + ': "' + d.t + '" \u2192 ' + n); });
@@ -93,7 +93,7 @@ PHASE_ORDER.forEach(pid => {
 });
 restore();
 if (smokeErrs.length) smokeErrs.forEach(e => smoke.appendChild(chip(false, e)));
-else smoke.appendChild(chip(true, 'all 41 boot() + 11 divider() paths render clean (\u22653 views, __ok true)'));
+else smoke.appendChild(chip(true, 'all 45 boot() + 12 divider() paths render clean (\u22653 views, __ok true)'));
 s.appendChild(smoke);
 window.__smoke_errs = smokeErrs;
 fails += smokeErrs.length;

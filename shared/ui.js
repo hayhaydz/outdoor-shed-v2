@@ -161,5 +161,6 @@ const TOOLNAMES = {
   drill: 'Drill + PZ2', pilot: '3 mm pilot bit', saw: 'Hand saw', level: 'Level 600–1000',
   tape: 'Tape 5 m', square: 'Comb. square', clamp: 'Clamps \u00D74', hammer: 'Hammer',
   brush: 'Sealer + brush', marker: 'Marker', pencil: 'Pencil', helper: 'Helper \u00D71',
-  ladder: 'Ladder', photo: 'Photo the frame', square2: 'Diagonal check'
+  ladder: 'Ladder', photo: 'Photo the frame', square2: 'Diagonal check',
+  bottle: '1 L bottle (the measure)', timer: '5–10 min set'
 };

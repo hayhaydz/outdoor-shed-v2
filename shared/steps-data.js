@@ -24,14 +24,19 @@ const PHASES = {
   phase09: { num: '09', title: 'Rear cladding', steps: ['step33', 'step34', 'step35'], lead: 'Courses to ~1390 DONE Sat 26. Remaining: top ~2 courses to the 1580 plane + four FLAT corner boards \u2014 nothing folds, nothing bends (27 Sep). Weatherproof gate: braces off here.', handle: 'Top courses \u00D72 \u00B7 4 corner boards (ZERO-BUY: spares/offcuts, 19 \u00A74b) \u00B7 4.0\u00D765 + sealer', meta: [['drill', 'Driver only \u2014 no hammer'], ['wind', 'Boards catch wind']],
     views: [{ kind: 'rear', label: 'REAR', sub: '14 courses, square-cut corner tails', built: ['RP1', 'RP2', 'RR1', 'RR2', 'RS', 'FILL', 'RC3r', 'SLr1', 'SLr2'], new: ['CLADr_ALL'], extras: ['groundR', 'padsR', 'datum145', 'wraps'], post: ['lapsR'], labels: { CLADr_ALL: 'courses 1\u201314' } }] },
   phase10: { num: '10', title: 'Doors + finish', steps: ['step36', 'step37', 'step38', 'step39', 'step40', 'step41'], lead: 'Two layered sandwiches built flat, boarded with SCREWS (27 Sep) \u2014 then hung + locked the same week per the final-week plan (docs 19\u201320).', handle: 'Stiles \u00D74 \u00B7 rails \u00D74 \u00B7 diagonals \u00D72 \u00B7 24 boards (960) \u00B7 4.0\u00D745 skins \u00B7 M5 ironmongery (owned)', meta: [['drill', 'Evening track'], ['photo', 'Final survey']],
-    views: [{ kind: 'door', label: 'DOOR', sub: 'the layered sandwich', built: ['DSa', 'DSb', 'DRa', 'DRb'], new: ['DIAG', 'BOARDS'], post: ['lapsD'], dims: [{ k: 'v', a: 0, b: 1200, x: 1080, t: '1200', s: 'r' }] }] }
+    views: [{ kind: 'door', label: 'DOOR', sub: 'the layered sandwich', built: ['DSa', 'DSb', 'DRa', 'DRb'], new: ['DIAG', 'BOARDS'], post: ['lapsD'], dims: [{ k: 'v', a: 0, b: 1200, x: 1080, t: '1200', s: 'r' }] }] },
+  phase11: { num: '11', title: 'The anchor', steps: ['step42', 'step43', 'step44', 'step45'], lead: 'Two bags of no-mix concrete + the 27 L bucket = a ~45 kg block with the security anchor cast in. Powder first, THEN a little water — never the other way round. Sets in 5–10 minutes, so every step is ready-first.', handle: '2 × 20 kg Build It Postfix (AH689) · 27 L bucket · Ryde cement-in anchor · 1 L bottle (the measure) · poking stick', meta: [['timer', 'Set in 5–10 min'], ['level', 'Level ground'], ['helper', 'Solo OK']],
+    views: [{ kind: 'anchor', label: 'SECTION', sub: 'the finished block', built: ['BKT', 'PWDR_C', 'ANC_BODY', 'HOOP_L', 'HOOP_R', 'HOOP_T'], extras: ['rimA', 'chainA'],
+      labels: { PWDR_C: '2 bags ≈ 26–27 L', ANC_BODY: 'Ryde 180' }, dims: [{ k: 'v', a: 315, b: 414, x: -90, t: '~100 clear', s: 'l' }] }] }
 };
-const PHASE_ORDER = ['phase00', 'phase01', 'phase02', 'phase03', 'phase04', 'phase05', 'phase06', 'phase07', 'phase08', 'phase09', 'phase10'];
+const PHASE_ORDER = ['phase00', 'phase01', 'phase02', 'phase03', 'phase04', 'phase05', 'phase06', 'phase07', 'phase08', 'phase09', 'phase10', 'phase11'];
 
 /* view bundles */
 const SIDE_CTX = ['groundS', 'padsS', 'blockS', 'bracesR', 'bracesF', 'datum150'];
 const WALLS_SIDE = ['FP', 'RP', 'FT', 'FH', 'RR1', 'RR2', 'RS', 'FILL'];
 const ROOF_PLAN = ['PF1', 'PF2', 'PR1', 'PR2', 'FTp', 'RR2p', 'SL1', 'SL2', 'RC1', 'RC2', 'RC3'];
+const ANCH_SHED = ['PF1', 'PF2', 'PR1', 'PR2', 'FTp', 'RR2p', 'SL1', 'SL2', 'RC1', 'RC2', 'RC3', 'CLADsLp', 'CLADsRp', 'WRp1', 'WRp2'];
+const HOOP = ['ANC_BODY', 'HOOP_L', 'HOOP_R', 'HOOP_T'];
 
 const STEPS = {
 
@@ -763,7 +768,85 @@ step41: { phase: 'phase10', title: 'The finished box',
   ],
   pieces: [],
   tools: ['photo', 'helper'],
-  checks: ['Box line 1390 on rear + front walls (side tops tucked at 1340, v2.4); rear posts 1580 above it.', 'Roof: 4 pieces, laps facing NE, ~78 eaves, 5 rows nailed \u2014 3 defect spots snipped + mastic\u2019d, watched at first rain.', 'Sides closed under the roof line (scribed rakes); rear flush at 1580; four flat corner boards \u2014 nothing bent anywhere.', 'All braces off, box rigid, every cut end sealed, 150 strip open.', 'Doors hung on M5 bands + 5.0\u00D780 hooks, hasp + padlock on \u2014 bike in, chained to the anchor.'] }
+  checks: ['Box line 1390 on rear + front walls (side tops tucked at 1340, v2.4); rear posts 1580 above it.', 'Roof: 4 pieces, laps facing NE, ~78 eaves, 5 rows nailed — 3 defect spots snipped + mastic\u2019d, watched at first rain.', 'Sides closed under the roof line (scribed rakes); rear flush at 1580; four flat corner boards — nothing bent anywhere.', 'All braces off, box rigid, every cut end sealed, 150 strip open.', 'Doors hung on M5 bands + 5.0\u00D780 hooks, hasp + padlock on \u2014 bike in, chained to the anchor.'] },
+
+/* ---------- PHASE 11 — the anchor (doc 21: bucket pour, baby steps) ---------- */
+step42: { phase: 'phase11', title: 'Everything ready BEFORE bag 1 opens',
+  panels: [
+    { kind: 'anchor', label: 'SECTION', sub: 'the anchor braced in the empty bucket', built: ['BKT', 'BOTTLE'], new: HOOP, ghost: ['SPAR'], extras: ['rimA'],
+      labels: { ANC_BODY: 'Ryde 180 body' }, dims: [{ k: 'v', a: 140, b: 315, x: -90, t: '180 buried', s: 'l' }, { k: 'v', a: 315, b: 414, x: 470, t: 'hoop proud', s: 'r' }] },
+    { kind: 'anchorPlan', label: 'TOP', sub: 'the hoop faces where the bikes park', built: ['ApW1', 'ApW2', 'ApW3', 'ApW4'], new: ['ApHOOP'], ghost: ['ApPLATE'],
+      labels: { ApHOOP: 'chain here' } },
+    { kind: 'plan', label: 'PLAN', sub: 'final home — rear right, in through the still-open front', built: ANCH_SHED, new: ['ANCHp'], ghost: ['BIKE1', 'BIKE2'], extras: ['chainP'] }
+  ],
+  actions: [
+    'Bucket on level ground <b>in its final home</b> inside the shed — carried empty. Once poured it is ~45 kg and never moves.',
+    'Brace the anchor: tape it to a spar laid across the rim — hoop UP, <b>facing where the bikes park</b> (the chain must reach both frames).',
+    'Line the kit up: both bags <b>open</b>, 1 L bottle full, poking stick, gloves. Nothing else exists once you start.',
+    'No mixing anywhere — this concrete goes in <b>dry</b>, water after. Total water for everything: <b>5–6 L</b>.'
+  ],
+  pieces: [['ANCHOR', 'Ryde cement-in, hoop Ø 50', '180 buried · hoop proud, faces the bikes', 0, [80, 180]], ['BUCKET', '27 L, clean', 'level, in its final home', 0, 0], ['POSTFIX', 'Build It 20 kg (AH689)', 'no-mix — pour dry, water after', 0, 0, 2], ['MEASURE', '1 L bottle', '≈3 L per bag', 0, 0]],
+  tools: ['level', 'bottle', 'marker', 'tape'],
+  warnings: [['warn', 'Once water touches powder you have ~5 MINUTES. Missing something when bag 1 opens? Stop — bag unopened means concrete is still fine tomorrow.']],
+  checks: ['Hoop faces the bike parking spot.', 'Bucket level — a sloped pour cures lopsided.', 'Bags open, bottle full, stick to hand.'] },
+
+step43: { phase: 'phase11', title: 'Bag 1 — half, water, poke. Then the rest',
+  panels: [
+    { kind: 'anchor', label: 'SECTION', sub: 'bag 1 in (≈13 L)', built: ['BKT', 'BOTTLE'].concat(HOOP), new: ['PWDR_B'], ghost: ['WTRb', 'SPAR'], extras: ['rimA'],
+      labels: { PWDR_B: 'bag 1 ≈ 13 L' }, callouts: [[235, 182], [55, 115]] },
+    { kind: 'anchorPlan', label: 'TOP', sub: 'nothing to see from above — that is fine', built: ['ApW1', 'ApW2', 'ApW3', 'ApW4'], ghost: ['ApPLATE', 'ApHOOP'] },
+    { kind: 'plan', label: 'PLAN', sub: 'the pour happens inside the closed box', built: ANCH_SHED, new: ['ANCHp'], ghost: ['BIKE1', 'BIKE2'] }
+  ],
+  insets: [
+    { kind: 'anchor', tag: 'the rhythm: HALF a bag → 1 bottle → poke 15–20×', bnd: [-40, 340, 30, 250], built: ['BKT'], new: ['PWDR_A'], ghost: ['WTRa'], minor: 50 }
+  ],
+  actions: [
+    'Pour in <b>half of bag 1</b> — the bucket fills roughly a quarter.',
+    '<b>One bottle of water (1 L)</b>, poured slowly over the top ①, then <b>poke 15–20 times</b> ② — right down to the floor, so water reaches the bottom.',
+    'Now the <b>rest of bag 1</b> → another bottle → poke again. Powder first, water after — always this order.',
+    'Done right: the surface looks dark and wet. Pale dry patches = a splash more water, never a flood.'
+  ],
+  pieces: [['POSTFIX', 'bag 1 — 20 kg', 'half → 1 L → poke → half', 0, 0], ['WATER', '1 L bottle measures', '2 bottles this step', 0, 0, 2]],
+  tools: ['bottle', 'timer'],
+  warnings: [['warn', 'NEVER fill the bucket with water. 5–6 L does BOTH bags — the powder fills the bucket, the water only soaks it.']],
+  checks: ['No pale dry patches after poking.', 'Water soaks in within a minute — pooling that stays means STOP adding.'] },
+
+step44: { phase: 'phase11', title: 'Bag 2 — same again, STOP 25 below the rim',
+  panels: [
+    { kind: 'anchor', label: 'SECTION', sub: 'both bags in — the pour stops here', built: ['BKT', 'PWDR_B'].concat(HOOP), new: ['PWDR_C'], ghost: ['WTRc'], extras: ['rimA'],
+      dims: [{ k: 'v', a: 0, b: 315, x: -90, t: '2 bags ≈ 26–27 L', s: 'l' }, { k: 'v', a: 315, b: 340, x: 470, t: 'STOP ~25', s: 'r' }] },
+    { kind: 'anchorPlan', label: 'TOP', sub: 'only the hoop stays proud', built: ['ApW1', 'ApW2', 'ApW3', 'ApW4'], new: ['ApHOOP'], ghost: ['ApPLATE'],
+      labels: { ApHOOP: 'chain here' } },
+    { kind: 'plan', label: 'PLAN', sub: 'the block is done — 5–7 days from now it holds the chain', built: ANCH_SHED, new: ['ANCHp'], ghost: ['BIKE1', 'BIKE2'], extras: ['chainP'] }
+  ],
+  actions: [
+    'Bag 2, the same rhythm: half → 1 L → poke → rest → last 1–1.5 L → poke.',
+    '<b>Poke hard around the anchor\u2019s legs</b> — dry pockets against the steel are the one weak point of a deep pour.',
+    'Stop with the surface <b>~25 below the rim</b> — the hoop must stand clear so chain + lock thread through.',
+    'Done looks like: dark and wet all over, no pale patches, small pools soaking away.'
+  ],
+  pieces: [['POSTFIX', 'bag 2 — 20 kg', 'same rhythm · stop 25 below the rim', 0, 0], ['WATER', '1 L bottle measures', '2–2.5 bottles this step', 0, 0, 2]],
+  tools: ['bottle', 'timer'],
+  warnings: [['heavy', '~45 kg from here on — the bucket does not get carried again. It IS the mould.']],
+  checks: ['Concrete ~25 below the rim; hoop fully clear.', 'No dry pockets left by the anchor legs.'] },
+
+step45: { phase: 'phase11', title: 'Wait a week — then chain the bike',
+  panels: [
+    { kind: 'anchor', label: 'SECTION', sub: 'curing — hard ≠ strong', built: ['BKT', 'PWDR_C'].concat(HOOP), extras: ['rimA', 'chainA'],
+      labels: { PWDR_C: 'curing — day 1 is weak' }, dims: [{ k: 'v', a: 315, b: 414, x: -90, t: '~100 clear', s: 'l' }] },
+    { kind: 'anchorPlan', label: 'TOP', sub: 'the hoop is the only metal that matters', built: ['ApW1', 'ApW2', 'ApW3', 'ApW4'], new: ['ApHOOP'], ghost: ['ApPLATE'] },
+    { kind: 'plan', label: 'PLAN', sub: 'chain: anchor hoop → both frames, off the ground', built: ANCH_SHED, new: ['ANCHp'], ghost: ['BIKE1', 'BIKE2'], extras: ['chainP'] }
+  ],
+  actions: [
+    'Rock-hard in 10 minutes — but <b>weak for days</b>. Full strength at <b>5–7 days</b>. No chain load before then; parking the bike and laying the chain through is fine.',
+    'After a week: cut the bucket off if you want it pretty — or leave it on under the shed floor, the plastic protects the block.',
+    'Chain loops <b>anchor hoop → both bike frames</b>, high and tight, <b>off the ground</b> — croppers and sledgehammers both need the floor.',
+    'Photo. The shed is done.'
+  ],
+  pieces: [['CHAIN', '1 m hardened kit (owned)', 'hoop → both frames · off the ground', 0, 0]],
+  tools: ['photo'],
+  warnings: [['warn', 'Day-one fast-set concrete can look set and still crumble under a yank — the week is not optional.']],
+  checks: ['5–7 days cured before the chain takes real load.', 'Chain high and tight, resting on nothing.', 'Bike in, locked, photo taken.'] }
 
 };
 
