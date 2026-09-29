@@ -63,11 +63,13 @@ group('Frame \u00B7 75\u00D750 \u00B7 from the 8 sticks (18 pieces + 4 blocks)',
   { code: 'BLOCK', qty: 4, bar: [140, [75, 50]], d: 'spacer blocks 140, from offcuts \u2014 pocket them' }
 ]);
 group('Battens \u00B7 50\u00D722 \u00B7 from the 3 sticks (10 pieces)', [
-  { code: 'DL1 / DL2', qty: 2, bar: [1200, [50, 22]], cls: 'bat', d: 'door linings (door stops) \u00B7 B1', g: [50, 22] },
+  { code: 'DL1 / DL2', qty: 2, bar: [1200, [50, 22]], cls: 'bat', d: 'door linings \u00B7 <b>INSTALLED ON EDGE \u2192 rotate FLAT at step 49</b> (22 into the hole, not 50) \u2014 widens it 1873 \u2192 ~1929 (v2.8, doc 23)', g: [50, 22] },
   { code: 'DS1\u2013DS4', qty: 4, bar: [1200, [50, 22]], cls: 'bat', d: 'door stiles \u2014 the doors\u2019 full height \u00B7 B1 / B2 / B3', g: [50, 22] },
-  { code: 'DR1\u2013DR4', qty: 4, bar: [960, [50, 22]], cls: 'bat', d: 'door rails \u2014 <b>FULL WIDTH 960, OVER both stiles</b> (v2.6, 29 Sep: was 700 inset \u2014 the hinge bands anchor through them, step 37/46) \u00B7 ends flush with the stile edges', g: [50, 22] },
-  { code: 'DIAG \u00D72', qty: 2, bar: [1148, [50, 22]], cls: 'bat', d: '~1148 stile-to-stile over the rails (v2.6 \u2014 was ~990), SCRIBED +5 proud at step 38 \u00B7 one from the B3 remainder, one from the longest offcut (fallback: rail-to-rail ~1025)', g: [50, 22] },
-  { code: 'B3 remainder', qty: 1, d: '~2.1 m kept whole \u2014 covers ONE full-length diagonal + turn-buttons/catches; if 700 mm rails were already cut, they become the offcut pool (turn-buttons \u00D72, hook packers, door catches)' }
+  { code: 'DR1 \u00D72', qty: 2, bar: [936, [50, 22]], cls: 'bat', d: 'door rails \u2014 <b>FULL WIDTH 936 bottom bars</b> \u00B7 door 1 from the B2 offcut (~980), door 2 from B3 (~2180) \u00B7 ends flush with the stile edges (v2.8 zero-buy, doc 23)', g: [50, 22] },
+  { code: 'DR2a\u2013d', qty: 4, bar: [350, [50, 22]], cls: 'bat', d: 'top-rail <b>STUBS</b> \u2014 two old 700 rails halved \u00B7 one over each stile, outer ends flush \u00B7 the hinge straps cross them into the same 66 mm anchor a full bar would give', g: [50, 22] },
+  { code: 'DIAG \u00D72', qty: 2, bar: [1129, [50, 22]], cls: 'bat', d: '~1129 SCRIBED +5 proud at step 38 (v2.8: 936 door) \u00B7 door 1 from the B1 offcut (~1185), door 2 from the B3 remainder \u00B7 DO NOT pre-measure \u2014 pencil round the stick on the built frame', g: [50, 22] },
+  { code: '700s \u00D74 (old cut list)', qty: 4, d: 'v2.8: TWO are halved into the top-rail stub pairs; TWO stay whole \u2014 temporary squaring battens at step 38, then turn-buttons / catches / packers. Nothing bought.' },
+  { code: 'B1 / B2 / B3 offcuts', qty: 3, d: 'v2.8 door stock: B2 (~980) \u2192 door 1 bottom bar \u00B7 B3 (~2180) \u2192 door 2 bottom bar + one diagonal \u00B7 B1 (~1185) \u2192 the other diagonal. <b>MEASURE all three before cutting (step 49, doc 23 \u00A77)</b>' }
 ]);
 group('Door ironmongery \u00B7 ALL OWNED (28 Sep) \u00B7 the hook & band idea in one breath', [
   { code: 'BAND \u00D74', qty: 4, d: '450 hook & band straps (AG160) \u2014 2 per door, on the HINGE stile, 75 in from the door ends, EYE ENDS UP. Strap \u2192 board \u2192 rail \u2192 stile = 66 at the rail crossings (the anchor screws, M5\u00D760) \u00B7 M5\u00D745 elsewhere \u00B7 3.5 mm pilots' },
@@ -78,7 +80,7 @@ group('Door ironmongery \u00B7 ALL OWNED (28 Sep) \u00B7 the hook & band idea in
 group('Boards \u00B7 22\u00D7125 feather-edge (cut to the as-built shed)', [
   { code: 'REAR', qty: 15, bar: [2188, [125, 22]], d: '2188 = 2080 wall (v2.4) + 2 \u00D754 square-cut corner tails \u2014 NEVER folded, ends sealed \u00B7 14 courses + 1 spare' },
   { code: 'SIDES', qty: 28, bar: [950, [125, 22]], d: 'measured rule: real SR + 2 \u00D7 real post depth \u2248 944 \u00B7 14 courses \u00D72 + 2 spare' },
-  { code: 'DOORS', qty: 24, bar: [960, [125, 22]], d: '960 \u00B7 12 courses \u00D72 doors \u2014 still to cut from the 1.05 m stack (final week)' },
+  { code: 'DOORS', qty: 24, bar: [936, [125, 22]], d: '<b>936 \u2014 ALREADY CUT 29 Sep, KEPT (never trimmed, zero-buy)</b> \u00B7 12 courses \u00D72 doors \u00B7 the opening was widened instead (step 49)' },
   { code: 'CORNER \u00D74', qty: 4, d: 'FLAT vertical corner boards (27 Sep) \u2014 ZERO-BUY (19 \u00A74b): rear top courses get first claim on 2 m+ boards \u2192 halve a spare long board (2 jointless per half) \u2192 else full 1.05 m board + offcut fill low down \u00B7 tops scribed ~1375 front / ~1565 rear' }
 ]);
 group('Roof \u00B7 Onduline 760 \u00D7 1000 \u00D7 2.6', [

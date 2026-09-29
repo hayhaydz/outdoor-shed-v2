@@ -323,7 +323,7 @@ const EXTRAS = {
   },
   lapsS: (c, t) => courseLines(c, t, 14, 936, CO.side.lines),
   lapsR: (c, t) => courseLines(c, t, 20, 2110, CO.rear.lines),
-  lapsD: (c, t) => courseLines(c, t, 8, 952, CO.door.lines),
+  lapsD: (c, t) => courseLines(c, t, 8, 928, CO.door.lines), // v2.8: 936-wide door
   /* ---- v2.6 doors (29 Sep, doc 22): hinge band eyes + anchor zones + hook pins ---- */
   eyesL: (c, t) => { // door 1 (hinge LEFT): the rings at the top of each 450 band
     [[25, 525], [25, 1125]].forEach(p => {
@@ -333,7 +333,7 @@ const EXTRAS = {
     chipDraw(c, t.X(150), t.Y(1125), 'EYE END UP');
   },
   eyesR: (c, t) => { // door 2 (hinge RIGHT)
-    [[935, 525], [935, 1125]].forEach(p => {
+    [[911, 525], [911, 1125]].forEach(p => {
       c.beginPath(); c.arc(t.X(p[0]), t.Y(p[1]), 13, 0, 7); c.fillStyle = '#fff'; c.fill();
       c.strokeStyle = PAL.ink; c.lineWidth = 1.8; c.stroke();
     });
@@ -346,7 +346,7 @@ const EXTRAS = {
   },
   anchorsR: (c, t) => { // door 2 (hinge RIGHT)
     c.save(); c.setLineDash([6, 4]); c.strokeStyle = PAL.check; c.lineWidth = 1.8;
-    [[935, 250], [935, 950]].forEach(p => { c.beginPath(); c.arc(t.X(p[0]), t.Y(p[1]), 55, 0, 7); c.stroke(); });
+    [[911, 250], [911, 950]].forEach(p => { c.beginPath(); c.arc(t.X(p[0]), t.Y(p[1]), 55, 0, 7); c.stroke(); });
     c.restore(); chipDraw(c, t.X(725), t.Y(1075), '66 ANCHORS — M5×60', PAL.check);
   },
   hooksF: (c, t) => { // front view: hook pins at the band-eye heights, plumb line per post
