@@ -41,8 +41,9 @@ const M = (() => {
   const sp = deck(-68.5), sq = deck(905.5);
   const SHEETp = [[sp[0] + 50 * nrm[0], sp[1] + 50 * nrm[1]], [sq[0] + 50 * nrm[0], sq[1] + 50 * nrm[1]],
                   [sq[0] + 58 * nrm[0], sq[1] + 58 * nrm[1]], [sp[0] + 58 * nrm[0], sp[1] + 58 * nrm[1]]];
-  // Door diagonal (door 1, hinge LEFT: bottom-hinge → top-lock), 50 wide band
-  const DIAG1 = [[111.7, 242], [811.7, 992], [868.3, 958], [168.3, 208]];
+  // Door diagonal (door 1, hinge LEFT: bottom-hinge → top-lock), 50 wide band.
+  // v2.6 (29 Sep): stile-to-stile over the FULL-WIDTH rails — centreline (25,250)→(935,950), ≈1148 cut.
+  const DIAG1 = [[10, 270], [920, 970], [950, 930], [40, 230]];
   const DIAG2 = DIAG1.map(p => [960 - p[0], p[1]]); // mirrored for door 2 (hinge right)
 
   const RS_X0 = 1027.5, RS_X1 = 1102.5; // RS/FILL centred on 1065
@@ -72,7 +73,12 @@ const M = (() => {
       DL1: [50, 72, 150, 1340], DL2: [2008, 2030, 150, 1340],
       RC1f: [50, 2030, 1390, 1440], SLf1: [-25, 50, 1384, 1438], SLf2: [2030, 2105, 1384, 1438],
       SHEETf: [-100, 2180, 1438, 1446],                  // sheet eaves edge over the doors (exaggerated)
-      DOORSg: [-10, 950, 150, 1350], DOORSc: [1130, 2090, 150, 1350] // door pair, overlay (ghost)
+      // v2.6 (29 Sep): flat corner boards on the front posts (19 §4b) + the hanging hardware.
+      // Doors 960 each over the 1980 opening: gaps 15 / 30 / 15 (post inner faces 50 / 2030).
+      CBf1: [0, 125, 325, 1375], CBf2: [1955, 2080, 325, 1375],   // corner boards, thick edge toward the opening
+      DOORSg: [65, 1025, 155, 1355], DOORSc: [1055, 2015, 155, 1355], // door pair, overlay (ghost)
+      HASP: [985, 1095, 975, 1040],                     // hasp across the 30 centre gap (schematic)
+      TB1: [1700, 1760, 180, 222], TB2: [1700, 1760, 1290, 1332] // turn-buttons, slave door top + bottom
     },
 
     side: { // (z,y) — front at LEFT (z 0), rear at RIGHT (z 950); walls 75 thick (v2.4)
@@ -108,10 +114,16 @@ const M = (() => {
     },
 
     door: { // (x,y) door 1 face up, hinge side LEFT
+      // v2.6 (29 Sep, doc 22): rails run the FULL 960 width, laid OVER both stiles —
+      // the hinge bands cross them and anchor into board+rail+stile = 66. DR was [130,830].
       DSa: [0, 50, 0, 1200], DSb: [910, 960, 0, 1200],
-      DRa: [130, 830, 225, 275], DRb: [130, 830, 925, 975],
+      DRa: [0, 960, 225, 275], DRb: [0, 960, 925, 975],
       DIAG: DIAG1, DIAGm: DIAG2,
-      BOARDS: [0, 960, 0, 1200]
+      BOARDS: [0, 960, 0, 1200],
+      // hinge bands (AG160 450 straps) on the hinge stile, eye end UP: bottoms 75 in from the
+      // door ends — each 450 band CROSSES its rail (bottom band 225–275, top band 925–975)
+      BANDb: [12, 38, 75, 525], BANDt: [12, 38, 675, 1125],
+      BANDb2: [922, 948, 75, 525], BANDt2: [922, 948, 675, 1125] // door 2, hinge RIGHT
     },
 
     rearSec: { // (z,y) rear-wall edge section (looking along the wall) — orientation view
@@ -124,14 +136,15 @@ const M = (() => {
     },
 
     doorSec: { // (x, stack) layer stack section at a stile/rail crossing — heights 22/44/66/88
-      L_DS: [0, 960, 0, 22], L_DR: [130, 830, 22, 44], L_DIAG: [[0, 44], [622, 44], [860, 66], [238, 66]],
-      L_BOARDS: [0, 960, 66, 88]
+      L_DS: [0, 960, 0, 22], L_DR: [0, 960, 22, 44], L_DIAG: [[0, 44], [720, 44], [960, 66], [240, 66]],
+      L_BOARDS: [0, 960, 66, 88],
+      L_BAND: [0, 50, 88, 94] // v2.6: the hinge strap lies ON the boards (board 88 + strap ~6)
     },
 
     doorPlan: { // (x,z) horizontal slice through the opening: posts, linings, overlay doors
       PPa: [0, 50, 0, 75], PPb: [2030, 2080, 0, 75],
       DLa: [50, 72, 0, 75], DLb: [2008, 2030, 0, 75],
-      D1: [-10, 950, -22, 0], D2: [1130, 2090, -22, 0]
+      D1: [65, 1025, -22, 0], D2: [1055, 2015, -22, 0]   // v2.6: gaps 15 outer / 30 centre, door width 960
     },
 
     /* ---- PHASE 11 — the anchor (doc 21). Bucket section schematic, mm-ish, on the 100 grid.
@@ -204,7 +217,15 @@ const M = (() => {
     { t: '8 v2.4 overlaps: SR = 850 = 800 gap + 2×25; screws cross the 50 everywhere', ok:
         eq(75 - P.plan.SR1p[2], 25) && eq(P.plan.SR1p[3] - 875, 25) && eq(P.plan.SR1p[3] - P.plan.SR1p[2], 850) },
     { t: '9 Corner tails (D12): 2188 = 2080 + 2×54, square-cut — NO folding', ok:
-        eq(2188, C.W_ALL + 2 * 54) && eq(P.side.WRAPs[0], C.D_ALL) && eq(P.side.WRAPs[1], C.D_ALL + 54) && eq(P.plan.WRp1[2], C.D_ALL) }
+        eq(2188, C.W_ALL + 2 * 54) && eq(P.side.WRAPs[0], C.D_ALL) && eq(P.side.WRAPs[1], C.D_ALL + 54) && eq(P.plan.WRp1[2], C.D_ALL) },
+    { t: '10 Doors v2.6: rails FULL-WIDTH 0–960 over both stiles; 12 courses ×100 = 1200 = stile height', ok:
+        eq(P.door.DRa[0], 0) && eq(P.door.DRa[1], C.DOOR_W) && eq(P.door.DRb[1], C.DOOR_W) && eq(courses.door.n * courses.door.pitch, C.DOOR_H) },
+    { t: '11 Hinge bands cross both rails (75-in bands × 450 span the 225–275 / 925–975 zones); straps + boards = 94', ok:
+        P.door.BANDb[2] < 225 && P.door.BANDb[3] > 275 && P.door.BANDt[2] < 925 && P.door.BANDt[3] > 975 &&
+        eq(P.door.BANDt[3] - P.door.BANDt[2], 450) && eq(P.doorSec.L_BAND[2], 88) },
+    { t: '12 Door gaps: 960 + 960 + 30 centre + 2×15 outer = 1980 opening (post inner faces 50 / 2030)', ok:
+        eq(P.doorPlan.D2[0] - P.doorPlan.D1[1], 30) && eq(P.doorPlan.D1[0] - 50, 15) && eq(2030 - P.doorPlan.D2[1], 15) &&
+        eq(P.doorPlan.D1[1] - P.doorPlan.D1[0], C.DOOR_W) }
   ];
 
   return { C, COS, SIN, deck, nrm, pieces, courses, VIEWS, view, checks };

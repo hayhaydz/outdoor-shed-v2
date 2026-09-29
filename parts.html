@@ -65,9 +65,15 @@ group('Frame \u00B7 75\u00D750 \u00B7 from the 8 sticks (18 pieces + 4 blocks)',
 group('Battens \u00B7 50\u00D722 \u00B7 from the 3 sticks (10 pieces)', [
   { code: 'DL1 / DL2', qty: 2, bar: [1200, [50, 22]], cls: 'bat', d: 'door linings (door stops) \u00B7 B1', g: [50, 22] },
   { code: 'DS1\u2013DS4', qty: 4, bar: [1200, [50, 22]], cls: 'bat', d: 'door stiles \u2014 the doors\u2019 full height \u00B7 B1 / B2 / B3', g: [50, 22] },
-  { code: 'DR1\u2013DR4', qty: 4, bar: [700, [50, 22]], cls: 'bat', d: 'door rails, laid OVER the stiles \u00B7 B2 / B3', g: [50, 22] },
-  { code: 'DIAG \u00D72', qty: 2, bar: [990, [50, 22]], cls: 'bat', d: '~990, SCRIBED from the B3 remainder at step 38', g: [50, 22] },
-  { code: 'B3 remainder', qty: 1, d: '~2.1 m kept whole \u2014 becomes the diagonals \u00B7 no batten is spare: offcuts reserved (front drip edge / door catches)' }
+  { code: 'DR1\u2013DR4', qty: 4, bar: [960, [50, 22]], cls: 'bat', d: 'door rails \u2014 <b>FULL WIDTH 960, OVER both stiles</b> (v2.6, 29 Sep: was 700 inset \u2014 the hinge bands anchor through them, step 37/46) \u00B7 ends flush with the stile edges', g: [50, 22] },
+  { code: 'DIAG \u00D72', qty: 2, bar: [1148, [50, 22]], cls: 'bat', d: '~1148 stile-to-stile over the rails (v2.6 \u2014 was ~990), SCRIBED +5 proud at step 38 \u00B7 one from the B3 remainder, one from the longest offcut (fallback: rail-to-rail ~1025)', g: [50, 22] },
+  { code: 'B3 remainder', qty: 1, d: '~2.1 m kept whole \u2014 covers ONE full-length diagonal + turn-buttons/catches; if 700 mm rails were already cut, they become the offcut pool (turn-buttons \u00D72, hook packers, door catches)' }
+]);
+group('Door ironmongery \u00B7 ALL OWNED (28 Sep) \u00B7 the hook & band idea in one breath', [
+  { code: 'BAND \u00D74', qty: 4, d: '450 hook & band straps (AG160) \u2014 2 per door, on the HINGE stile, 75 in from the door ends, EYE ENDS UP. Strap \u2192 board \u2192 rail \u2192 stile = 66 at the rail crossings (the anchor screws, M5\u00D760) \u00B7 M5\u00D745 elsewhere \u00B7 3.5 mm pilots' },
+  { code: 'HOOK \u00D74', qty: 4, d: 'L-pins for the posts \u2014 fixed THROUGH the front corner boards (5.0\u00D780, 4 mm pilots, threads soaped), on the FAT half of each corner board so the pin stands plumb \u00B7 adjustable: tap to true the doors' },
+  { code: 'HASP + STAPLE', qty: 1, d: 'heavy-duty hasp across the ~30 centre gap \u2014 FIT-CHECK before screwing (loop reaches, staple clears, shackle threads both) \u00B7 M5, 3.5 mm pilots' },
+  { code: 'TURN-BUTTON \u00D72', qty: 2, d: '~100\u00D740 batten offcuts, one centre screw each \u2014 rotate to hold the slave door top + bottom' }
 ]);
 group('Boards \u00B7 22\u00D7125 feather-edge (cut to the as-built shed)', [
   { code: 'REAR', qty: 15, bar: [2188, [125, 22]], d: '2188 = 2080 wall (v2.4) + 2 \u00D754 square-cut corner tails \u2014 NEVER folded, ends sealed \u00B7 14 courses + 1 spare' },
@@ -83,7 +89,7 @@ group('Fixings + consumables \u00B7 ZERO-BUY since 28 Sep (19 \u00A710 audit)', 
   { code: '5.0\u00D780', qty: 0, d: '~30\u201334 LEFT (66\u201370 went into the frame Sat 26) \u00B7 <b>\u00D78\u201312 RESERVED for the door hooks</b> (CSK head fits the M5 holes, ~60 into the post through the corner board) \u00B7 NOT for cladding \u2014 80 mm pokes through 50 members and splits feather edge' },
   { code: '4.0\u00D765', qty: 200, d: 'WALLS + door diagonals: side rakes \u00B7 rear top courses \u00B7 4 corner boards \u00B7 optional header batten (\u224850) \u2014 43 mm bite into the 47\u201350 members, no poke-through \u00B7 + \u00D716 for the 3-layer diagonal stacks \u00B7 3 mm pilots' },
   { code: '4.0\u00D745', qty: 200, d: 'DOORS ONLY: \u00D716\u201324 frame rail ends + ~150\u2013192 skins at REAL crossings (2 stiles + diagonal + occasional rail \u2248 3\u20134/board) \u00B7 pokes \u22646 mm through 22 battens \u2014 better than the planned 50 mm nails \u00B7 the ledger is tight: real crossings only' },
-  { code: 'M5 CSK', qty: 0, d: '<b>COUNT + MEASURE TONIGHT \u2014 it gates the whole zero-buy plan</b> \u00B7 need ~38 at 45\u201360 mm: hinge bands ~24 \u00B7 hasp + staple 8 \u00B7 turn-buttons 6 \u00B7 3.5 mm pilots \u00B7 4.0\u00D745 substitutes if short (then bands drop to 4/band)' },
+  { code: 'M5 CSK', qty: 0, d: '<b>COUNT + MEASURE TONIGHT \u2014 it gates the whole zero-buy plan</b> \u00B7 need ~38 at 45\u201360 mm: hinge bands ~24 (<b>\u00D760 at the rail crossings \u2014 the anchors</b>, \u00D745 plain) \u00B7 hasp + staple 8 \u00B7 turn-buttons 6 \u00B7 3.5 mm pilots \u00B7 4.0\u00D745 substitutes if short (then bands drop to 4/band)' },
   { code: 'SMOOTH NAILS', qty: 0, d: '~290 left \u2014 FALLBACK ONLY (the bought Wickes 287489 is smooth-shank, not ringshank; 27 Sep: all remaining cladding + door skins went SCREWED) \u00B7 usable in a daytime hammer window if a screw line runs dry' },
   { code: 'ONDULINE 65', qty: 200, d: 'roof nailed Sun 27 \u2014 ~90\u2013105 used \u00B7 <b>3 DEFECT nails</b>: snip flush + mastic + one replacement each into clear grain (19 \u00A73) \u00B7 check the tub before ordering more' },
   { code: 'MASTIC', qty: 1, d: 'bitumen roof mastic (on order, ~\u00A36) \u2014 the 3 defect heads/washers + any torn edge \u00B7 press in with a gloved finger' },

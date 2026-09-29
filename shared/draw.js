@@ -254,6 +254,8 @@ function picto(name, warnStyle) {
   switch (name) {
     case 'drill': x.beginPath(); x.rect(4, 8, 13, 7); L(); x.beginPath(); x.rect(17, 9.5, 5, 4); L(); x.beginPath(); x.moveTo(8, 15); x.lineTo(6, 23); x.lineTo(11, 23); x.lineTo(10, 15); x.closePath(); L(); break;
     case 'pilot': x.beginPath(); x.moveTo(6, 4); x.lineTo(20, 4); L(); x.beginPath(); x.moveTo(13, 4); x.lineTo(13, 16); L(); x.beginPath(); x.moveTo(13, 16); x.lineTo(10.5, 22); x.lineTo(13, 24); x.lineTo(15.5, 22); x.closePath(); L(); x.font = f(9, 800); x.textAlign = 'center'; x.fillText('3', 19.5, 24); break;
+    case 'pilot35': x.beginPath(); x.moveTo(4, 4); x.lineTo(22, 4); L(); x.beginPath(); x.moveTo(13, 4); x.lineTo(13, 16); L(); x.beginPath(); x.moveTo(13, 16); x.lineTo(10.5, 22); x.lineTo(13, 24); x.lineTo(15.5, 22); x.closePath(); L(); x.font = f(8, 800); x.textAlign = 'center'; x.fillText('3.5', 20, 24); break;
+    case 'pilot4': x.beginPath(); x.moveTo(4, 4); x.lineTo(22, 4); L(); x.beginPath(); x.moveTo(13, 4); x.lineTo(13, 16); L(); x.beginPath(); x.moveTo(13, 16); x.lineTo(10.5, 22); x.lineTo(13, 24); x.lineTo(15.5, 22); x.closePath(); L(); x.font = f(9, 800); x.textAlign = 'center'; x.fillText('4', 20, 24); break;
     case 'saw': x.beginPath(); x.moveTo(3, 9); x.lineTo(17, 9); x.lineTo(17, 15); x.lineTo(3, 15); x.closePath(); L(); x.beginPath(); for (let i = 3; i < 17; i += 3.5) { x.moveTo(i, 15); x.lineTo(i + 1.5, 19); } L(); x.beginPath(); x.rect(17, 8, 7, 8); L(); break;
     case 'level': x.beginPath(); x.rect(2, 9, 22, 8); L(); x.beginPath(); x.arc(13, 13, 2.6, 0, 7); L(); x.beginPath(); x.moveTo(13, 7.5); x.lineTo(13, 4); L(); break;
     case 'tape': x.beginPath(); x.rect(4, 6, 18, 14); L(); x.beginPath(); x.arc(13, 13, 4, 0, 7); L(); x.beginPath(); x.moveTo(22, 13); x.lineTo(26, 13); L(); break;
@@ -322,6 +324,44 @@ const EXTRAS = {
   lapsS: (c, t) => courseLines(c, t, 14, 936, CO.side.lines),
   lapsR: (c, t) => courseLines(c, t, 20, 2110, CO.rear.lines),
   lapsD: (c, t) => courseLines(c, t, 8, 952, CO.door.lines),
+  /* ---- v2.6 doors (29 Sep, doc 22): hinge band eyes + anchor zones + hook pins ---- */
+  eyesL: (c, t) => { // door 1 (hinge LEFT): the rings at the top of each 450 band
+    [[25, 525], [25, 1125]].forEach(p => {
+      c.beginPath(); c.arc(t.X(p[0]), t.Y(p[1]), 13, 0, 7); c.fillStyle = '#fff'; c.fill();
+      c.strokeStyle = PAL.ink; c.lineWidth = 1.8; c.stroke();
+    });
+    chipDraw(c, t.X(150), t.Y(1125), 'EYE END UP');
+  },
+  eyesR: (c, t) => { // door 2 (hinge RIGHT)
+    [[935, 525], [935, 1125]].forEach(p => {
+      c.beginPath(); c.arc(t.X(p[0]), t.Y(p[1]), 13, 0, 7); c.fillStyle = '#fff'; c.fill();
+      c.strokeStyle = PAL.ink; c.lineWidth = 1.8; c.stroke();
+    });
+    chipDraw(c, t.X(810), t.Y(1125), 'EYE END UP');
+  },
+  anchorsL: (c, t) => { // where each band crosses its rail = the 66 mm anchor spots (door 1)
+    c.save(); c.setLineDash([6, 4]); c.strokeStyle = PAL.check; c.lineWidth = 1.8;
+    [[25, 250], [25, 950]].forEach(p => { c.beginPath(); c.arc(t.X(p[0]), t.Y(p[1]), 55, 0, 7); c.stroke(); });
+    c.restore(); chipDraw(c, t.X(235), t.Y(1075), '66 ANCHORS — M5×60', PAL.check);
+  },
+  anchorsR: (c, t) => { // door 2 (hinge RIGHT)
+    c.save(); c.setLineDash([6, 4]); c.strokeStyle = PAL.check; c.lineWidth = 1.8;
+    [[935, 250], [935, 950]].forEach(p => { c.beginPath(); c.arc(t.X(p[0]), t.Y(p[1]), 55, 0, 7); c.stroke(); });
+    c.restore(); chipDraw(c, t.X(725), t.Y(1075), '66 ANCHORS — M5×60', PAL.check);
+  },
+  hooksF: (c, t) => { // front view: hook pins at the band-eye heights, plumb line per post
+    // door bottoms sit ~155: eyes at 155+525=680 / 155+1125=1280 → pins ~675 / 1275
+    c.save(); c.setLineDash([10, 5]); c.strokeStyle = PAL.check; c.lineWidth = 1.6;
+    [25, 2055].forEach(x => { c.beginPath(); c.moveTo(t.X(x), t.Y(675)); c.lineTo(t.X(x), t.Y(1275)); c.stroke(); });
+    c.restore();
+    [[25, 675], [25, 1275], [2055, 675], [2055, 1275]].forEach(p => {
+      c.beginPath(); c.arc(t.X(p[0]), t.Y(p[1]), 9, 0, 7); c.fillStyle = '#fff'; c.fill();
+      c.strokeStyle = PAL.ink; c.lineWidth = 1.6; c.stroke();
+      c.beginPath(); c.arc(t.X(p[0]), t.Y(p[1]), 2.6, 0, 7); c.fillStyle = PAL.ink; c.fill();
+    });
+    chipDraw(c, t.X(190), t.Y(975), 'PINS PLUMB', PAL.check);
+    chipDraw(c, t.X(1890), t.Y(975), 'PINS PLUMB', PAL.check);
+  },
   wraps: (c, t) => {
     c.save(); c.setLineDash([6, 4]); c.strokeStyle = PAL.dim; c.lineWidth = 1.2;
     [0, 2080].forEach(x => { c.beginPath(); c.moveTo(t.X(x), t.Y(-20)); c.lineTo(t.X(x), t.Y(1580)); c.stroke(); });

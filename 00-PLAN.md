@@ -1,6 +1,7 @@
 # 00 — PLAN · v2 Guide (IKEA-style, mobile-first, accurate)
 
 
+> **v2.7 PATCH (29 Sep, evening):** **DOORS rebuilt around the full-width rail decision** (source: `../v2-2026-09-17/22-doors-explained-simply.md` — the plain-words companion). (1) **DR rails now run the FULL 960** over both stiles, screwed into them (was 700, inset 130, never touching the stiles — the old step-37 numbers contradicted their own screw step). (2) **DIAG goes stile-to-stile ~1148** over the rails (fallback ~1025 rail-to-rail). (3) **NEW steps 46–48**: bands on (eyes UP, slid off the laps, M5×60 anchors at the rail crossings = strap→board→rail→stile 66) · hang (hooks marked THROUGH the hanging eyes, pins plumb, tap-to-adjust) · lock (hasp fit-check, turn-buttons, padlock). (4) Model: `BANDb/BANDt (+2 mirrors)`, `L_BAND`, `CBf1/CBf2`, `HASP`, `TB1/TB2`; door ghosts/doorPlan gaps corrected to 15/30/15; invariants 10–12. (5) draw EXTRAS `eyesL/eyesR/anchorsL/anchorsR/hooksF`, pictos `pilot35/pilot4`. Now **48 steps, 12 phases**. Number-audit ALLOWED += 66, 4.
 > **v2.6 PATCH (29 Sep):** **NEW PHASE 11 — the anchor** (steps 42–45, source `../v2-2026-09-17/21-anchor-pour-baby-steps.md`): the bucket pour as baby steps — everything-ready-first → bag 1 (half → 1 L bottle → poke → rest) → bag 2 (stop ~25 below the rim) → 5–7 day cure + chain high/off-ground. Bought 29 Sep: 2 × Build It Postfix 20 kg (Toolstation AH689, £6.99 ea — site fetch finally worked) + the 27 L bucket ≈ **45 kg block** (2 bags ≈ 26–27 L compacted, water ~5–6 L total in 1 L-bottle measures). Model: new kinds `anchor` (bucket cross-section) + `anchorPlan`, plan pieces `ANCHp`/`BIKE1`/`BIKE2`; draw: EXTRAS `rimA`/`chainA`/`chainP`, pictos `bottle`/`timer`. Now **45 steps, 12 phases**; qa number-audit ALLOWED extended with the anchor dims.
 > **v2.5 AS-BUILT PATCH (28 Sep evening):** guide content re-synced to the final-week decisions (source: `../v2-2026-09-17/19-status-2026-09-27-final-week.md` + `20-baby-steps-to-friday.md`, plus the 28-Sep revisions inside `02`/`03`/`11`/`12`/`16`). Deltas applied to steps 29–41, parts + tools pages: **(1) all remaining cladding + door skins fixed with SCREWS, not nails** — walls/corner boards 4.0×65, door skins 4.0×45, 3 mm pilots, zero evening hammering (noise + wrist + the smooth-shank reality of the bought nails); **(2) hinge bands + hasp now M5 CSK from stock** (AG160 holes are CSK ~M5; the M10 bolt scheme is parked as a documented future upgrade — `02` §3d); hooks = 5.0×80 ×8–12; **(3) corners closed by four FLAT vertical corner boards** screwed to the post faces (extends D12 — nothing bends anywhere); **(4) rake datum = the roof sheet edge** (the sloped rail is hidden under the fixed roof); **(5) roof as-fixed carries 3 defect nails** → snip/mastic/replace into clear grain; **(6) fixings are ZERO-BUY** per the 28 Sep stock audit (`19` §10 — the M5 count gates it); ironmongery all owned (28 Sep). Build status: frame up Sat 26, roof on Sun 27, walls to the box line — D9's "nothing built yet" is historical.
 > **v2.4 AS-BUILT (25 Sep evening):** frame flipped — walls 75 thick, rails 50 tall, posts 50 across; side rails = inside overlaps (SRb 200–275, SRt 1265–1340); SLs centred on the post lines (inner faces x=50/2030); overall 2080, envelope 2124, eaves ~78; RS trims to ~1140; rear tails 2×54. Bands below updated where load-bearing. Full record: `../v2-2026-09-17/18-v2.4-as-built-orientation-flip.md`.
@@ -69,7 +70,7 @@ z : depth     0 = outer face FRONT posts → 950 (rear)     [ONE z everywhere �
 | Sheets | 760×1000, 8 corr @ 95 | side lap 1 corr = 95; boundaries −75…685 / 590…1350 / 1255…2015 / strip 1920…2205 |
 | Roof envelope | **2124** wall faces (v2.4); sheets cover 2280 | eaves ≈ **78**/side; down-slope overhang ≈ 16/end (recompute exactly at build) |
 | Cladding | 25 lap / 100 exposure | sides: 14 courses from 150 + raked course · rear: 14 courses from 145, laps eased to land on 1580 · doors: 12 courses = 1200 exactly |
-| Doors | 960 × 1200, overlay | stiles 1200; rails 700 centred 250/950 from bottom; diagonal ~990 scribed |
+| Doors | 960 × 1200, overlay | stiles 1200; **rails 960 FULL WIDTH (v2.7)** centred 250/950 from bottom; diagonal ~1148 stile-to-stile scribed |
 
 ### 3.2 Piece table (exact bands — encode verbatim in `model.js`)
 
@@ -112,7 +113,7 @@ z : depth     0 = outer face FRONT posts → 950 (rear)     [ONE z everywhere �
 
 **Plan (x, z) — front drawn at the BOTTOM of the canvas:** SL1 x 0–75 · SL2 x 2055–2130 (both z ≈ 2–950) · RC1 z 0–50 · RC2 z 450–500 · RC3 z 900–950 (all x 75–2055) · posts at corners · FT z 0–50.
 
-**Door (per door, face up):** DS stiles x 0–50 and 910–960, y 0–1200 · DR rails x 130–830 at y 225–275 and 925–975 · DIAG ~990 bottom-hinge→top-lock, mirrored on door 2 · BOARDS 12 courses y 0–1200, bottom-up, 25/100.
+**Door (per door, face up — v2.7):** DS stiles x 0–50 and 910–960, y 0–1200 · DR rails **x 0–960 FULL WIDTH over both stiles** at y 225–275 and 925–975 · DIAG ~1148 stile-to-stile, bottom-hinge→top-lock, mirrored on door 2 · BANDs on the hinge stile, 75 in from the ends (each 450 crosses its rail: anchor = board+rail+stile 66) · BOARDS 12 courses y 0–1200, bottom-up, 25/100 · gaps 15 outer / 30 centre over the 1980 opening.
 
 ### 3.3 Invariants (assert in `model.js`, surface as visible chips on `qa.html`)
 
@@ -165,7 +166,7 @@ Zero dependencies, no build step, works offline from `file://` on a phone.
   parts.html                 IKEA page-1 parts sheet (NEW)
   tools.html                 tools + consumables + golden rules (NEW)
   phase00.html … phase11.html   12 phase dividers (NEW)
-  step01.html … step45.html     45 steps (regenerated stubs, same 9-line pattern as v1)
+  step01.html … step48.html     48 steps (46–48 added by v2.7 — same 9-line shell pattern)
   qa.html                    dev harness: renders every view + invariant chips (NEW, unlinked)
   shared/
     model.js                 constants, piece table, derived views, asserts   (NEW)
@@ -260,7 +261,8 @@ Title block (project, "read parts + tools first"), the corrected **4-view multi-
 ### 8.2 `parts.html` — parts sheet (IKEA page 1)
 Every piece drawn to scale, grouped by subsystem, each with code, ×qty, cut length, orientation glyph:
 - **Frame 75×50 (18 + 4 blocks):** per stick mapping (S1→RR1+RP1 … S8→SR1–4) with offcuts noted; **RS: "cut 1150 — trim to ~1090 at step 06"**; **FILL: "~190 — cut from S3/S4 ~225 offcut"**; blocks 140 ×4.
-- **Battens 50×22:** DL1/DL2 1200; DS 1200×4; DR 700×4; DIAG ~990 ×2 scribed; B3 remainder kept whole.
+- **Battens 50×22:** DL1/DL2 1200; DS 1200×4; **DR 960×4 FULL WIDTH (v2.7)**; **DIAG ~1148 ×2 scribed (v2.7)**; B3 remainder covers one diagonal + turn-buttons/catches.
+- **Door ironmongery (all owned, v2.7 group on parts page):** 4×450 bands + 4 hooks + hasp/staple + 2 turn-buttons (batten offcuts).
 - **Boards:** rear 2188 ×15 (+1 spare); sides 944–950 ×28 (+2 spare); doors 960 ×24.
 - **Sheets:** 3 full + strip diagram (cut the 4th along a valley → 285 strip + spare).
 - **Fixings/consumables:** 5.0×80 ×100 (budget ~64 frame day), 4.0×45 / 4.0×65 door screws, ring-shanks, ~90–105 Onduline 65 mm, sealer.
@@ -320,10 +322,13 @@ Every step renders V1 + V2 + TOP regardless of the primary view below — the ta
 | 34 | courses 2–14 | rear | eased laps to land 1580; level checks |
 | 35 | corners + braces OFF | rear | weatherproof gate; rack test |
 | 36 | door stiles + 960 spacers | door | width via spacer blocks |
-| 37 | rails over stiles | door | layer 2, centred 250/950 |
-| 38 | diagonal | door | bottom-hinge → top-lock inset; compression direction |
-| 39 | boards ×12 | door | bottom-up; nails not screws (security note) |
+| 37 | rails over stiles — FULL WIDTH 960 | door | layer 2, centred 250/950, ends flush = the width |
+| 38 | diagonal stile-to-stile ~1148 | door | bottom-hinge → top-lock; compression direction |
+| 39 | boards ×12 | door | bottom-up; SCREWED (27 Sep); bottom board = ends only |
 | 40 | door 2 mirrored | door | mirrored diagonal; hinge-side labels |
+| 46 | bands on | door | eyes UP; slid off the laps; M5×60 anchors at the rail crossings |
+| 47 | hang day | front + doorPlan | hooks marked through the hanging eyes; pins plumb; tap-to-adjust |
+| 48 | lock up | front centre | hasp fit-check; turn-buttons; padlock; chain |
 | 41 | the finished box | all 3 elevations | final check list: 1390 box, 1580 rear, 150 strip open, roof rows, seals |
 | 42–45 | the anchor pour | bucket SECTION | new kinds `anchor`/`anchorPlan`; 42 ready-first, 43 bag 1, 44 bag 2 stop-below-rim, 45 cure + chain |
 
@@ -360,7 +365,7 @@ Screw budgets carried/adjusted from v1 + docs (~64 frame-day screws; door screws
 ## 11. Out of scope / future
 
 - **Any 3D rendering** — axonometric, perspective, exploded 3D, isometric (explicitly declined, D10). Multi-view 2D projections only.
-- Door hanging, ironmongery, hinges/hasp (deliberately deferred to the doors track — unchanged from v1).
+- ~~Door hanging, ironmongery, hinges/hasp (deferred in v1)~~ — **now IN the guide as steps 46–48 (v2.7).**
 - PWA/offline manifest, swipe, progress persistence (explicitly declined, D8).
 - PDF export of the new guide (old PDFs untouched).
 - If measured timber (68–73 × 45–48 actual) matters later: nominal drawn, note on parts page only.
