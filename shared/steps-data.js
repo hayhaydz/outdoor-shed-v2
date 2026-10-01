@@ -1,10 +1,13 @@
 /* steps-data.js — declarative content: PHASES + STEPS (49). Views per D11: every step = triptych.
    Geometry ids resolve in model.js M.pieces. Technique ported from v1 guide + v2 docs 09–12.
-   v2.8 (29 Sep evening, doc 23): ZERO-BUY doors — boards stay 936 AS CUT, the OPENING moves
-   instead (linings rotated flat, step 49); lower rail one full 936 piece, upper rail a SPLIT
-   ~350 pair from the 700s; diagonal ~1129 scribed; gaps ~14/29/14 over the ~1929 clear.
+   v2.9 (1 Oct, doc 24): the four 700 rails used AS CUT, slid hard to the HINGE side (hinge
+   ends flush over the hinge stile — the 66 mm strap anchors survive, no offcut lottery); the
+   lock side gets a DOUBLED vertical + offset fill pieces (186 on the lower line, ~250 at the
+   hasp height 600) → hasp screws bite board+fill+vertical = 66 mm of frame.
+   v2.8 (29 Sep evening, doc 23): boards stay 936 AS CUT, the OPENING moves instead (linings
+   rotated flat, step 49); diagonal ~1129 scribed; gaps ~14/29/14 over the ~1929 clear.
    v2.6 (29 Sep, doc 22): doors — hinge-band anchor scheme + steps 46–48 (bands on · hang · lock).
-   Plain-words companion: ../v2-2026-09-17/23 (numbers) + 22 (the words). */
+   Plain-words companion: ../v2-2026-09-17/24 (frame, numbers) + 22 (the words). */
 'use strict';
 
 const PHASES = {
@@ -28,8 +31,8 @@ const PHASES = {
     views: [{ kind: 'side', label: 'SIDE', sub: 'courses 1\u201314 + rake', built: ['FP', 'RP', 'FT', 'FH', 'RR1', 'RR2', 'RS', 'FILL', 'SRb', 'SRt', 'SLp', 'RCp1', 'RCp2', 'RCp3'], new: ['CLADs1', 'CLADs_RUN', 'CLADs14'], extras: ['groundS', 'padsS', 'datum150', 'slope'], labels: { CLADs1: 'course 1', CLADs_RUN: 'courses 2\u201313', CLADs14: 'rake' } }] },
   phase09: { num: '09', title: 'Rear cladding', steps: ['step33', 'step34', 'step35'], lead: 'Courses to ~1390 DONE Sat 26. Remaining: top ~2 courses to the 1580 plane + four FLAT corner boards \u2014 nothing folds, nothing bends (27 Sep). Weatherproof gate: braces off here.', handle: 'Top courses \u00D72 \u00B7 4 corner boards (ZERO-BUY: spares/offcuts, 19 \u00A74b) \u00B7 4.0\u00D765 + sealer', meta: [['drill', 'Driver only \u2014 no hammer'], ['wind', 'Boards catch wind']],
     views: [{ kind: 'rear', label: 'REAR', sub: '14 courses, square-cut corner tails', built: ['RP1', 'RP2', 'RR1', 'RR2', 'RS', 'FILL', 'RC3r', 'SLr1', 'SLr2'], new: ['CLADr_ALL'], extras: ['groundR', 'padsR', 'datum145', 'wraps'], post: ['lapsR'], labels: { CLADr_ALL: 'courses 1\u201314' } }] },
-  phase10: { num: '10', title: 'Doors + finish', steps: ['step49', 'step36', 'step37', 'step38', 'step39', 'step40', 'step46', 'step47', 'step48', 'step41'], lead: 'Two flat sandwiches \u2014 and one trick that makes the hole bigger instead of the doors smaller. v2.8 (29 Sep evening, doc 23): the boards stay 936 AS CUT, nothing is bought. Step 49 widens the opening (turn the two side strips flat); the bottom bar is one full piece, the top bar is two short stubs from an old 700 \u2014 the hinge anchors keep their full 66 mm either way. Steps 46\u201348 = bands \u00B7 hang \u00B7 lock.', handle: 'Stiles \u00D74 (1200) \u00B7 bottom rails 936 \u00D72 (batten offcuts B2/B3) \u00B7 top stubs ~350 \u00D74 (two 700s halved) \u00B7 diagonals \u00D72 (~1129 scribed, B1 + B3) \u00B7 24 boards (936 \u2014 ALREADY CUT, kept) \u00B7 4\u00D7450 bands + 4 hooks + hasp (owned)', meta: [['drill', 'Evening track'], ['photo', 'Final survey']],
-    views: [{ kind: 'door', label: 'DOOR', sub: 'full bottom bar \u00B7 stub pair up top \u00B7 bands over both', built: ['DSa', 'DSb', 'DRa', 'DRb', 'DRc'], new: ['DIAG'], ghost: ['BANDb', 'BANDt'], post: ['lapsD', 'eyesL', 'anchorsL'], dims: [{ k: 'v', a: 0, b: 1200, x: 1080, t: '1200', s: 'r' }] }] },
+  phase10: { num: '10', title: 'Doors + finish', steps: ['step49', 'step36', 'step37', 'step38', 'step39', 'step40', 'step46', 'step47', 'step48', 'step41'], lead: 'Two flat sandwiches \u2014 and one trick that makes the hole bigger instead of the doors smaller. v2.9 (1 Oct, doc 24): the four old <b>700 rails are used AS CUT</b>, both slid hard to the <b>HINGE side</b> of each door \u2014 the hinge anchors keep their full 66 mm. The lock side gets a <b>doubled edge</b> (a second vertical) + short <b>offset fill pieces</b>, so the padlock hasp screws bite frame, not boards. Steps 46\u201348 = bands \u00B7 hang \u00B7 lock.', handle: 'Stiles \u00D74 (1200) \u00B7 rails = the four 700s AS CUT (2/door, hinge-flush) \u00B7 lock verticals \u00D72 (B3 remainder + B2) \u00B7 fill pieces \u00D72+/door (rear board offcuts: 186 + ~250) \u00B7 diagonals \u00D72 (~1129 scribed, B1 + B3) \u00B7 24 boards (936 \u2014 ALREADY CUT, kept) \u00B7 4\u00D7450 bands + 4 hooks + hasp (owned)', meta: [['drill', 'Evening track'], ['photo', 'Final survey']],
+    views: [{ kind: 'door', label: 'DOOR', sub: '700 bars hinge-side \u00B7 lock kit \u00B7 bands over both', built: ['DSa', 'DSb', 'DRa', 'DRb', 'DV', 'DFA', 'DFB'], new: ['DIAG'], ghost: ['BANDb', 'BANDt'], post: ['lapsD', 'eyesL', 'anchorsL'], dims: [{ k: 'v', a: 0, b: 1200, x: 1080, t: '1200', s: 'r' }] }] },
   phase11: { num: '11', title: 'The anchor', steps: ['step42', 'step43', 'step44', 'step45'], lead: 'Two bags of no-mix concrete + the 27 L bucket = a ~45 kg block with the security anchor cast in. Powder first, THEN a little water — never the other way round. Sets in 5–10 minutes, so every step is ready-first.', handle: '2 × 20 kg Build It Postfix (AH689) · 27 L bucket · Ryde cement-in anchor · 1 L bottle (the measure) · poking stick', meta: [['timer', 'Set in 5–10 min'], ['level', 'Level ground'], ['helper', 'Solo OK']],
     views: [{ kind: 'anchor', label: 'SECTION', sub: 'the finished block', built: ['BKT', 'PWDR_C', 'ANC_BODY', 'HOOP_L', 'HOOP_R', 'HOOP_T'], extras: ['rimA', 'chainA'],
       labels: { PWDR_C: '2 bags ≈ 26–27 L', ANC_BODY: 'Ryde 180' }, dims: [{ k: 'v', a: 315, b: 414, x: -90, t: '~100 clear', s: 'l' }] }] }
@@ -684,7 +687,7 @@ step49: { phase: 'phase10', title: 'Make the hole bigger \u2014 turn the side st
     'Turn it <b>FLAT</b> \u2014 wide face against the post, only <b>22 mm</b> poking in. Screw it back (same screws, 3 mm pilots). You just bought <b>28 mm</b> of hole. Both sides: <b>+56 \u2192 the hole is ~1929</b>. The doors now fit with ~14 / 29 / 14 gaps \u2014 almost exactly the plan\u2019s 15 / 30 / 15.',
     'Nothing touches these strips once the doors hang \u2014 the doors sit IN FRONT of the whole wall. The strips are just tidy edges now; losing the deep edge costs nothing.',
     'THE TWO WONKY BOARDS at the front corners (CORNER BOARDS \u2014 the door hooks screw through them on hang day): unscrew each, stand it <b>upright per the level bubble</b>, <b>thick edge toward the hole</b>, outer edge in line with the corner, screw back (3\u20134 \u00D7 4.0\u00D765, pilots). Straight board = straight hook pins = a door that swings instead of jamming. (This does NOT widen the hole \u2014 doors pass in front \u2014 it makes the side gaps EVEN.)',
-    'MEASURE + WRITE DOWN \u2014 5 numbers (doc 23 \u00A77): the hole between the flat strips at <b>top / middle / bottom</b> (want \u22651912, best ~1929; if one end is narrower, the hooks get set off the NARROW end) \u2026 and the lengths of your <b>3 batten offcuts</b> (B1 / B2 / B3 \u2014 the rails and braces come out of them next).'
+    'MEASURE + WRITE DOWN \u2014 5 numbers (doc 23 \u00A77): the hole between the flat strips at <b>top / middle / bottom</b> (want \u22651912, best ~1929; if one end is narrower, the hooks get set off the NARROW end) \u2026 and the lengths of your <b>3 batten offcuts</b> (B1 / B2 / B3 \u2014 the diagonals and lock-side verticals come out of them next).'
   ],
   pieces: [['LINING', '1200 \u00D750\u00D722 \u00D72 (reused, no cut)', 'FLAT \u2014 22 mm into the hole', 0, [50, 22], 2], ['CORNER BOARD', 'repositioned, no cut', 'plumb \u00B7 thick edge toward the hole', 0, [125, 22], 2]],
   tools: ['drill', 'pilot', 'level', 'tape', 'marker', 'pencil'],
@@ -712,52 +715,56 @@ step36: { phase: 'phase10', title: 'Door 1 \u2014 the two tall posts + a board a
   tools: ['clamp', 'tape', 'square', 'pencil', 'marker'],
   checks: ['Board ends flush with BOTH stile outer edges \u2014 width 936.', 'Marks at 250 and 950 on both stiles.', 'Hinge side labelled with an arrow.'] },
 
-step37: { phase: 'phase10', title: 'The bars \u2014 ONE long + TWO short stubs (the zero-buy trick)',
+step37: { phase: 'phase10', title: 'The bars \u2014 both 700s hard to the HINGE side (+ the lock kit)',
   panels: [
-    { kind: 'door', label: 'DOOR', sub: 'layer 2 \u2014 full 936 bottom bar \u00B7 stub pair up top', built: ['DSa', 'DSb'], new: ['DRa', 'DRb', 'DRc'], labels: { DSa: 'DS1', DSb: 'DS2', DRa: 'DR1 \u2014 936 full', DRb: 'stub', DRc: 'stub' },
-      screws: [[15, 250], [35, 250], [15, 950], [35, 950], [901, 950], [921, 950]], screwChip: '\u00D72 per corner / stub',
-      dims: [{ k: 'h', a: 0, b: 936, y: -80, t: '936 \u2014 the bottom bar sets it' }, { k: 'v', a: 0, b: 250, x: -120, t: '250', s: 'l' }, { k: 'v', a: 0, b: 950, x: -60, t: '950', s: 'l' }] },
+    { kind: 'door', label: 'DOOR', sub: 'layer 2 \u2014 two 700 bars hinge-flush \u00B7 lock kit on the right', built: ['DSa', 'DSb'], new: ['DRa', 'DRb', 'DV', 'DFA', 'DFB'], labels: { DSa: 'DS1', DSb: 'DS2', DRa: 'DR1 \u2014 700', DRb: 'DR2 \u2014 700', DV: 'lock vert', DFA: 'fill 186', DFB: 'fill \u2014 hasp' },
+      screws: [[15, 250], [35, 250], [15, 950], [35, 950], [861, 250], [861, 600], [861, 950]], screwChip: '\u00D72 per joint',
+      dims: [{ k: 'h', a: 0, b: 700, y: -80, t: '700 \u2014 as cut' }, { k: 'h', a: 700, b: 886, y: -80, t: '186 fill' }, { k: 'v', a: 0, b: 250, x: -120, t: '250', s: 'l' }, { k: 'v', a: 0, b: 950, x: -60, t: '950', s: 'l' }] },
     { kind: 'doorSec', label: 'SECTION', sub: 'stack now 44', built: ['L_DS'], new: ['L_DR'], labels: { L_DR: 'rails 44' } },
     { kind: 'doorPlan', label: 'PLAN', sub: 'overlay position', built: ['PPa', 'PPb', 'DLa', 'DLb'], new: ['D1'] }
   ],
   insets: [
-    { kind: 'door', tag: 'top bar = two stubs over the posts \u2014 the middle gap is FINE', bnd: [-40, 980, 800, 1120], built: ['DSa', 'DSb'], new: ['DRb', 'DRc'], screws: [[15, 950], [35, 950], [901, 950], [921, 950]], minor: 50 }
+    { kind: 'door', tag: 'the anchor zone \u2014 each bar sits OVER the hinge stile', bnd: [-60, 330, 120, 500], built: ['DSa'], new: ['DRa'], screws: [[25, 250]], minor: 50 },
+    { kind: 'door', tag: 'lock edge: doubled vertical + fills \u2014 the hasp bites 66 mm of frame', bnd: [540, 1010, 100, 1150], built: ['DSb'], new: ['DV', 'DFA', 'DFB'], screws: [[861, 250], [861, 600], [861, 950]], minor: 50 }
   ],
   actions: [
-    'WHY THIS SHAPE (doc 23 \u2014 nothing bought): the fancy plan wanted four long 936 bars. You have two long batten offcuts and four old 700s \u2014 so: <b>bottom bar = ONE full 936 piece</b>, <b>top bar = TWO ~350 stubs</b>, one over each post. The hinge straps only ever cross the bars WHERE THEY SIT ON POSTS \u2014 the stubs feed the anchors exactly what a long bar would (board + bar + post = 66 mm). The middle of the top bar held only board screws, and boards don\u2019t need it: your bottom board already spans mid-air by design.',
-    'CUT (offcut lengths measured at step 49): one <b>936</b> off a long batten \u2014 door 1\u2019s from <b>B2</b> (~980), door 2\u2019s from <b>B3</b> (~2180). Take one old <b>700 rail and halve it</b> \u2192 two stubs ~350. No precision needed on the halving.',
-    'BOTTOM BAR: lay the 936 across at the <b>250</b> marks, <b>ends flush with the stile outer edges</b>. The bar now SETS the door width \u2014 the step-36 board just double-checks it. Clamp \u2192 3 mm pilot \u2192 <b>2 \u00D7 4.0\u00D745 at each end</b> (22 bar + 22 stile = 44).',
-    'TOP STUBS: one over each stile at the <b>950</b> marks, <b>outer ends flush</b> with the stile outer edges. 2 screws each, same recipe.',
-    'The gap between the two stubs is not a mistake \u2014 the slanting brace (next step) crosses exactly there and ties the halves together.'
+    'WHY THIS SHAPE (doc 24): your four bars were cut <b>700</b> for an older, narrower door plan. They cannot span 936 \u2014 and nothing is being bought. So <b>slide BOTH bars hard to the HINGE side</b>, ends flush with the hinge edge. There each bar sits <b>ON TOP of the hinge stile</b> \u2014 exactly where the metal straps will cross it (step 46): strap \u2192 board \u2192 bar \u2192 stile = <b>66 mm, the anchors</b>. A full-width bar would give the hinges nothing more than that. The hinge side is the side that carries the door \u2014 that is where the wood goes.',
+    'NO CUTTING OF THE 700s \u2014 they go on as cut. The gap they leave on the lock side is <b>186</b> (bar end at 700, lock stile face at 886).',
+    'THE LOCK KIT, three small pieces: <b>FILL A</b> \u2014 a 186 piece butted hard against the LOWER bar\u2019s end, finishing that line to the lock stile (cut from a rear board offcut ~270). <b>FILL B</b> \u2014 a ~250 piece at the <b>600 mark</b> (the future hasp height). <b>LOCK VERTICAL</b> \u2014 a second vertical batten tight against the lock stile\u2019s inner face, centred top-to-bottom (door 1: the B3 remainder ~1030 \u00B7 door 2: the B2 offcut ~980). 3 skew screws into the stile.',
+    'THE POINT OF THE KIT: the lock edge is now <b>DOUBLE thickness</b>, and the hasp screws (step 48) land on <b>board + fill B + vertical = 66 mm of solid frame</b> \u2014 not thin wedge boards. That is the whole idea.',
+    'HEIGHTS: bars on the <b>250 / 950</b> marks as before. The one alignment that matters: <b>hinge ends FLUSH with the hinge edge</b> \u2014 that IS the anchor.',
+    'SCREWS: 3 mm pilot always. Bars \u2192 hinge stile: <b>2 \u00D7 4.0\u00D745</b> each. Fills: 2 screws each into the lock vertical. The butt joints need no screws of their own \u2014 the board rows above (step 39) screw through BOTH sides of every butt and tie them.',
+    'KEEP EVERY FILL BELOW THE 750 MARK \u2014 the slanting stick (next step) passes through this zone above that height.'
   ],
-  pieces: [['DR1', '936 \u00D750\u00D722 \u00D72 \u2014 door 1: B2 \u00B7 door 2: B3', '50 up (flat), OVER both stiles', 0, [50, 22], 2], ['DR2a/b', '~350 \u00D750\u00D722 \u00D74 \u2014 two 700s halved', 'over each stile \u00B7 outer ends flush', 0, [50, 22], 4]],
+  pieces: [['DR1/DR2', '700 \u00D750\u00D722 \u00D72/door \u2014 AS CUT, never recut', 'flat, OVER the hinge stile \u00B7 hinge ends flush', 0, [50, 22], 4], ['LOCK VERT', '~975\u20131030 \u00D750\u00D722', 'stile layer, tight inboard of the lock stile', 0, [50, 22], 2], ['FILL A', '186 \u00D7 rear board offcut (~270\u00D7125\u00D722)', 'lower line \u00B7 butts the bar end at 700', 0, [50, 22], 2], ['FILL B', '~250 \u00D7 rear board offcut', 'centre 600 \u2014 the hasp backing', 0, [50, 22], 2]],
   tools: ['drill', 'pilot', 'clamp', 'square', 'saw'],
-  checks: ['Bottom-bar ends flush both sides \u2014 the width IS 936 by construction.', 'Stubs centred at 950, outer ends flush with the stile edges.', 'Every screw into a 3 mm pilot first.'] },
+  checks: ['Both bar ends flush with the hinge edge, each bar sitting OVER the hinge stile \u2014 the anchors.', 'Lock vertical tight to the lock stile, centred; fills butted tight, everything below 750.', 'Every screw into a 3 mm pilot first.'] },
 
 step38: { phase: 'phase10', title: 'The slanting stick \u2014 squeeze the door square',
   panels: [
-    { kind: 'door', label: 'DOOR', sub: 'layer 3 \u2014 corner to corner over the bars', built: ['DSa', 'DSb', 'DRa', 'DRb', 'DRc'], new: ['DIAG'],
+    { kind: 'door', label: 'DOOR', sub: 'layer 3 \u2014 corner to corner over the bars', built: ['DSa', 'DSb', 'DRa', 'DRb', 'DV', 'DFA', 'DFB'], new: ['DIAG'],
       screws: [[250, 428], [500, 626], [750, 823]], det: [500, 626, 150, 'A'] },
     { kind: 'doorSec', label: 'SECTION', sub: 'stack now 66', built: ['L_DS', 'L_DR'], new: ['L_DIAG'], labels: { L_DIAG: 'diagonal 66' } },
     { kind: 'doorPlan', label: 'PLAN', sub: 'overlay position', built: ['PPa', 'PPb', 'DLa', 'DLb'], new: ['D1'] }
   ],
   insets: [
-    { kind: 'door', tag: 'compression direction \u2014 the ONLY right way', bnd: [40, 910, 130, 1110], built: ['DSa', 'DSb', 'DRa', 'DRb', 'DRc'], new: ['DIAG'], minor: 50 }
+    { kind: 'door', tag: 'compression direction \u2014 the ONLY right way', bnd: [40, 910, 130, 1110], built: ['DSa', 'DSb', 'DRa', 'DRb', 'DV', 'DFA', 'DFB'], new: ['DIAG'], minor: 50 }
   ],
   actions: [
     'WHY: every door on Earth slowly droops into a leaning parallelogram \u2014 the top corner away from the hinges sags. One slanting stick corner-to-corner stops it, but ONLY leaning the right way: <b>starts at the BOTTOM on the HINGE side, ends at the TOP on the LOCK side</b>. That way the droop SQUEEZES the stick \u2014 and wood is brilliant at being squeezed. The other way it hangs loose and does nothing.',
     'DO NOT MEASURE ANYTHING. Lay your longest batten offcut (<b>B1 ~1185</b> for door 1) across the finished frame in that direction, corner to corner. Pencil a line along BOTH sides of it.',
     'Cut <b>5 mm LONGER</b> than the lines \u2014 a tight fit squeezes the frame square; a loose one braces nothing. Offer it up and tap it in \u2014 it should fight you a little. Shave micro-slivers off if it truly won\u2019t go.',
-    '3 mm pilot + a screw EVERYWHERE it touches wood: 4.0\u00D745 over one layer, <b>4.0\u00D765 through the fat 3-layer spots</b> (over a stile + bar together = 66 mm).',
-    'SQUARE CHECK: tape corner-to-corner both ways \u2014 within 3 mm. Then screw a <b>spare 700 loosely across as a temporary brace</b> (it comes off after boarding). Door 2\u2019s stick leans the OTHER way \u2014 but still bottom-hinge \u2192 top-lock.'
+    '3 mm pilot + a screw EVERYWHERE it touches wood: 4.0\u00D745 over one layer, <b>4.0\u00D765 through the fat 3-layer spots</b>. Its top end now lands on the <b>DOUBLED lock edge</b> (stile + vertical) \u2014 put the long screws in there.',
+    'V2.9 NOTE \u2014 this stick is no longer optional decoration: the lock-side corners of the frame are butt joints held by the board skin, so the <b>slanting stick is what actually stops the door racking</b>. Screw every crossing, no skips.',
+    'SQUARE CHECK: tape corner-to-corner both ways \u2014 within 3 mm. Then screw a <b>long BOARD OFFCUT loosely across as a temporary brace</b> (all four 700s are bars now \u2014 doc 24). It comes off after boarding. Door 2\u2019s stick leans the OTHER way \u2014 but still bottom-hinge \u2192 top-lock.'
   ],
-  pieces: [['DIAG', '~1129 \u00D750\u00D722, scribed +5', 'door 1: B1 \u00B7 door 2: the B3 remainder', 0, [50, 22], 2]],
+  pieces: [['DIAG', '~1129 \u00D750\u00D722, scribed +5', 'door 1: B1 \u00B7 door 2: the B3 remainder (after its lock vertical)', 0, [50, 22], 2]],
   tools: ['saw', 'drill', 'pilot', 'square2'],
   checks: ['Frame diagonals equal within 3 mm.', 'Diagonal snug \u2014 it does not rattle or slide.', 'Hinge-side arrows still visible.'] },
 
 step39: { phase: 'phase10', title: 'Boards on \u2014 12 rows, bottom to top',
   panels: [
-    { kind: 'door', label: 'DOOR', sub: 'layer 4 \u2014 the skin (936, as cut)', built: ['DSa', 'DSb', 'DRa', 'DRb', 'DRc'], new: ['BOARDS'], post: ['lapsD'],
+    { kind: 'door', label: 'DOOR', sub: 'layer 4 \u2014 the skin (936, as cut)', built: ['DSa', 'DSb', 'DRa', 'DRb', 'DV', 'DFA', 'DFB'], new: ['BOARDS'], post: ['lapsD'],
       screws: [[25, 25], [911, 25], [25, 250], [262, 250], [500, 250], [737, 250], [911, 250]], screwChip: '2 per crossing \u00B7 fat half',
       dims: [{ k: 'v', a: 0, b: 1200, x: 1080, t: '1200', s: 'r' }] },
     { kind: 'doorSec', label: 'SECTION', sub: 'full stack 88', built: ['L_DS', 'L_DR', 'L_DIAG'], new: ['L_BOARDS'], labels: { L_BOARDS: 'boards 88' } },
@@ -770,8 +777,9 @@ step39: { phase: 'phase10', title: 'Boards on \u2014 12 rows, bottom to top',
   actions: [
     'Your boards are <b>already cut at 936 \u2014 leave them alone</b>. Twelve rows per door, each row shows 100 mm: 12 \u00D7 100 = <b>1200 = exactly the stile height</b>, so row 12 lands flush. Nothing to fudge.',
     'ROW 1 at the BOTTOM: flush with the stile bottoms, <b>FAT edge DOWN</b> (every board is a wedge \u2014 thick edge down makes rain run off it, like a roof tile).',
-    'THE BOTTOM BOARD GETS SCREWS AT ITS TWO ENDS ONLY \u2014 2 into each stile, 4 total, through the fat half. Nothing behind its middle, <b>on purpose</b> (the door must swing clear of the ground \u2014 a screw into air grips nothing). Row 2 laps over it 25, and row 3 lands on the full-width bar: each row holds the one below.',
-    'Every next row overlaps the last by <b>25</b> \u2014 like tiles or fish scales \u2014 so 100 mm shows. 2 screws per REAL crossing: both stiles on every row; along the bottom bar on row 3; into the stubs and the slanting stick wherever they pass behind.',
+    'THE BOTTOM BOARD GETS SCREWS AT ITS TWO ENDS ONLY \u2014 2 into each stile, 4 total, through the fat half. Nothing behind its middle, <b>on purpose</b> (the door must swing clear of the ground \u2014 a screw into air grips nothing). Row 2 laps over it 25, and row 3 lands on the lower bar + its fill: each row holds the one below.',
+    'Every next row overlaps the last by <b>25</b> \u2014 like tiles or fish scales \u2014 so 100 mm shows. 2 screws per REAL crossing: both stiles <b>and the doubled lock edge</b> on every row; along the lower bar + its fill on row 3; onto the hasp-height fill at row 6; into the slanting stick wherever it passes behind.',
+    'BUTT JOINTS (rows 3 and 6): one screw <b>each side</b> of every butt joint \u2014 the boards are what tie the fills to the bars. Running short of \u00D745s? The lock vertical drops to ONE screw on rows 1\u20132 and 11\u201312 (edge rows carry least).',
     'SCREW RULES: through the <b>FAT half</b> of each board, 25\u201340 up from its fat bottom edge \u2014 NEVER near the crisp-thin top edge, it splits. 3 mm pilot ALWAYS. Head flush, not buried.',
     'SEAL: every cut end + the bottom board\u2019s bottom edge \u2014 it is the closest wood to the ground on the whole shed.'
   ],
@@ -782,14 +790,14 @@ step39: { phase: 'phase10', title: 'Boards on \u2014 12 rows, bottom to top',
 
 step40: { phase: 'phase10', title: 'Door 2 \u2014 same but MIRRORED',
   panels: [
-    { kind: 'door', label: 'DOOR', sub: 'face up, hinge side RIGHT', built: ['DSa', 'DSb', 'DRa', 'DRb', 'DRc'], new: ['DIAGm'],
-      labels: { DSa: 'DS3', DSb: 'DS4', DRa: 'DR5 \u2014 936 full', DRb: 'stub', DRc: 'stub', DIAGm: 'DIAG mirrored' }, ghost: ['BANDb2', 'BANDt2'], post: ['lapsD', 'eyesR', 'anchorsR'] },
+    { kind: 'door', label: 'DOOR', sub: 'face up, hinge side RIGHT', built: ['DSa', 'DSb', 'DRa', 'DRb', 'DV', 'DFA', 'DFB'], new: ['DIAGm'],
+      labels: { DSa: 'DS3', DSb: 'DS4', DRa: 'DR3 \u2014 700', DRb: 'DR4 \u2014 700', DV: 'lock vert', DIAGm: 'DIAG mirrored' }, ghost: ['BANDb2', 'BANDt2'], post: ['lapsD', 'eyesR', 'anchorsR'] },
     { kind: 'doorSec', label: 'SECTION', sub: 'same stack, mirrored', built: ['L_DS', 'L_DR', 'L_DIAG'], new: ['L_BOARDS'] },
     { kind: 'doorPlan', label: 'PLAN', sub: 'the second overlay', built: ['PPa', 'PPb', 'DLa', 'DLb', 'D1'], new: ['D2'],
       dims: [{ k: 'h', a: 1051, b: 1987, y: 90, t: '936' }] }
   ],
   actions: [
-    'Same five stages, mirror image: stiles + a board as the ruler \u2192 bottom bar <b>936</b> (this one from the <b>B3</b> offcut) + stubs (halve the <b>third</b> 700) \u2192 slanting stick \u2192 boards.',
+    'Same stages, mirror image: stiles + a board as the ruler \u2192 both 700 bars hard to the <b>RIGHT</b> (hinge) edge + the lock kit down the LEFT edge (lock vertical from the <b>B2</b> offcut ~980 \u00B7 this door\u2019s diagonal from the <b>B3</b> remainder) \u2192 slanting stick \u2192 boards.',
     '<b>HINGE SIDE IS RIGHT</b> this time \u2014 arrow on the right stile before anything else.',
     'The slanting stick still runs bottom-HINGE \u2192 top-LOCK, so it <b>leans the other way</b>. (Door 1: bottom-left \u2192 top-right. Door 2: bottom-right \u2192 top-left.)',
     'Gaps when hung: <b>~14</b> at the outer edges, <b>~29</b> up the middle between the two doors.',
@@ -801,7 +809,7 @@ step40: { phase: 'phase10', title: 'Door 2 \u2014 same but MIRRORED',
 /* ---------- steps 46–48 (v2.6, 29 Sep): bands → hang → lock — doc 22, docs 11 B5 / 12 C / 16 chunk 4 ---------- */
 step46: { phase: 'phase10', title: 'Metal straps on \u2014 eyes UP, slid off the lap lines',
   panels: [
-    { kind: 'door', label: 'DOOR', sub: 'door 1 \u2014 straps on the hinge stile', built: ['DSa', 'DSb', 'DRa', 'DRb', 'DRc', 'DIAG', 'BOARDS'], new: ['BANDb', 'BANDt'], labels: { BANDb: 'BAND 450', BANDt: 'BAND 450' },
+    { kind: 'door', label: 'DOOR', sub: 'door 1 \u2014 straps on the hinge stile', built: ['DSa', 'DSb', 'DRa', 'DRb', 'DV', 'DFA', 'DFB', 'DIAG', 'BOARDS'], new: ['BANDb', 'BANDt'], labels: { BANDb: 'BAND 450', BANDt: 'BAND 450' },
       post: ['lapsD', 'eyesL', 'anchorsL'],
       screws: [[25, 250], [25, 950], [25, 400], [25, 800], [25, 1100]], screwChip: 'M5 \u00D760 bars \u00B7 \u00D745 plain',
       dims: [{ k: 'v', a: 0, b: 75, x: -120, t: '75', s: 'l' }, { k: 'v', a: 1125, b: 1200, x: -60, t: '75', s: 'l' }] },
@@ -809,19 +817,19 @@ step46: { phase: 'phase10', title: 'Metal straps on \u2014 eyes UP, slid off the
     { kind: 'doorPlan', label: 'PLAN', sub: 'overlay position', built: ['PPa', 'PPb', 'DLa', 'DLb'], new: ['D1'] }
   ],
   insets: [
-    { kind: 'door', tag: 'the anchor: strap \u2192 board \u2192 bar \u2192 stile = 66', bnd: [-50, 280, 840, 1240], built: ['DSa', 'DRb', 'BOARDS'], new: ['BANDt'], screws: [[25, 950]], minor: 25 }
+    { kind: 'door', tag: 'the anchor: strap \u2192 board \u2192 bar \u2192 stile = 66', bnd: [-50, 300, 100, 500], built: ['DSa', 'DRa', 'BOARDS'], new: ['BANDb'], screws: [[25, 250]], minor: 25 }
   ],
   actions: [
     'THE WORDS: the <b>STRAP</b> is the 450 metal arm that screws flat onto the door; the <b>EYE</b> is the ring curled at its top end; the <b>HOOK + PIN</b> are the coat-hook that goes on the post. The door hangs from two pins <b>like a coat on two wall hooks</b> \u2014 gravity holds it, and it lifts off any time you like.',
     'Per door: 2 straps down the HINGE-side stile, <b>75 in from the top and bottom, EYE ENDS UP</b>.',
     'PARK BETWEEN THE LINES: every board has a shadow line every 100 mm (a lap edge). Dry-hold each strap and slide it up/down a few mm until every hole lands on clean FAT wood <b>between</b> the lines \u2014 like parking between the lines, not on them. <b>Any hole that won\u2019t park cleanly gets skipped</b> (straps always have spares).',
-    'Screws: 3.5 mm pilot, owned <b>M5 CSK in every usable hole</b>, snug to the seat. <b>\u00D760 where the strap crosses a bar</b> \u2014 the bottom strap crosses the full bar (225\u2013275), the top strap crosses its STUB (925\u2013975) \u2014 both are strap \u2192 board \u2192 bar \u2192 stile = <b>66 mm, the anchors</b>. <b>\u00D745</b> everywhere else (plain board + stile = 44).',
+    'Screws: 3.5 mm pilot, owned <b>M5 CSK in every usable hole</b>, snug to the seat. <b>\u00D760 where the strap crosses a bar</b> \u2014 each strap crosses its own <b>700 bar right where it sits on the hinge stile</b> (225\u2013275 and 925\u2013975) \u2014 both are strap \u2192 board \u2192 bar \u2192 stile = <b>66 mm, the anchors</b>. <b>\u00D745</b> everywhere else (plain board + stile = 44).',
     'The wedge boards tilt the strap slightly \u2014 it bridges them like a ruler on a staircase. <b>NORMAL.</b> The door hangs on the pins, not on strap flatness. Just keep each strap <b>parallel to the stile edge</b> (lay the level along it) \u2014 the horizontal shadow lines will try to fool your eye.',
     'Same two insets on door 2, mirrored stile \u2014 all four hooks then land level, two per post.'
   ],
   pieces: [['BAND', '450 hook & band strap \u00D72/door', 'eye end UP \u00B7 over the boards', 0, 0], ['M5 CSK', '\u00D745 plain \u00B7 \u00D760 bar anchors', '3.5 mm pilots', 0, 0]],
   tools: ['drill', 'pilot35', 'level', 'marker', 'pencil'],
-  checks: ['Every bar-zone hole carries its M5\u00D760 anchor screw (full bar AND stub).', 'All holes parked between the lap lines \u2014 slid, not forced.', 'Straps parallel to the stile edge, 75 in from both ends.', 'Eyes up + free to rotate, both doors.'] },
+  checks: ['Every bar-zone hole carries its M5\u00D760 anchor screw (both 700 bars over the hinge stile).', 'All holes parked between the lap lines \u2014 slid, not forced.', 'Straps parallel to the stile edge, 75 in from both ends.', 'Eyes up + free to rotate, both doors.'] },
 
 step47: { phase: 'phase10', title: 'Hang day \u2014 gravity marks the hooks',
   panels: [
@@ -856,11 +864,11 @@ step48: { phase: 'phase10', title: 'Lock up \u2014 hasp, turn-buttons, padlock',
   actions: [
     '<b>FIT-CHECK FIRST</b> (12 \u00A7C1): hold the owned hasp across the closed centre gap \u2014 loop reaches the staple, staple clears both door faces, padlock shackle threads BOTH. Only then mark holes.',
     'Hasp base on the door you open first; loop + staple on the slave door. <b>M5 CSK</b>, 3.5 mm pilots, into board + stile \u2014 same park-between-the-lines trick as the straps.',
-    '<b>TURN-BUTTONS</b> from the spare 700s (~100\u00D740 each): one screw through the centre of each, they rotate to hold the slave door at top + bottom \u2014 it then behaves like part of the frame.',
+    '<b>TURN-BUTTONS</b> from board offcuts (~100\u00D740 each \u2014 all four 700s are rails now, doc 24): one screw through the centre of each, they rotate to hold the slave door at top + bottom \u2014 it then behaves like part of the frame.',
     'Padlock on. Chain: anchor \u2192 bike frames, high and tight (step 45).',
     'Aftercare, two minutes a year: re-tighten board screws after the first wet season; lift the doors off the pins, tap the hooks true, re-hang. Screws allow re-tightening \u2014 nails never could.'
   ],
-  pieces: [['HASP', 'heavy duty + staple', 'across the 29 centre gap', 0, 0], ['TURN-BUTTON', '~100\u00D740 batten \u00D72', 'one centre screw \u00B7 rotates', 0, 0]],
+  pieces: [['HASP', 'heavy duty + staple', 'across the 29 centre gap \u00B7 bites 66 mm of frame', 0, 0], ['TURN-BUTTON', '~100\u00D740 board offcut \u00D72', 'one centre screw \u00B7 rotates', 0, 0]],
   tools: ['drill', 'pilot35', 'marker', 'tape'],
   checks: ['Hasp closes without forcing; padlock through loop + staple.', 'Slave door held top + bottom \u2014 no rattle in wind.', 'Nothing unsealed; bike chained to the anchor \u2014 DONE.'] },
 
@@ -879,7 +887,7 @@ step41: { phase: 'phase10', title: 'The finished box',
   ],
   pieces: [],
   tools: ['photo', 'helper'],
-  checks: ['Box line 1390 on rear + front walls (side tops tucked at 1340, v2.4); rear posts 1580 above it.', 'Roof: 4 pieces, laps facing NE, ~78 eaves, 5 rows nailed \u2014 3 defect spots snipped + mastic\u2019d, watched at first rain.', 'Sides closed under the roof line (scribed rakes); rear flush at 1580; four flat corner boards \u2014 nothing bent anywhere.', 'All braces off, box rigid, every cut end sealed, 150 strip open.', 'Doors 936 as cut (zero-buy, `23`): full bottom bars + stub pairs, straps anchored (46), hung + locked (47\u201348) \u2014 gaps ~29 / ~14 \u2014 bike in, chained to the anchor.'] },
+  checks: ['Box line 1390 on rear + front walls (side tops tucked at 1340, v2.4); rear posts 1580 above it.', 'Roof: 4 pieces, laps facing NE, ~78 eaves, 5 rows nailed \u2014 3 defect spots snipped + mastic\u2019d, watched at first rain.', 'Sides closed under the roof line (scribed rakes); rear flush at 1580; four flat corner boards \u2014 nothing bent anywhere.', 'All braces off, box rigid, every cut end sealed, 150 strip open.', 'Doors 936 as cut (zero-buy): 700 bars hinge-side + doubled lock edge (v2.9, doc 24), straps anchored (46), hung + locked (47\u201348) \u2014 gaps ~29 / ~14 \u2014 bike in, chained to the anchor.'] },
 
 /* ---------- PHASE 11 — the anchor (doc 21: bucket pour, baby steps) ---------- */
 step42: { phase: 'phase11', title: 'Everything ready BEFORE bag 1 opens',

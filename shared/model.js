@@ -117,15 +117,19 @@ const M = (() => {
     },
 
     door: { // (x,y) door 1 face up, hinge side LEFT
-      // v2.8 (29 Sep eve, doc 23 — ZERO-BUY): door 936 as cut. Lower rail = ONE full-width piece
-      // (offcut stock); upper rail = SPLIT PAIR over the stiles (the 700s halved) — the hinge
-      // bands still cross a rail over each stile → board+rail+stile = 66 anchor (was DR [0,960]×2).
+      // v2.9 (1 Oct, doc 24): BOTH rails = the four old 700s AS CUT, slid hard to the HINGE
+      // side, hinge ends flush — each sits OVER the hinge stile → the straps keep their
+      // board+rail+stile = 66 anchors with zero offcut-length dependency. The lock side gets
+      // the kit: DV (second vertical, inboard of the lock stile — doubles the lock edge),
+      // DFA (186 fill completing the lower line, butted at 700) and DFB (~250 at the hasp
+      // height 600) → hasp screws bite board+fill+vertical = 66 (was DRa [0,936] + DRb/DRc stubs).
       DSa: [0, 50, 0, 1200], DSb: [886, 936, 0, 1200],
-      DRa: [0, 936, 225, 275], DRb: [0, 350, 925, 975], DRc: [586, 936, 925, 975],
+      DRa: [0, 700, 225, 275], DRb: [0, 700, 925, 975],
+      DFA: [700, 886, 225, 275], DFB: [636, 886, 575, 625], DV: [836, 886, 100, 1100],
       DIAG: DIAG1, DIAGm: DIAG2,
       BOARDS: [0, 936, 0, 1200],
       // hinge bands (AG160 450 straps) on the hinge stile, eye end UP: bottoms 75 in from the
-      // door ends — each 450 band CROSSES its rail zone (225–275 full bar / 925–975 split pair)
+      // door ends — each 450 band CROSSES its own 700 rail where it sits on the hinge stile
       BANDb: [12, 38, 75, 525], BANDt: [12, 38, 675, 1125],
       BANDb2: [898, 924, 75, 525], BANDt2: [898, 924, 675, 1125] // door 2, hinge RIGHT
     },
@@ -222,12 +226,13 @@ const M = (() => {
         eq(75 - P.plan.SR1p[2], 25) && eq(P.plan.SR1p[3] - 875, 25) && eq(P.plan.SR1p[3] - P.plan.SR1p[2], 850) },
     { t: '9 Corner tails (D12): 2188 = 2080 + 2×54, square-cut — NO folding', ok:
         eq(2188, C.W_ALL + 2 * 54) && eq(P.side.WRAPs[0], C.D_ALL) && eq(P.side.WRAPs[1], C.D_ALL + 54) && eq(P.plan.WRp1[2], C.D_ALL) },
-    { t: '10 Doors v2.8: lower rail FULL-WIDTH 0–936 over both stiles; upper = SPLIT PAIR (0–350 / 586–936) over the stiles; 12 courses ×100 = 1200', ok:
-        eq(P.door.DRa[0], 0) && eq(P.door.DRa[1], C.DOOR_W) && eq(P.door.DRb[1] - P.door.DRb[0], 350) &&
-        eq(P.door.DRc[0], 586) && eq(P.door.DRc[1], C.DOOR_W) && eq(courses.door.n * courses.door.pitch, C.DOOR_H) },
-    { t: '11 Hinge bands cross both rail zones (75-in bands × 450 span the 225–275 bar / 925–975 stubs); straps + boards = 94', ok:
+    { t: '10 Doors v2.9: BOTH rails 700 as-cut, hinge-flush, sitting OVER the hinge stile; fill A completes the lower line to 886; lock vertical doubles the lock edge; 12 courses ×100 = 1200', ok:
+        eq(P.door.DRa[1], 700) && eq(P.door.DRb[1], 700) && eq(P.door.DRa[0], 0) && eq(P.door.DRb[0], 0) &&
+        eq(P.door.DFA[0], 700) && eq(P.door.DFA[1], 886) && eq(P.door.DV[0], 836) && eq(P.door.DV[1], 886) &&
+        eq(courses.door.n * courses.door.pitch, C.DOOR_H) },
+    { t: '11 Hinge bands cross both 700 rail zones on the hinge stile (225–275 / 925–975) → strap→board→rail→stile = 66 anchors; hasp zone = board + fill B + vertical = 66 (DFB centred 600)', ok:
         P.door.BANDb[2] < 225 && P.door.BANDb[3] > 275 && P.door.BANDt[2] < 925 && P.door.BANDt[3] > 975 &&
-        eq(P.door.BANDt[3] - P.door.BANDt[2], 450) && eq(P.doorSec.L_BAND[2], 88) },
+        eq(P.door.BANDt[3] - P.door.BANDt[2], 450) && eq(P.doorSec.L_BAND[2], 88) && eq(P.door.DFB[2] + P.door.DFB[3], 1200) },
     { t: '12 Door gaps v2.8: 936 + 936 + 29 centre + 2×14 outer = 1929 clear between the FLAT linings (faces 72 / 2001)', ok:
         eq(P.doorPlan.D2[0] - P.doorPlan.D1[1], 29) && eq(P.doorPlan.D1[0] - 72, 14) && eq(2001 - P.doorPlan.D2[1], 14) &&
         eq(P.doorPlan.D1[1] - P.doorPlan.D1[0], C.DOOR_W) }

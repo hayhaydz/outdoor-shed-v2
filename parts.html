@@ -62,20 +62,22 @@ group('Frame \u00B7 75\u00D750 \u00B7 from the 8 sticks (18 pieces + 4 blocks)',
   { code: 'RC1 / RC2 / RC3', qty: 3, bar: [1980, [75, 50]], d: 'roof rails, flat: front (over FH) \u00B7 mid \u00B7 rear (on the post tops) \u00B7 S5 / S6 / S7', g: [75, 50] },
   { code: 'BLOCK', qty: 4, bar: [140, [75, 50]], d: 'spacer blocks 140, from offcuts \u2014 pocket them' }
 ]);
-group('Battens \u00B7 50\u00D722 \u00B7 from the 3 sticks (10 pieces)', [
+group('Battens \u00B7 50\u00D722 \u00B7 from the 3 sticks (12 pieces + board-offcut fills)', [
   { code: 'DL1 / DL2', qty: 2, bar: [1200, [50, 22]], cls: 'bat', d: 'door linings \u00B7 <b>INSTALLED ON EDGE \u2192 rotate FLAT at step 49</b> (22 into the hole, not 50) \u2014 widens it 1873 \u2192 ~1929 (v2.8, doc 23)', g: [50, 22] },
   { code: 'DS1\u2013DS4', qty: 4, bar: [1200, [50, 22]], cls: 'bat', d: 'door stiles \u2014 the doors\u2019 full height \u00B7 B1 / B2 / B3', g: [50, 22] },
-  { code: 'DR1 \u00D72', qty: 2, bar: [936, [50, 22]], cls: 'bat', d: 'door rails \u2014 <b>FULL WIDTH 936 bottom bars</b> \u00B7 door 1 from the B2 offcut (~980), door 2 from B3 (~2180) \u00B7 ends flush with the stile edges (v2.8 zero-buy, doc 23)', g: [50, 22] },
-  { code: 'DR2a\u2013d', qty: 4, bar: [350, [50, 22]], cls: 'bat', d: 'top-rail <b>STUBS</b> \u2014 two old 700 rails halved \u00B7 one over each stile, outer ends flush \u00B7 the hinge straps cross them into the same 66 mm anchor a full bar would give', g: [50, 22] },
-  { code: 'DIAG \u00D72', qty: 2, bar: [1129, [50, 22]], cls: 'bat', d: '~1129 SCRIBED +5 proud at step 38 (v2.8: 936 door) \u00B7 door 1 from the B1 offcut (~1185), door 2 from the B3 remainder \u00B7 DO NOT pre-measure \u2014 pencil round the stick on the built frame', g: [50, 22] },
-  { code: '700s \u00D74 (old cut list)', qty: 4, d: 'v2.8: TWO are halved into the top-rail stub pairs; TWO stay whole \u2014 temporary squaring battens at step 38, then turn-buttons / catches / packers. Nothing bought.' },
-  { code: 'B1 / B2 / B3 offcuts', qty: 3, d: 'v2.8 door stock: B2 (~980) \u2192 door 1 bottom bar \u00B7 B3 (~2180) \u2192 door 2 bottom bar + one diagonal \u00B7 B1 (~1185) \u2192 the other diagonal. <b>MEASURE all three before cutting (step 49, doc 23 \u00A77)</b>' }
+  { code: 'DR1\u2013DR4', qty: 4, bar: [700, [50, 22]], cls: 'bat', d: 'door rails \u2014 <b>THE FOUR 700s AS CUT (v2.9, doc 24): never recut.</b> Both slide hard to the HINGE side per door, hinge ends flush, sitting OVER the hinge stile \u2192 the strap anchors keep their 66 mm', g: [50, 22] },
+  { code: 'LOCK VERT \u00D72', qty: 2, bar: [1000, [50, 22]], cls: 'bat', d: 'second verticals, tight inboard of the lock stile (doubled lock edge) \u00B7 door 1 from the B3 remainder (~1030), door 2 from B2 (~980), centred \u00B7 the hasp screws bite board + fill + vertical = 66 mm of frame', g: [50, 22] },
+  { code: 'FILL A \u00D72', qty: 2, bar: [186, [50, 22]], cls: 'bat', d: 'offset fills on the LOWER bar line \u2014 butted to the bar end at 700, finishing the line to the lock stile \u00B7 from rear board offcuts (~270\u00D7125\u00D722)', g: [50, 22] },
+  { code: 'FILL B \u00D72', qty: 2, bar: [250, [50, 22]], cls: 'bat', d: 'offset fills at the <b>600 mark (hasp height)</b> \u2014 rear board offcuts \u00B7 all fills stay below ~750 (the diagonal passes above)', g: [50, 22] },
+  { code: 'DIAG \u00D72', qty: 2, bar: [1129, [50, 22]], cls: 'bat', d: '~1129 SCRIBED +5 proud at step 38 (v2.9: top end lands on the doubled lock edge) \u00B7 door 1 from the B1 offcut (~1185), door 2 from the B3 remainder (after its lock vertical) \u00B7 DO NOT pre-measure \u2014 pencil round the stick on the built frame', g: [50, 22] },
+  { code: 'BOARD OFFCUTS', qty: 0, d: 'rear-wall offcuts ~270 \u00D715 \u2192 the door fills + turn-buttons + temporary squaring battens (all four 700s are rails now) \u00B7 door-board offcuts ~114 as extras' },
+  { code: 'B1 / B2 / B3 offcuts', qty: 3, d: 'v2.9 door stock: B1 (~1185) \u2192 diagonal 1 \u00B7 B3 (~2180) \u2192 diagonal 2 + lock vertical 1 \u00B7 B2 (~980) \u2192 lock vertical 2. <b>MEASURE all three before cutting (step 49)</b> \u2014 thresholds are gentle (B1 \u2265~1100 \u00B7 B3 \u2265~2100 \u00B7 B2 \u2265~950; short verticals just centre on the hasp zone)' }
 ]);
 group('Door ironmongery \u00B7 ALL OWNED (28 Sep) \u00B7 the hook & band idea in one breath', [
   { code: 'BAND \u00D74', qty: 4, d: '450 hook & band straps (AG160) \u2014 2 per door, on the HINGE stile, 75 in from the door ends, EYE ENDS UP. Strap \u2192 board \u2192 rail \u2192 stile = 66 at the rail crossings (the anchor screws, M5\u00D760) \u00B7 M5\u00D745 elsewhere \u00B7 3.5 mm pilots' },
   { code: 'HOOK \u00D74', qty: 4, d: 'L-pins for the posts \u2014 fixed THROUGH the front corner boards (5.0\u00D780, 4 mm pilots, threads soaped), on the FAT half of each corner board so the pin stands plumb \u00B7 adjustable: tap to true the doors' },
   { code: 'HASP + STAPLE', qty: 1, d: 'heavy-duty hasp across the ~30 centre gap \u2014 FIT-CHECK before screwing (loop reaches, staple clears, shackle threads both) \u00B7 M5, 3.5 mm pilots' },
-  { code: 'TURN-BUTTON \u00D72', qty: 2, d: '~100\u00D740 batten offcuts, one centre screw each \u2014 rotate to hold the slave door top + bottom' }
+  { code: 'TURN-BUTTON \u00D72', qty: 2, d: '~100\u00D740 board offcuts (all four 700s are rails now, v2.9), one centre screw each \u2014 rotate to hold the slave door top + bottom' }
 ]);
 group('Boards \u00B7 22\u00D7125 feather-edge (cut to the as-built shed)', [
   { code: 'REAR', qty: 15, bar: [2188, [125, 22]], d: '2188 = 2080 wall (v2.4) + 2 \u00D754 square-cut corner tails \u2014 NEVER folded, ends sealed \u00B7 14 courses + 1 spare' },
